@@ -205,7 +205,6 @@ class LVSClient extends SessionClient {
           // 'Cookie': 'JSESSIONID=26EE54DEAE11E85EC4535FDAA534ED83-m2',
           "Content-Type": "application/json"
         }).then((rep) {
-      print('meee');
       print(rep.statusCode);
       print(rep.request);
       print(rep.body);
