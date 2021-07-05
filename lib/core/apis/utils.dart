@@ -11,6 +11,8 @@ import 'package:ynotes/core/apis/Pronote/PronoteCas.dart';
 import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/globals.dart';
 
+import 'Lvs.dart';
+
 //Return the good API (will be extended to Pronote)
 List<String> colorList = [
   "#f07aa0",
@@ -36,7 +38,11 @@ apiManager(Offline _offline) {
       return APIEcoleDirecte(_offline);
 
     case 1:
-      return APIPronote(_offline);
+      return APILVS(_offline);
+
+    //We'll see later to attribute a proper channel
+    /* case 2:
+      return APILVS(_offline); */
   }
 }
 

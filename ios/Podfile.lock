@@ -3,7 +3,7 @@ PODS:
     - Flutter
   - awesome_notifications (0.0.2):
     - Flutter
-  - background_fetch (1.0.0-nullsafety.2):
+  - background_fetch (1.0.1):
     - Flutter
   - battery_optimization (0.0.1):
     - Flutter
@@ -134,7 +134,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   app_settings: d103828c9f5d515c4df9ee754dabd443f7cedcf3
   awesome_notifications: 74462bc8e68b11f8235d78422266886759e9da61
-  background_fetch: 67b227578932e795dbe3ea6d3f7c006e45f3ce66
+  background_fetch: 2edffc19a5a465c47f073efa35db57f7910738fa
   battery_optimization: 2cfe96337f15b292912db1d874c317962fda5635
   connectivity_plus: 5f0eb61093bec56935f21a1699dd2758bc895587
   ext_storage: 4eaf3a84d5594106e2ebcc2502248cfde53c8fa1
@@ -156,7 +156,7 @@ SPEC CHECKSUMS:
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
-  webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
+  webview_flutter: 3603125dfd3bcbc9d8d418c3f80aeecf331c068b
 
 PODFILE CHECKSUM: 874082ed3f2e47e0a6d200ebd8944575ac4c4efd
 

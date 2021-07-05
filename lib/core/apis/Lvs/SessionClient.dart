@@ -1,0 +1,69 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'dart:math';
+
+abstract class SessionClient {
+  http.Client client = new http.Client();
+  String token = '';
+  int token_limit = 12000;
+  String user_agent = '';
+  final credentials;
+
+  SessionClient(this.credentials);
+
+  init(); //init the client by -for example- defining the token
+
+  Future<http.Response> get(Uri url,
+      {Map<String, String>? custom_headers,
+      bool token = true,
+      baseUrl = true}) async {
+    Map headers = {};
+    if (custom_headers == Map) {
+      headers.addAll(custom_headers!);
+    }
+    return client.get(url);
+  }
+
+  Future<http.Response> post(Uri url,
+      {Map<String, String>? headers,
+      Object? body,
+      Encoding? encoding,
+      bool token = true,
+      baseUrl = true}) async {
+    return client.post(url, body: body);
+  }
+
+  String getToken({refresh = false}) {
+    //add timer later on to refresh if necessary with token limit
+    if (this.token == '' || refresh) {
+      this.init();
+    }
+    return this.token;
+  }
+
+  String setUser_agent({String agent = ''}) {
+    if (agent != '') {
+      Random random = new Random();
+      int randomNumber = random.nextInt(15);
+      return this.user_agent = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4",
+        "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0",
+        "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:53.0) Gecko/20100101 Firefox/53.0"
+      ][randomNumber];
+    }
+    return this.user_agent = agent;
+  }
+}

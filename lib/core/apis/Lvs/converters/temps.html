@@ -1,0 +1,874 @@
+https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/eleve
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"> 
+<head>
+
+  <title>la-vie-scolaire</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  
+
+  
+
+
+  <link href="/vsn.main/static/css/default/error.css" type="text/css" rel="stylesheet" media="all" />
+<script src="/vsn.main/static/plugins/jquery-1.11.1/js/jquery/jquery-1.11.1.min.js" type="text/javascript" ></script>
+<link href="/vsn.main/static/css/jqueryui/themes/smoothness/jquery-ui-1.9.2.custom.min.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<script src="/vsn.main/static/js/jqueryui/jquery-ui-1.9.2.custom.min.js" type="text/javascript" ></script>
+<link href="/vsn.main/static/bundle-jquery_ui_adapte-5.19.2-1623418640664_head.css" type="text/css" rel="stylesheet" media="screen, projection" />
+
+
+
+
+
+<script src="/vsn.main/static/bundle-bundle_chosen_head.js" type="text/javascript" ></script>
+<link href="/vsn.main/static/bundle-bundle_chosen_head.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="/vsn.main/static/css/default/styles-1.12.css" type="text/css" rel="stylesheet" media="all" />
+<script src="/vsn.main/static/bundle-core-5.19.2-1623418640664_head.js" type="text/javascript" ></script>
+
+
+
+
+<link href="/vsn.main/static/bundle-core-5.19.2-1623418640664_head.css" type="text/css" rel="stylesheet" media="screen, projection" />
+
+
+<link href="/vsn.main/static/css/jprogress/jprogress.ajuste.css" type="text/css" rel="stylesheet" media="screen, projection" />
+
+  
+  <meta name="layout" content="main"/>
+    
+    
+        <link rel="stylesheet" href="/vsn.main/static/bundle-liste_eleves_edition-5.19.2-1623418640664_head.css" type="text/css" media="screen, print"/>
+
+</head>
+<body id="top">
+
+      <script type="text/javascript">
+          var $j = jQuery.noConflict();
+          
+      </script>
+  
+
+    <ul id="skip" class="invisible">
+      <li><a href="#toolbar" accesskey="s">Aller au menu</a></li>
+      <li><a href="#content" accesskey="c" title="Aller au contenu">Aller au contenu</a></li>
+    </ul>
+
+
+
+
+
+  
+
+
+
+
+
+  <div id="toolbar">
+    <ul id="navmenu-h">
+
+      
+        
+          <li>
+
+            
+              <a href="/vsn.main/temps/eleve">Elève</a>
+            
+
+          </li>
+          
+        
+      
+
+      
+        <li class="print_menu">
+            <a target="#" class="print_menu" title="Imprimer">
+                <img class="print_menu" alt="Imprimer" src="/vsn.main/static/images/print.png"/>
+            </a>
+        </li>
+      
+
+      <script>var urlMajOptionsAffichageEdt = '/vsn.main/temps/setOptionsAffichageEDT'</script><li class="optionsAffichagesEdt"></li>
+
+    </ul>
+
+  </div>
+
+
+
+
+
+
+
+
+
+<div id="content">
+  
+      <div class='breadcrumbs'><span>Emploi du temps > Elève</span></div>
+
+      
+
+      
+        <div class="weekmenu block">
+            <div class="weekMenuElems"><a href="/vsn.main/temps/semaineCourante" title="Semaine courante">Aujourd'hui</a></div>
+            
+              <div class="weekMenuElems" id="precedent">
+                  <a href="/vsn.main/temps/semainePrecedente" title="Semaine précédente">
+                      <
+                  </a>
+              </div>
+            
+            
+              <div class="weekMenuElems"><a href="/vsn.main/temps/semaineSuivante" title="Semaine suivante">></a></div>
+            
+
+
+
+            <div class="weekMenuElems"><input id="dateCal" class="date" name="dateCal" maxlength="10" readonly="readonly"/></div>
+
+            
+
+            <form action="/vsn.main/temps/semaineDate" method="post" name="formSemaineDate" id="formSemaineDate" >
+              <input type="hidden" name="dateSemaine" value="" id="dateSemaine" />
+            </form>
+
+
+          <div class="weekMenuElems" id="semaine">
+          </div>
+
+
+        </div>
+
+        
+        <div id="exportIcal">
+            <span id='export'> Export <a href="/vsn.main/temps/emploiDuTempsExport?typeExport=ics">ICal</a></span>
+        </div>
+        
+          
+          
+  
+
+    <div class="calendar">
+      
+        
+          
+
+
+<div id="calendarOverlayBackground"><div id="calendarOverlay"><div id="calendarOverlayContent"><div id="calendarOverlayElem"><div id="calendarOverlayLabel">Chargement</div><div id="calendarOverlayImg"><img src="/vsn.main/static/images/loading.png"/></div></div></div></div></div><div id="edtCalendar"><div id="edtCalendarCell"><div id="calendarHeader"><table class="calendar2" summary=""><caption></caption><tbody><tr><td class="tdHoraire noBorder"><div class="infoSite"></div></td><td class="tdCCell-1" style="width:500px;"><div id="cD-1" class="calendarDay" dt="2021-07-05" dtTitle="lundi 05 juillet 2021">lundi<br/>05/07/21</div></td><td class="tdCCell-2" style="width:500px;"><div id="cD-2" class="calendarDay" dt="2021-07-06" dtTitle="mardi 06 juillet 2021">mardi<br/>06/07/21</div></td><td class="tdCCell-3" style="width:500px;"><div id="cD-3" class="calendarDay" dt="2021-07-07" dtTitle="mercredi 07 juillet 2021">mercredi<br/>07/07/21</div></td><td class="tdCCell-4" style="width:500px;"><div id="cD-4" class="calendarDay" dt="2021-07-08" dtTitle="jeudi 08 juillet 2021">jeudi<br/>08/07/21</div></td><td class="tdCCell-5" style="width:500px;"><div id="cD-5" class="calendarDay" dt="2021-07-09" dtTitle="vendredi 09 juillet 2021">vendredi<br/>09/07/21</div></td><td class="tdCCell-6" style="width:500px;"><div id="cD-6" class="calendarDay" dt="2021-07-10" dtTitle="samedi 10 juillet 2021">samedi<br/>10/07/21</div></td></tr></tbody></table></div><div id="calendarBody"><table class="calendar2" summary=""><caption></caption><tbody><tr id="trGlobalHoraireCadre"><td class="tdHoraire"></td><td colspan="6"><div id="divGlobalHoraireCadre"><div id="divGlobalHoraireCadreAbsolute"><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-1-1"></div><div class="divDemiHoraireCadre" horaire="h-1-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-2-1"></div><div class="divDemiHoraireCadre" horaire="h-2-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-3-1"></div><div class="divDemiHoraireCadre" horaire="h-3-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-4-1"></div><div class="divDemiHoraireCadre" horaire="h-4-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-5-1"></div><div class="divDemiHoraireCadre" horaire="h-5-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-6-1"></div><div class="divDemiHoraireCadre" horaire="h-6-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-7-1"></div><div class="divDemiHoraireCadre" horaire="h-7-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-8-1"></div><div class="divDemiHoraireCadre" horaire="h-8-2"></div></div><div class="divHoraireCadre addBottomBorder"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-9-1"></div><div class="divDemiHoraireCadre" horaire="h-9-2"></div></div><div class="divHoraireCadre"><div class="divDemiHoraireCadre divDemiHoraireCadreDotted" horaire="h-10-1"></div><div class="divDemiHoraireCadre" horaire="h-10-2"></div></div></div></div></td></tr><tr><td class="tdHoraire "><div style="position:relative;"><div class="horaire addBottomBorder"><div id="h-1-1" class="horaireDeb horaireInfos ohf-1" oh="1" demiH="2" nfoId="h-1"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">08h10</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">08h05</div></div></div><div id="h-1-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">08h35</div><div class="labelSite1 simpleHidden">08h40</div></div></div><div id="h-1-2" class="horaireFin horaireInfos ohf-2" oh="2" demiH="2" nfoId="h-1"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">08h55</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">09h00</div></div></div></div><div class="horaire addBottomBorder"><div id="h-2-1" class="horaireDeb horaireInfos ohf-3" oh="3" demiH="2" nfoId="h-2"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">09h05</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">09h00</div></div></div><div id="h-2-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">09h30</div><div class="labelSite1 simpleHidden">09h35</div></div></div><div id="h-2-2" class="horaireFin horaireInfos ohf-4" oh="4" demiH="2" nfoId="h-2"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">09h55</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">10h00</div></div></div></div><div class="horaire addBottomBorder"><div id="h-3-1" class="horaireDeb horaireInfos ohf-5" oh="5" demiH="2" nfoId="h-3"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">10h15</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">10h10</div></div></div><div id="h-3-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">10h40</div><div class="labelSite1 simpleHidden">10h45</div></div></div><div id="h-3-2" class="horaireFin horaireInfos ohf-6" oh="6" demiH="2" nfoId="h-3"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">11h00</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">11h05</div></div></div></div><div class="horaire addBottomBorder"><div id="h-4-1" class="horaireDeb horaireInfos ohf-7" oh="7" demiH="2" nfoId="h-4"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">11h10</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">11h05</div></div></div><div id="h-4-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">11h35</div><div class="labelSite1 simpleHidden">11h40</div></div></div><div id="h-4-2" class="horaireFin horaireInfos ohf-8" oh="8" demiH="2" nfoId="h-4"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">12h00</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">12h05</div></div></div></div><div class="horaire addBottomBorder"><div id="h-5-1" class="horaireDeb horaireInfos ohf-9" oh="9" demiH="2" nfoId="h-5"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">12h05</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">12h00</div></div></div><div id="h-5-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">12h30</div><div class="labelSite1 simpleHidden">12h35</div></div></div><div id="h-5-2" class="horaireFin horaireInfos ohf-10" oh="10" demiH="2" nfoId="h-5"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">12h50</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">12h45</div></div></div></div><div class="horaire addBottomBorder"><div id="h-6-1" class="horaireDeb horaireInfos ohf-11" oh="11" demiH="2" nfoId="h-6"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">12h50</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">12h55</div></div></div><div id="h-6-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">13h25</div><div class="labelSite1 simpleHidden">13h20</div></div></div><div id="h-6-2" class="horaireFin horaireInfos ohf-12" oh="12" demiH="2" nfoId="h-6"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">13h50</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">13h40</div></div></div></div><div class="horaire addBottomBorder"><div id="h-7-1" class="horaireDeb horaireInfos ohf-13" oh="13" demiH="2" nfoId="h-7"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">13h45</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">13h50</div></div></div><div id="h-7-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">14h20</div><div class="labelSite1 simpleHidden">14h15</div></div></div><div id="h-7-2" class="horaireFin horaireInfos ohf-14" oh="14" demiH="2" nfoId="h-7"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">14h40</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">14h35</div></div></div></div><div class="horaire addBottomBorder"><div id="h-8-1" class="horaireDeb horaireInfos ohf-15" oh="15" demiH="2" nfoId="h-8"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">14h40</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">14h45</div></div></div><div id="h-8-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">15h15</div><div class="labelSite1 simpleHidden">15h10</div></div></div><div id="h-8-2" class="horaireFin horaireInfos ohf-16" oh="16" demiH="2" nfoId="h-8"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">15h40</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">15h35</div></div></div></div><div class="horaire addBottomBorder"><div id="h-9-1" class="horaireDeb horaireInfos ohf-17" oh="17" demiH="2" nfoId="h-9"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">15h50</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">15h55</div></div></div><div id="h-9-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">16h25</div><div class="labelSite1 simpleHidden">16h20</div></div></div><div id="h-9-2" class="horaireFin horaireInfos ohf-18" oh="18" demiH="2" nfoId="h-9"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">16h45</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">16h45</div></div></div></div><div class="horaire"><div id="h-10-1" class="horaireDeb horaireInfos ohf-19" oh="19" demiH="2" nfoId="h-10"><div class="horaireDebContent"><div class="labelSite1 simpleHidden" title="Horaire de début du site 1">16h50</div><div class="labelSite2 simpleHidden" title="Horaire de début du site 2">16h50</div></div></div><div id="h-10-m" class="simpleHidden"><div class="horaireMilieuContent"><div class="labelSite2 simpleHidden">17h20</div><div class="labelSite1 simpleHidden">17h20</div></div></div><div id="h-10-2" class="horaireFin horaireInfos ohf-20" oh="20" demiH="2" nfoId="h-10"><div class="horaireFinContent"><div class="labelSite2 simpleHidden" title="Horaire de fin du site 2">17h45</div><div class="labelSite1 simpleHidden" title="Horaire de fin du site 1">17h45</div></div></div></div></div></td><td id="tdCCell-1" class="tdCalendarCell tdCCell-1" idx="1" cCount="6"><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(203,254,186);background-color: #fff;" debH="1" debDh="1" finH="1" finDh="2" nbSalles="1" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Histoire-G&eacute;ographie
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme TROUBAT P.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10441, 10442]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 08h05 à 08h55</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">08h10</div><div class="idhd">1</div><div class="hf">09h00</div><div class="idhf">2</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[806133, 806185]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(203,254,186); border-bottom:solid 2px rgb(203,254,186);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(0,128,0);background-color: #fff;" debH="2" debDh="1" finH="2" finDh="2" nbSalles="1" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Anglais LV1
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme GUEGAN E.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">490</div><div class="structureType">groupe</div><div class="structureTypeBis">GROUPE</div><div class="sequenceIds">[10443, 10444]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 09h00 à 09h55</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">09h05</div><div class="idhd">3</div><div class="hf">10h00</div><div class="idhf">4</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[806235, 806286]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(0,128,0); border-bottom:solid 2px rgb(0,128,0);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(0,128,0);background-color: #fff;" debH="2" debDh="1" finH="2" finDh="2" nbSalles="1" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Anglais LV1
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        M. LAURENSON J.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">18</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">491</div><div class="structureType">groupe</div><div class="structureTypeBis">GROUPE</div><div class="sequenceIds">[10443, 10444]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 09h00 à 09h55</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 18</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">09h05</div><div class="idhd">3</div><div class="hf">10h00</div><div class="idhf">4</div><div class="ec">false</div><div class="salle">46</div><div class="coursId">[806236, 806287]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(0,128,0); border-bottom:solid 2px rgb(0,128,0);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(192,220,192);background-color: #fff;" debH="3" debDh="1" finH="3" finDh="2" nbSalles="0" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Permanence
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        
+    
+    </div>
+
+
+
+    <br id="brSalle" class="simpleHidden"/>
+       <label class="intituleSalle"></label>
+       <label class="nomSalle"></label>
+        
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10445, 10446]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 10h10 à 11h00</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"></label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">10h15</div><div class="idhd">5</div><div class="hf">11h05</div><div class="idhf">6</div><div class="ec">false</div><div class="salle">null</div><div class="coursId">[806339, 806391]</div><div class="descriptionSalle">null</div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(192,220,192); border-bottom:solid 2px rgb(192,220,192);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(128,128,128);background-color: #fff;" debH="4" debDh="1" finH="4" finDh="2" nbSalles="1" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Accomp. personnalis&eacute;
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme THIRION D.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10447, 10448]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 11h05 à 12h00</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">11h10</div><div class="idhd">7</div><div class="hf">12h05</div><div class="idhf">8</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[806442, 806493]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(128,128,128); border-bottom:solid 2px rgb(128,128,128);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(128,128,0);background-color: #fff;" debH="8" debDh="1" finH="8" finDh="2" nbSalles="1" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Physique-Chimie
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        M. HASSAK M.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10455, 10456]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 14h45 à 15h40</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">14h40</div><div class="idhd">15</div><div class="hf">15h35</div><div class="idhf">16</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[806851, 806909]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(128,128,0); border-bottom:solid 2px rgb(128,128,0);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-1" style="border-color:rgb(249,193,157);background-color: #fff;" debH="9" debDh="1" finH="10" finDh="2" nbSalles="0" jour="1" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    E.P.S.
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme EUDE C.
+    
+    </div>
+
+
+
+    <br id="brSalle" class="simpleHidden"/>
+       <label class="intituleSalle"></label>
+       <label class="nomSalle"></label>
+        
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">245</div><div class="structureType">groupe</div><div class="structureTypeBis">GROUPE</div><div class="sequenceIds">[10457, 10458, 10459, 10460]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du lundi 05 juillet 2021 de 15h55 à 17h45</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"></label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-05</div><div class="hd">15h50</div><div class="idhd">17</div><div class="hf">17h45</div><div class="idhf">20</div><div class="ec">false</div><div class="salle">null</div><div class="coursId">[806970, 807025, 807040, 807056]</div><div class="descriptionSalle">null</div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(249,193,157); border-bottom:solid 2px rgb(249,193,157);">2</div></div></td><td id="tdCCell-2" class="tdCalendarCell tdCCell-2" idx="2" cCount="4"><div class="coursDetailInfo calendarCours selectable cC-2" style="border-color:rgb(192,220,192);background-color: #fff;" debH="1" debDh="1" finH="1" finDh="1" nbSalles="0" jour="2" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Permanence
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        
+    
+    </div>
+
+
+
+    <br id="brSalle" class="simpleHidden"/>
+       <label class="intituleSalle"></label>
+       <label class="nomSalle"></label>
+        
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10471]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du mardi 06 juillet 2021 de 08h05 à 08h35</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"></label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-06</div><div class="hd">08h10</div><div class="idhd">1</div><div class="hf">08h40</div><div class="idhf">1</div><div class="ec">false</div><div class="salle">null</div><div class="coursId">[807112]</div><div class="descriptionSalle">null</div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(192,220,192); border-bottom:solid 2px rgb(192,220,192);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-2" style="border-color:rgb(128,0,128);background-color: #fff;" debH="3" debDh="1" finH="3" finDh="2" nbSalles="1" jour="2" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Fran&ccedil;ais
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme KETTERLIN C.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10475, 10476]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du mardi 06 juillet 2021 de 10h10 à 11h00</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-06</div><div class="hd">10h15</div><div class="idhd">5</div><div class="hf">11h05</div><div class="idhf">6</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[807398, 807456]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(128,0,128); border-bottom:solid 2px rgb(128,0,128);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-2" style="border-color:rgb(166,202,240);background-color: #fff;" debH="4" debDh="1" finH="4" finDh="2" nbSalles="1" jour="2" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Allemand LV2
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme THIRION D.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">240</div><div class="structureType">groupe</div><div class="structureTypeBis">GROUPE</div><div class="sequenceIds">[10477, 10478]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du mardi 06 juillet 2021 de 11h05 à 12h00</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-06</div><div class="hd">11h10</div><div class="idhd">7</div><div class="hf">12h05</div><div class="idhf">8</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[807514, 807569]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(166,202,240); border-bottom:solid 2px rgb(166,202,240);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-2" style="border-color:rgb(228,102,27);background-color: #fff;" debH="7" debDh="1" finH="8" finDh="2" nbSalles="1" jour="2" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Math&eacute;matiques
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        M. ADJAHI B.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">12</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">13</div><div class="structureType">classe</div><div class="structureTypeBis">DIVISION</div><div class="sequenceIds">[10483, 10484, 10485, 10486]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du mardi 06 juillet 2021 de 13h50 à 15h40</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 12</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-06</div><div class="hd">13h45</div><div class="idhd">13</div><div class="hf">15h35</div><div class="idhf">16</div><div class="ec">false</div><div class="salle">43</div><div class="coursId">[807827, 807883, 807938, 807993]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(228,102,27); border-bottom:solid 2px rgb(228,102,27);">2</div></div><div class="coursDetailInfo calendarCours selectable cC-2" style="border-color:rgb(255,0,255);background-color: #fff;" debH="9" debDh="1" finH="10" finDh="2" nbSalles="1" jour="2" demiH="2" site="2" title="" onClick="elemClicked(event,this);effacerCoursEleves();effacerDescriptionCours();effacerDescriptionEvent();">
+
+<div class="matiereCours">
+    Arts Plastiques
+</div>
+<div class="unSelectCours" onclick="closeSelection(event, this);">X</div>
+
+
+    <div class="inlinePossible">
+    
+        Mme MARIE C.
+    
+    </div>
+
+
+
+    <div class="inlinePossible">
+    <label class="intituleSalle">Salle : </label>
+    <label class="nomSalle">24</label>
+    
+    </div>
+
+
+
+
+
+<div id="infosCoursEleve" class="simpleHidden"><div class="structureId">12</div><div class="structureType">regroupement</div><div class="structureTypeBis">REGROUP</div><div class="sequenceIds">[10487, 10488, 10489, 10490]</div><div class="numSemaineIso">27</div><div class="coursAction">eleve</div><div class="ligne1">Cours du mardi 06 juillet 2021 de 15h55 à 17h45</div><div class="ligne2"></div><div class="ligne3"><label id="labelSalle">Salle : </label><label id="coursSalleNom"> 24</label><label id="coursSalleDesc"></label></div><div class="specialPrint"></div><div class="specialPrintTitre"></div></div><div id="infosDescriptionCours" class="simpleHidden"><div class="dt">2021-07-06</div><div class="hd">15h50</div><div class="idhd">17</div><div class="hf">17h45</div><div class="idhf">20</div><div class="ec">false</div><div class="salle">66</div><div class="coursId">[808056, 808130, 808161, 808193]</div><div class="descriptionSalle"></div></div><div class="idxSite simpleHidden" style="border-right:solid 2px rgb(255,0,255); border-bottom:solid 2px rgb(255,0,255);">2</div></div></td><td id="tdCCell-3" class="tdCalendarCell tdCCell-3" idx="3" cCount="0"><div deb="1-1" class="horaireFerme " jour="3"></div><div deb="1-2" class="horaireFerme " jour="3"></div><div deb="2-1" class="horaireFerme " jour="3"></div><div deb="2-2" class="horaireFerme " jour="3"></div><div deb="3-1" class="horaireFerme " jour="3"></div><div deb="3-2" class="horaireFerme " jour="3"></div><div deb="4-1" class="horaireFerme " jour="3"></div><div deb="4-2" class="horaireFerme " jour="3"></div><div deb="5-1" class="horaireFerme " jour="3"></div><div deb="5-2" class="horaireFerme " jour="3"></div><div deb="6-1" class="horaireFerme " jour="3"></div><div deb="6-2" class="horaireFerme " jour="3"></div><div deb="7-1" class="horaireFerme " jour="3"></div><div deb="7-2" class="horaireFerme " jour="3"></div><div deb="8-1" class="horaireFerme " jour="3"></div><div deb="8-2" class="horaireFerme " jour="3"></div><div deb="9-1" class="horaireFerme " jour="3"></div><div deb="9-2" class="horaireFerme " jour="3"></div><div deb="10-1" class="horaireFerme " jour="3"></div><div deb="10-2" class="horaireFerme " jour="3"></div></td><td id="tdCCell-4" class="tdCalendarCell tdCCell-4" idx="4" cCount="0"><div deb="1-1" class="horaireFerme " jour="4"></div><div deb="1-2" class="horaireFerme " jour="4"></div><div deb="2-1" class="horaireFerme " jour="4"></div><div deb="2-2" class="horaireFerme " jour="4"></div><div deb="3-1" class="horaireFerme " jour="4"></div><div deb="3-2" class="horaireFerme " jour="4"></div><div deb="4-1" class="horaireFerme " jour="4"></div><div deb="4-2" class="horaireFerme " jour="4"></div><div deb="5-1" class="horaireFerme " jour="4"></div><div deb="5-2" class="horaireFerme " jour="4"></div><div deb="6-1" class="horaireFerme " jour="4"></div><div deb="6-2" class="horaireFerme " jour="4"></div><div deb="7-1" class="horaireFerme " jour="4"></div><div deb="7-2" class="horaireFerme " jour="4"></div><div deb="8-1" class="horaireFerme " jour="4"></div><div deb="8-2" class="horaireFerme " jour="4"></div><div deb="9-1" class="horaireFerme " jour="4"></div><div deb="9-2" class="horaireFerme " jour="4"></div><div deb="10-1" class="horaireFerme " jour="4"></div><div deb="10-2" class="horaireFerme " jour="4"></div></td><td id="tdCCell-5" class="tdCalendarCell tdCCell-5" idx="5" cCount="0"><div deb="1-1" class="horaireFerme " jour="5"></div><div deb="1-2" class="horaireFerme " jour="5"></div><div deb="2-1" class="horaireFerme " jour="5"></div><div deb="2-2" class="horaireFerme " jour="5"></div><div deb="3-1" class="horaireFerme " jour="5"></div><div deb="3-2" class="horaireFerme " jour="5"></div><div deb="4-1" class="horaireFerme " jour="5"></div><div deb="4-2" class="horaireFerme " jour="5"></div><div deb="5-1" class="horaireFerme " jour="5"></div><div deb="5-2" class="horaireFerme " jour="5"></div><div deb="6-1" class="horaireFerme " jour="5"></div><div deb="6-2" class="horaireFerme " jour="5"></div><div deb="7-1" class="horaireFerme " jour="5"></div><div deb="7-2" class="horaireFerme " jour="5"></div><div deb="8-1" class="horaireFerme " jour="5"></div><div deb="8-2" class="horaireFerme " jour="5"></div><div deb="9-1" class="horaireFerme " jour="5"></div><div deb="9-2" class="horaireFerme " jour="5"></div><div deb="10-1" class="horaireFerme " jour="5"></div><div deb="10-2" class="horaireFerme " jour="5"></div></td><td id="tdCCell-6" class="tdCalendarCell tdCCell-6" idx="6" cCount="0"><div deb="1-1" class="horaireFerme " jour="6"></div><div deb="1-2" class="horaireFerme " jour="6"></div><div deb="2-1" class="horaireFerme " jour="6"></div><div deb="2-2" class="horaireFerme " jour="6"></div><div deb="3-1" class="horaireFerme " jour="6"></div><div deb="3-2" class="horaireFerme " jour="6"></div><div deb="4-1" class="horaireFerme " jour="6"></div><div deb="4-2" class="horaireFerme " jour="6"></div><div deb="5-1" class="horaireFerme " jour="6"></div><div deb="5-2" class="horaireFerme " jour="6"></div><div deb="6-1" class="horaireFerme " jour="6"></div><div deb="6-2" class="horaireFerme " jour="6"></div><div deb="7-1" class="horaireFerme " jour="6"></div><div deb="7-2" class="horaireFerme " jour="6"></div><div deb="8-1" class="horaireFerme " jour="6"></div><div deb="8-2" class="horaireFerme " jour="6"></div><div deb="9-1" class="horaireFerme " jour="6"></div><div deb="9-2" class="horaireFerme " jour="6"></div><div deb="10-1" class="horaireFerme " jour="6"></div><div deb="10-2" class="horaireFerme " jour="6"></div></td></tr><div id="firstDayId" class="simpleHidden">1</div><div id="firstEmptyIdx" class="simpleHidden"></div><div id="siteActif" class="simpleHidden">2</div><div id="maxProfsEnLigne" class="simpleHidden">2</div><div id="nbrDemiHoraire" class="simpleHidden">2</div><div id="toolTypeDetailLabel" class="simpleHidden">Détail</div><div id="selectSearchNoResult" class="simpleHidden">Aucun résultat</div></tbody></table><div id="nbJour" class="simpleHidden">6</div><div id="printAction" class="simpleHidden"></div><div id="cellWidth" class="simpleHidden">150</div><div id="cellMaxWidth" class="simpleHidden">500</div><div id="horaireMax" class="simpleHidden">102</div><div id="numSemaineIso" class="simpleHidden">27</div></div></div>
+
+
+        
+      
+    </div>
+    <div id="tempsDetail" class="">
+        <div id="descriptionEvent" style="display: none">
+            <div id="descriptionEventContent" class="ergoCadre">
+  <div id="descriptionEventTitre">
+      <div id="divDescriptionEventTitre">Evènement du {0} de {1} à {2}</div>
+      <div id="divEditEvent">
+        
+      </div>
+  </div>
+  <div id="overlayDescriptionEvent">
+    <div id="overlaySpinerTab">
+      <div id="overlaySpinerCell">
+        <img src="/vsn.main/images/spinner2.gif"/>
+      </div>
+    </div>
+  </div>
+  <div id="editEventsNotification"></div>
+  <div id="descriptionEventValue">
+    <div id="divDescriptionEventInfo" class="divTable">
+    <div class="divTableRow">
+        <div id="labelEventDescType" class="divTableCell">Evènement</div>
+        <div id="valueEventDescType" class="divTableCell divDecaleValue"></div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <div id="labelEventDescDe" class="divInLine">De</div>
+          <div id="valueEventDescDe" class="divInLine"></div>
+          <div id="labelEventDescA" class="divInLine">à</div>
+        </div>
+        <div id="valueEventDescA" class="divTableCell divDecaleValue"></div>
+      </div>
+      <div class="divTableRow">
+        <div id="labelEventDescReferent" class="divTableCell">Référent</div>
+        <div id="valueEventDescReferent" class="divTableCell divDecaleValue"></div>
+      </div>
+      <div class="divTableRow">
+        <div id="labelEventDescParticipant" class="divTableCell">Participants</div>
+        <div id="valueEventDescParticipant" class="divTableCell divDecaleValue"></div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <div id="labelEventDescNomSalle" class="divInLine">Salle</div>
+          <div id="valueEventDescNomSalle" class="divInLine"></div>
+        </div>
+        <div id="valueEventDescDescriptionSalle" class="divTableCell divDecaleValue"></div>
+      </div>
+      <div class="divTableRow">
+        <div id="labelEventDescDescription" class="divTableCell">Description</div>
+        <div id="valueEventDescDescription" class="divTableCell divDecaleValue"></div>
+      </div>
+      </div>
+      <div id="divDescriptionEventNoInfo">
+        <div id="divDescriptionEventNoEvent">Aucun évènement sur cette plage horaire</div>
+      </div>
+  </div>
+  <div id="descriptionEventValueEdit">
+    <div id="maxSelectedParticipant" class="simpleHidden">30</div>
+    <form id="validEditEvent">
+      <input type="text" id="deDt" class="simpleHidden" name="deDt">
+      <input type="text" id="deHd" class="simpleHidden" name="deHd"> 
+      <input type="text" id="deHf" class="simpleHidden" name="deHf"> 
+      <input type="text" id="deIdHd" class="simpleHidden" name="deIdHd"> 
+      <input type="text" id="deIdHf" class="simpleHidden" name="deIdHf"> 
+      <input type="text" id="deType" class="simpleHidden" name="deType">
+      <input type="text" id="deRef" class="simpleHidden" name="deRef">
+      <input type="text" id="dePart" class="simpleHidden" name="dePart">
+      <input type="text" id="deDesc" class="simpleHidden" name="deDesc">
+      <input type="text" id="saveEventParentIdx" class="simpleHidden" name="parentIdx">
+      <input type="text" id="saveEventSemIso" class="simpleHidden" name="semIso">
+      <input type="text" id="saveEventNomSalle" class="simpleHidden" name="saveNomSalle">
+      <input type="text" id="saveEventAction" class="simpleHidden" name="saveAction">
+      <input type="text" id="saveEventSalle" class="simpleHidden" name="salle">
+      <input type="text" id="saveEventNomTypeEvent" class="simpleHidden" name="saveNomMatiere">
+      <input type="text" id="saveEventLstIdCours" class="simpleHidden" name="saveLstIdCours">
+      <input type="text" id="saveIds" class="simpleHidden" name="saveIds">
+      <input type="text" id="inputValueEventDt" class="simpleHidden" name="inputValueEventDt">
+      <input type="text" id="createAction" class="simpleHidden" name="createAction">
+      <input type="text" id="isClose" class="simpleHidden" name="isClose">
+      <div id="divEditEventInfos" class="divTable">
+          <div id="divEditEventNoEvent">Aucun évènement sur cette plage horaire</div>
+          <div id="divEditEventHasEvent">
+            <div class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventType">Evènement</label>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <select id="listEventType" name="listEventType" data-placeholder="Sélectionner un type d'évènement"></select>
+              </div>
+            </div>
+            <div class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventDe">De</label>
+                <label id="valueEventDe"></label>
+                <input type="text" id="inputValueEventDe" class="simpleHidden" name="inputValueEventDe">
+                <label id="labelEventA">à</label>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <select id="listEventA" name="listEventA" link="https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/editChangeEventA" data-placeholder="Sélectionner une heure de fin"></select>
+                <input type="text" id="valueOldEventA" name="valueOldEventA" value="" class="simpleHidden"/>
+              </div>
+            </div>
+            <div class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventReferent">Référent</label>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <select id="listEventReferent" name="listEventReferent" link="https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/editChangeReferent" data-placeholder="Sélectionner un référent"></select>
+              </div>
+            </div>
+            <div id="divEditEventParticipant" class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventParticipant">Participants</label>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <select  id="listEventParticipant" name="listEventParticipant[]" multiple="multiple" data-placeholder="Aucun participant disponible"></select>
+              </div>
+            </div>
+            <div class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventNomSalle">Salle</label>
+                <label id="valueEventNomSalle"></label>
+                <div id="listEventNomSalleDiv">
+                  <select  id="listEventNomSalle" name="listEventNomSalle" link="https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/editChangeReferent" data-placeholder="Sélectionner une salle"></select>
+                </div>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <label id="valueEventDescriptionSalle"></label>
+              </div>
+            </div>
+            <div class="divTableRow">
+              <div class="divTableCell">
+                <label id="labelEventDescription">Description</label>
+              </div>
+              <div class="divTableCell divDecaleValue">
+                <input type="text" id="valueEventDescription" name="valueEventDescription" value="" maxlength="100"/>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="divEditEventBt">
+        <div id="editEventValidBt" class="baseBt baseBtInline" onclick="validEditEvent('https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/saveEvent','https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/eventExists'); ">Valider</div>
+        <div id="editEventValidInactifBt" class="baseInactifBt baseBtInline" >Valider</div>
+        <div id="editEventAnnuleBt" class="baseBt baseBtInline" onclick="closeEditEvent(); ">Annuler</div>
+        <div id="editEventBt" class="simpleHidden"></div>
+        <div id="createEventBt" class="simpleHidden"></div>
+        <div id="deleteEventBt" class="simpleHidden"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+        </div>
+        <div id="descriptionCours" style="display: none">
+            <div id="descriptionCoursContent" class="ergoCadre">
+  <div id="descriptionCoursTitre">
+      <div id="divDescriptionCoursTitre"></div>
+      <div id="divEditCours">
+        <form id="FormDescriptionCours">
+          <a target="#" id="editCours" link="https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/listSalleDisp" title="Modification de la salle"  disabled=&quot;disabled&quot; class=&quot;inactif&quot; dte="false">
+            <img id="imgBtnEditCours" alt="Modification de la salle" src="/vsn.main/static/images/modifier.png" class=&quot;disabled&quot;/>
+          </a>
+        </form>
+      </div>
+  </div>
+    <div id="overlayDescriptionCoursEleve">
+            <div id="overlaySpinerTab">
+              <div id="overlaySpinerCell">
+                
+                  <img src="/vsn.main/images/spinner2.gif"/>
+              </div>
+            </div>
+    </div>
+    <div id="editCoursNotification"></div>
+  <div id="descriptionCoursValue">
+    <p id="descriptionCoursValueDetail1"></p>
+
+    <p id="descriptionCoursValueDetail2"></p>
+  </div>
+  <div id="descriptionCoursValueEdit">
+      <p id="descriptionCoursValueEditDetail1"></p>
+      <form id="validEditCours">
+        <input type="text" id="dcDt" class="simpleHidden" name="dcDt">
+        <input type="text" id="dcHd" class="simpleHidden" name="dcHd">
+        <input type="text" id="dcHf" class="simpleHidden" name="dcHf">
+        <input type="text" id="dcIdHd" class="simpleHidden" name="deIdHd"> 
+        <input type="text" id="dcIdHf" class="simpleHidden" name="deIdHf"> 
+        <input type="text" id="dcSalle" class="simpleHidden" name="dcSalle">
+        <input type="text" id="parentIdx" class="simpleHidden" name="parentIdx">
+        <input type="text" id="newRoom" class="simpleHidden" name="newRoom">
+        <input type="text" id="oldRoom" class="simpleHidden" name="oldRoom">
+        <input type="text" id="typeStruc" class="simpleHidden" name="typeStruc">
+        <input type="text" id="typeStrucId" class="simpleHidden" name="typeStrucId">
+        <input type="text" id="saveSequenceIds" class="simpleHidden" name="saveSequenceIds">
+        <input type="text" id="saveSemIso" class="simpleHidden" name="semIso">
+        <input type="text" id="saveCoursNomSalle" class="simpleHidden" name="saveNomSalle">
+        <input type="text" id="saveCoursAction" class="simpleHidden" name="saveAction">
+        <input type="text" id="saveLstIdCours" class="simpleHidden" name="saveLstIdCours">
+        <div id="divEditCoursInfos">
+          <p id="descriptionCoursValueEditDetail2">
+            <div id="divEditCoursNoRoom">Aucune salle réservable n?est disponible pour ce cours.</div>
+            <div id="divEditCoursHasRoom">
+              <div id="salleSelect">
+                <label id="labelListSalle"></label>
+                <select id="listSalle" data-placeholder="Sélectionner une salle"></select>
+              </div>
+              <div id="salleDesc">
+                <label id="labelDescriptionSalle"></label>
+              </div>
+            </div>
+          </p>
+        </div>
+        <div id="divEditCoursBt">
+          <div id="editCoursValidBt" class="baseBt baseBtInline" onclick="validEditCours('https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/temps/changeSalle'); ">Valider</div>
+          <div id="editCoursAnnuleBt" class="baseBt baseBtInline" onclick="closeEditCours(); ">Annuler</div>
+          <div id="editCoursBt" class="simpleHidden"></div>
+        </div>
+      </form>
+  </div>
+</div>
+        </div>
+        <div id='coursEleves' style="display: none"></div>
+    </div>
+</div>
+
+    
+
+
+<script language="javascript" type="text/javascript">
+    function build_choosen(idmenu){
+        if ( $j(idmenu).length ) {
+            if (!$j(idmenu).is(":hidden")) {
+                $j(idmenu).chosen({
+                    placeholder_text_single: '-- choix --',
+                    no_results_text: 'Aucun résultat',
+                    search_contains: false,
+                    enable_split_word_search: false
+                });
+                $j(idmenu + "_chosen").css('width', ($j(idmenu).outerWidth(true) + 25) + 'px');
+            }
+        }
+    }
+
+    $j(".choosemenu").removeClass('block');
+    build_choosen("#idClasse");
+    build_choosen("#idEleve");
+    build_choosen("#idTableau");
+    build_choosen("#idSalle");
+    build_choosen("#idProf");
+    build_choosen("#idProfesseur");
+    build_choosen("#idPalier");
+    build_choosen("#idCompetence");
+    build_choosen("#idDomaineItem");
+    build_choosen("#idTypeDevoir");
+    build_choosen("#codeStructure");
+
+</script>
+
+
+
+
+    <a href="#top" id="totop" title="Retour en haut de la page">Haut de page</a>
+    
+
+    
+     
+    
+
+
+
+
+
+
+<script src="/vsn.main/static/bundle-temps-5.19.2-1623418640664_defer.js" type="text/javascript" ></script>
+<script src="/vsn.main/static/bundle-utils-5.19.2-1623418640664_defer.js" type="text/javascript" ></script>
+<script src="/vsn.main/static/bundle-jquery_ui_adapte-5.19.2-1623418640664_defer.js" type="text/javascript" ></script>
+
+
+
+
+
+
+<script type="text/javascript">
+              $j(function () {
+                  finaliseWeekMenu();
+              });
+          </script><script type="text/javascript">
+  $j(function () {
+    initDetailToolTip($j(document), $j('#toolTypeDetailLabel').text());
+    initMarqueCoursSelectionne();
+    initOnClickPrintCoursEleves();
+    initOnClickEditListeEleves();
+    initOnClickEditCoursEleves();
+    initOnClickCreateEvent();
+    initOnClickEditEvent();
+    initOnClickDeleteEvent();
+    initCommentaireToolTip($j(document));
+
+    finaliseGrille();
+
+
+  });
+</script><script type="text/javascript">
+        $j(function() {
+
+
+            toggleDetailRegroupements(false);
+
+            $j('.weekmenu').find('a').button();
+
+            desactiveAujourdhui(false);
+
+            $j("#dateCal").val("Aller à");
+            $j("#dateCal").button();
+            $j("#dateCal").datepicker({
+                dateFormat: 'dd/mm/yy',
+                showOn: "button",
+                minDate: "01\u002f09\u002f20",
+                maxDate: "06\u002f07\u002f21"
+
+            });
+            $j("#dateCal").change(function () {
+                $j('#dateSemaine').val($j("#dateCal").val());
+                $j("#dateCal").val("Aller à");
+                $j('#formSemaineDate').submit();
+            });
+
+            $j('#dateCal').click(function() {
+                var visible = $j('#ui-datepicker-div').is(':visible');
+                $j('#dateCal').datepicker(visible ? 'hide' : 'show');
+            });
+
+            /**
+             * désactive le bouton aujourd'hui si desactiver est vrai
+             * @param desactiver
+             */
+            function desactiveAujourdhui(desactiver) {
+                $j('a[title = "Semaine courante"]').button(desactiver ? 'disable' : 'enable');
+            };
+
+    });
+    </script><script type="text/javascript">
+    $j(function () {
+        organiseCours();
+        try {
+          selectFirstEmptyCell();
+        } catch(err) {
+          console.error(err)
+        }
+
+        $j('#calendarOverlayBackground').css('display','none');
+    });
+</script><script type="text/javascript">
+    if (/iP(ad|od|hone)/i.test(window.navigator.userAgent)) {
+        var $j = jQuery.noConflict();
+        $j('#submenu').on('touchstart', function (e) {
+            var link = $j(this);
+            var sub = $j(this).parent().find('ul');
+            e.preventDefault();
+            e.stopPropagation();
+            if (link.hasClass('ui-state-focus')) {
+                link.removeClass('ui-state-focus');
+                sub.attr('aria-hidden', 'true');
+                sub.attr('aria-expanded', 'false');
+                sub.css('display', 'none');
+            } else {
+                link.addClass('ui-state-focus');
+                sub.removeAttr('aria-hidden');
+                sub.attr('aria-expanded', 'true');
+                sub.css('display', 'block');
+                sub.css('position', 'absolute');
+                sub.css('left', '100%');
+                sub.css('right', 'auto');
+                sub.css('top', '85%');
+                $j(this).parent().find('a').attr('pointer-events', 'none');
+                $j(this).parent().find('a').attr('cursor', 'not-allowed');
+            }
+        });
+    }
+</script><script type="text/javascript">
+        var $j = jQuery.noConflict();
+        
+            showPrint('\u002fvsn.main\u002ftemps\u002fprint?impression=true\u0026action_edt=eleve', false);
+        
+        $j(function() {
+          $j.datepicker.setDefaults( $j.datepicker.regional[ "fr" ] );
+          $j.datepicker.setDefaults({
+            firstDay: 1
+          });
+          initMenu();
+        });
+        if ($j('#contentAccueil').length > 0) {
+                hideTotop();
+        }
+    </script><script type="text/javascript">
+  $j(document).ajaxError(function( event, jqxhr, settings, exception ) {$j('#content').html(jqxhr.responseText)});
+</script>
+
+
+
+</body>
+</html>

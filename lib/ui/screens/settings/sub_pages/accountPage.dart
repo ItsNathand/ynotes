@@ -114,7 +114,9 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 
+
   ExpansionPanel buildAccountDetail(SchoolAccount account, int index) {
+    
     MediaQueryData screenSize = MediaQuery.of(context);
 
     return ExpansionPanel(

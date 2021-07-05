@@ -24,6 +24,7 @@ abstract class API {
   Future<AppAccount?> account() async {
     final storage = new FlutterSecureStorage();
     String? appAccount = await storage.read(key: "appAccount");
+    print(appAccount);
     if (appAccount != null) {
       print("Returning account");
       return AppAccount.fromJson(jsonDecode(appAccount));
@@ -106,7 +107,7 @@ abstract class API {
   Future uploadFile(String context, String id, String filepath);
 }
 
-enum API_TYPE { EcoleDirecte, Pronote }
+enum API_TYPE { EcoleDirecte, Pronote, LVS }
 
 @JsonSerializable()
 class AppAccount {

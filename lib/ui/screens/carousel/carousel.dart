@@ -414,7 +414,6 @@ class _Page4State extends State<Page4> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context);
-
     return ChangeNotifierProvider<ApplicationSystem>.value(
       value: appSys,
       child: Consumer<ApplicationSystem>(builder: (buildContext, model, child) {

@@ -1,0 +1,1142 @@
+{
+    "mails": [
+      {
+        "a": [
+          {
+            "id": 29978,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 27461,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 29979,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 27461,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-06-01 12:41:28",
+        "dateCreationStr": "01 juin",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 61081,
+        "lu": "2021-06-01 01:43:33",
+        "mailid": 27461,
+        "message": "<p>Bonjour à tous</p><p>Voici les activités sur le nouveau chapitre</p><p>Bonne journée</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "Activité cours",
+        "pjs": [
+          {
+            "dateUpload": "2021-06-01 12:43:54",
+            "id": "09739d77ff85bc5e1e8840501ce7e2e0",
+            "idmail": 27461,
+            "nom": "20210531_134346.pdf",
+            "ordre": 0,
+            "taille": 100796,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31313a41343d71383f756b43386a6d4267386d453d41313636376a6f466b3d7232&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-06-01 12:43:45",
+            "id": "f70e869169ca0b8ca6e4e79e04672da5",
+            "idmail": 27461,
+            "nom": "20210531_134315.pdf",
+            "ordre": 0,
+            "taille": 103855,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31673e3e733b413a3b413a6d6e3e70386b6c42673b7037406535393f46386c6d42&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-06-01 12:43:37",
+            "id": "9c16e1ed424721756f470477e3d528a5",
+            "idmail": 27461,
+            "nom": "20210531_134302.pdf",
+            "ordre": 0,
+            "taille": 145836,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e313a6d3e44693a6f7337393d4436373e43396f433a3a3e453c7134683d3f47683d&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-06-01 12:43:30",
+            "id": "dd0176ebfb4855e300ef2507975d9338",
+            "idmail": 27461,
+            "nom": "20210531_134253.pdf",
+            "ordre": 0,
+            "taille": 133487,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e316569393a41376c6e74663a42373c71343434696f4136363d463d42663f42353d&gp=messagerie"
+          }
+        ],
+        "recu": "2021-06-01 12:44:17",
+        "recuStr": "01 juin",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 29853,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 27346,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-05-31 06:34:07",
+        "dateCreationStr": "31 mai",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 60773,
+        "lu": "2021-05-31 09:01:31",
+        "mailid": 27346,
+        "message": "<p>Bonjour à tous</p><p>Voici le programme de tous</p><p style=\"margin: 0px; color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 12px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal;\">Programme de la semaine du 31/ 05/ au 04/04</p><p style=\"margin: 0px; color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 12px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal;\">lMardi 01/06 à 13 h45</p><p style=\"margin: 0px; color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 12px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal;\">Jeudi 03/ 06&nbsp;à 08 h 30</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "cours de la semaine du 31 /05 au 04/06",
+        "pjs": [],
+        "recu": "2021-05-31 06:39:45",
+        "recuStr": "31 mai",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 28876,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 26475,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-05-17 12:07:55",
+        "dateCreationStr": "17 mai",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 58690,
+        "lu": "2021-05-17 07:57:11",
+        "mailid": 26475,
+        "message": "<p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Ce message annule le remplace le précèdent c'est à dire le programme est le suivant</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Mardi 18/05 cours à 13h45 cours de maths</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">et jeudi 20/05 à 8 h30 cours de maths</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Cordialement&nbsp;</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">M ADJAHI</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "programme  de la semaine du 17 au 21 /05",
+        "pjs": [],
+        "recu": "2021-05-17 12:10:36",
+        "recuStr": "17 mai",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 28873,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 26472,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 28874,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 26472,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-05-16 11:47:42",
+        "dateCreationStr": "16 mai",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 58578,
+        "lu": "2021-05-17 07:57:08",
+        "mailid": 26472,
+        "message": "<p>Bonsoir à tous</p><p>On garde les horaires que la semaine de la rentrée c'est à dire la semaine du 03/ au 07 /05</p><p>Bonne réception.</p><p>ADJAHI</p><p><br></p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "Programme de la semaine",
+        "pjs": [],
+        "recu": "2021-05-16 11:54:01",
+        "recuStr": "16 mai",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 27632,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 25293,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-05-04 10:02:39",
+        "dateCreationStr": "04 mai",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 56173,
+        "lu": "2021-05-05 09:54:03",
+        "mailid": 25293,
+        "message": "<p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Bonjour à tout le monde</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">On fera cours&nbsp; mercredi 05/05&nbsp; &nbsp; à 11h&nbsp; et jeudi 06/05&nbsp; &nbsp;à 8h30</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Le lien zoom reste le même</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">&nbsp;Désolé pour le retard</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Cordialement</p><p style=\" margin: 0px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">ADJAHI</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "programme  de la semaine",
+        "pjs": [],
+        "recu": "2021-05-04 10:09:25",
+        "recuStr": "04 mai",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 23970,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 21927,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 23982,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 21927,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-28 02:07:06",
+        "dateCreationStr": "28 avr.",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 48649,
+        "lu": "2021-04-28 04:02:45",
+        "mailid": 21927,
+        "message": "<p>Bonjour à tous</p><p>ci-joint les fiches d'exercices et de cours.</p><p>Pour le cours ne pas dépasser la page 5 lors de l'impression.</p><p>Bonne journée.</p><p>Cordialement</p><p>ADJAHI</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "tavail à faire +cours",
+        "pjs": [
+          {
+            "dateUpload": "2021-04-28 02:09:45",
+            "id": "ac44470af49717dbfb20a4b823e4b3c9",
+            "idmail": 21927,
+            "nom": "N9PROBABILITES.pdf",
+            "ordre": 0,
+            "taille": 1177618,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e316265393d413838696f433c43343b6f7167693b3b6c40623a3c3f74386a3d7039&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-04-28 02:09:26",
+            "id": "e937c71012f15aa2772ad5dde6100e26",
+            "idmail": 21927,
+            "nom": "exercice seconde 1.pdf",
+            "ordre": 0,
+            "taille": 250584,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31663f42396c43343435376d3e436465373e4537686c4165696e443535356a3c42&gp=messagerie"
+          }
+        ],
+        "recu": "2021-04-28 02:16:23",
+        "recuStr": "28 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 23511,
+            "idpersonne": 5287,
+            "idstructure": null,
+            "libelle": "BOZON Clothilde",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 1,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23512,
+            "idpersonne": 2706,
+            "idstructure": null,
+            "libelle": "DELAISSE Garance",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 2,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23513,
+            "idpersonne": 5499,
+            "idstructure": null,
+            "libelle": "DEBRUS Gabrielle",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 3,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23514,
+            "idpersonne": 2752,
+            "idstructure": null,
+            "libelle": "DEMERS Nathan",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 4,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23515,
+            "idpersonne": 2596,
+            "idstructure": null,
+            "libelle": "EL GUABDAOUI Ilyas",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 5,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23516,
+            "idpersonne": 6581,
+            "idstructure": null,
+            "libelle": "GAUCHE Henri",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 6,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23517,
+            "idpersonne": 2685,
+            "idstructure": null,
+            "libelle": "TARATIBU Jean-Luc",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 7,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23519,
+            "idpersonne": 6021,
+            "idstructure": null,
+            "libelle": "KARSENTY Zoé",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 8,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23521,
+            "idpersonne": 2714,
+            "idstructure": null,
+            "libelle": "DOS SANTOS Mattéo",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 9,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 23522,
+            "idpersonne": 2624,
+            "idstructure": null,
+            "libelle": "LAIGNEL-FOREAU Benjamin",
+            "mailid": 21484,
+            "nbdest": 18,
+            "profil": 2,
+            "rank": 10,
+            "type": "personne",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-28 08:38:31",
+        "dateCreationStr": "28 avr.",
+        "dossier": 1,
+        "expediteur": "ANDRE F.",
+        "hasPj": false,
+        "id": 47728,
+        "lu": "2021-04-28 12:03:03",
+        "mailid": 21484,
+        "message": "<div>Bonjour à tous<br></div><div><br data-mce-bogus=\"1\"></div><div>Comme\n je vous l'ai écrit sur la vie scolaire avant les vacances, je vais vous\n solliciter demain par groupe dans une petite séance orale sur les \nadjectifs qualificatifs que vous aviez à réviser pendant ces congés \n(voir cahier de texte en ligne).<br data-mce-bogus=\"1\"></div><div><br data-mce-bogus=\"1\"></div><div>Le lien de visio est le suivant : <a target=\"_blank\" href=\"https://meet.google.com/ntb-ccjj-jcn\">https://meet.google.com/ntb-ccjj-jcn</a><br data-mce-bogus=\"1\"></div><div><br data-mce-bogus=\"1\"></div><div>De 12 heures à 12 heures 25, sont conviés les élèves de seconde 2 :<br data-mce-bogus=\"1\"></div><div>Clothilde, Gabrielle, Garance, Nathan, Ilyas, Henri, Zoé, Jean-Luc<br data-mce-bogus=\"1\"></div><div><br data-mce-bogus=\"1\"></div><div>De 12 heures 30 à 12 heures 55, les élèves de seconde 4 :<br data-mce-bogus=\"1\"></div><div>Alexane, Mattéo, Léonor, Benjamin, Maëlla, Lola, Antonin, Sophia, Hajaniaina, Tom<br data-mce-bogus=\"1\"></div><div><br data-mce-bogus=\"1\"></div><div>J'espère que je n'aurai pas besoin de faire de séance de rattrapage... <br data-mce-bogus=\"1\"></div><div>VALE !<br data-mce-bogus=\"1\"></div><div><br></div><div id=\"d62384c1-e333-4023-adb0-112f00d37c17\" data-marker=\"__SIG_PRE__\">Françoise André</div",
+        "nbdestinatairesa": 18,
+        "nbdestinatairescc": 0,
+        "objet": "cours latin jeudi 29 avril",
+        "pjs": [],
+        "recu": "2021-04-28 08:46:55",
+        "recuStr": "28 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 23171,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 21169,
+            "nbdest": 4,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 23172,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 21169,
+            "nbdest": 4,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 23174,
+            "idpersonne": null,
+            "idstructure": 12,
+            "libelle": "2de3 (ELEVE)",
+            "mailid": 21169,
+            "nbdest": 4,
+            "profil": 2,
+            "rank": 3,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 23175,
+            "idpersonne": null,
+            "idstructure": 15,
+            "libelle": "2de4 (ELEVE)",
+            "mailid": 21169,
+            "nbdest": 4,
+            "profil": 2,
+            "rank": 4,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-27 05:10:50",
+        "dateCreationStr": "27 avr.",
+        "dossier": 1,
+        "expediteur": "SAID OMAR N.",
+        "hasPj": true,
+        "id": 46925,
+        "lu": "2021-04-28 08:38:27",
+        "mailid": 21169,
+        "message": "<p>Bonjour à tous <br></p><p>Je vous joints le travail à faire cette semaine . Vous pouvez imprimer et compléter directement . <br></p><p>Remarquez que c'est une nouvelle sequence sur Excel .</p><p>Vous devez télécharger le fichier Excel l'enregistrer sur une clé avant de commencer le travail . Vous pouvez retrouver les fichiers sur votre cahier de texte . <br></p><p>Je vous souhaite une bonne soirée. <br></p><p>Bien cordialement <br></p>",
+        "nbdestinatairesa": 4,
+        "nbdestinatairescc": 0,
+        "objet": "Travail à la maison ",
+        "pjs": [
+          {
+            "dateUpload": "2021-04-27 05:17:43",
+            "id": "ba4fab0e0218c7766cb3a4ef8b164f1e",
+            "idmail": 21169,
+            "nom": "Table_Composition aliments.xls",
+            "ordre": 0,
+            "taille": 128000,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e316364386e6f71316636383941643b42383e716336673b70663e7031373b713267&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-04-27 05:17:33",
+            "id": "b9ed80c50fb5a7396a1fe9c8c2f3852a",
+            "idmail": 21169,
+            "nom": "Activité_Rassembler, structurer et traiter des données.pdf",
+            "ordre": 0,
+            "taille": 497202,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31633c71653d3d7035356b6d42633a3d463c6d3e746942653d7032683b43383a6b&gp=messagerie"
+          }
+        ],
+        "recu": "2021-04-27 05:18:15",
+        "recuStr": "27 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 21841,
+            "idpersonne": 6581,
+            "idstructure": null,
+            "libelle": "GAUCHE Henri",
+            "mailid": 19966,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "personne",
+            "typedest": "A"
+          },
+          {
+            "id": 21842,
+            "idpersonne": 2752,
+            "idstructure": null,
+            "libelle": "DEMERS Nathan",
+            "mailid": 19966,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "personne",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-26 06:26:28",
+        "dateCreationStr": "26 avr.",
+        "dossier": 1,
+        "expediteur": "EL GUABDAOUI Ilyas",
+        "hasPj": true,
+        "id": 44285,
+        "lu": "2021-04-26 06:47:47",
+        "mailid": 19966,
+        "message": "<p>Bonjour, je vous envoie mes recherche pour le travail en Latin sur le Tableau \"Hercule et L'Hydre de Lerne\".</p><p>EL Guabdaoui Ilyas.</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "Travail Latin",
+        "pjs": [
+          {
+            "dateUpload": "2021-04-26 06:32:31",
+            "id": "26263f6281eeb37edf5290118aa335f0",
+            "idmail": 19966,
+            "nom": "Gustave Moreau.docx",
+            "ordre": 0,
+            "taille": 20067,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e3133393b41346a40323a3b7065673a41666a703537403031323a6b6c3f42376d3d&gp=messagerie"
+          }
+        ],
+        "recu": "2021-04-26 06:32:47",
+        "recuStr": "26 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 19883,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 18257,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-25 12:01:24",
+        "dateCreationStr": "25 avr.",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 39998,
+        "lu": "2021-04-25 03:10:29",
+        "mailid": 18257,
+        "message": "<p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Bonjour à tous</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">je vous propose les dates suivantes pour faire cours en visio sur zoom&nbsp; avec le même zoom pour la semaine du 26 au 30 /04</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Le mardi 27/04/ 2021 de&nbsp; 13h30 à&nbsp; 15h</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"><span style=\" margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline; background-color: unset; text-align: inherit;\">Le jeudi 29/04/2021&nbsp; de 9h à 10h30&nbsp;</span></p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Le lien est le suivant</p><p><a target=\"_blank\" classname=\"e-rte-anchor\" href=\"https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09\" title=\"https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09\">https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09 </a></p><p><span style=\"font-size: 14px; background-color: unset; text-align: inherit;\">ID de réunion&nbsp;: 859 8267 1460</span><br></p><p>Code secret&nbsp;: 145274</p><p><br></p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"><span style=\" margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline; background-color: unset; text-align: inherit;\">Bon dimanche à vous et à Mardi.</span><br></p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Cordialement&nbsp;</p><p style=\" margin: 0px; padding: 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: inherit; font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; vertical-align: baseline; color: rgb(51, 51, 51); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">M. ADJAHI</p",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "cours : semaine du 26 au 30/avril",
+        "pjs": [],
+        "recu": "2021-04-25 12:06:34",
+        "recuStr": "25 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 17141,
+            "idpersonne": 2752,
+            "idstructure": null,
+            "libelle": "DEMERS Nathan",
+            "mailid": 15718,
+            "nbdest": 1,
+            "profil": null,
+            "rank": 1,
+            "type": "personne",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-09 12:07:17",
+        "dateCreationStr": "09 avr.",
+        "dossier": 1,
+        "expediteur": "COLLOT F.",
+        "hasPj": true,
+        "id": 34102,
+        "lu": "2021-04-09 05:55:22",
+        "mailid": 15718,
+        "message": "<p>Bonjour,</p><p>merci pour ton envoi, le serveur était plein...j'ai supprimé tous mes vieux messages, cela devait aller beaucoup mieux.</p><p>Bon après-midi et bonnes vacances,</p><p>Mme Collot<br><br>Le 08/04/2021 à 23:46:09, DEMERS Nathan a écrit :</p><div style=\"display:block; padding-left:10px; border-left:3px solid #CCCCCC;\"><p><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\">Bonsoir Mme Collot,</span><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\">Voici mon travail de cette semaine.</span></p><p><br><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\"></span><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\">(le serveur du mail ne marchait pas)</span><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><img id=\"<2B0E8451-F772-46DE-A25F-793092FFE8E4-L0-001>\" src=\"cid:2B0E8451-F772-46DE-A25F-793092FFE8E4-L0-001\" alt=\"<image0.jpeg>\" class=\"Apple-web-attachment Apple-edge-to-edge-visual-media Singleton e-rte-image e-imginline\" style=\" color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none;\"><img id=\"<94905D67-7BA3-4C59-A779-764129909F17-L0-001>\" src=\"cid:94905D67-7BA3-4C59-A779-764129909F17-L0-001\" alt=\"<image1.jpeg>\" class=\"Apple-web-attachment Apple-edge-to-edge-visual-media Singleton e-rte-image e-imginline\" style=\" color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none;\"><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"></p><p><br></p><p><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\">Bonne nuit</span><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><br style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; color: rgb(212, 212, 213); font-family: -apple-system, HelveticaNeue;\"><span style=\"font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none; font-size: 16px; font-family: -apple-system, HelveticaNeue; color: rgb(49, 49, 49);\">Nathan Demers 2nd2</span><br style=\" color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none;\"><br style=\" color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none;\"></p><div dir=\"ltr\" style=\" color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-weight: normal; text-align: start; text-indent: 0px; white-space: normal; text-decoration: none;\">Envoyé de mon iPhone</div></div>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "Re: Travail Nathan Demers",
+        "pjs": [
+          {
+            "dateUpload": "2021-04-08 11:46:00",
+            "id": "1489815be42729dc606bd1a1482acbfe",
+            "idmail": 15718,
+            "nom": "image1.jpeg",
+            "ordre": 0,
+            "taille": 986081,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e3132363e473f4035676c4032393b44686b413137696d3e6f40343c3e6f72646a6f&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-04-08 11:45:51",
+            "id": "272626f5ed60d7e19a331cd191e76ba8",
+            "idmail": 15718,
+            "nom": "image0.jpeg",
+            "ordre": 0,
+            "taille": 1025192,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31333a3c42343a70356a6e4434683f74353e6f423536696d3e47386d443a6c6d45&gp=messagerie"
+          }
+        ],
+        "recu": "2021-04-09 12:08:28",
+        "recuStr": "09 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 14649,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 13383,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 14650,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 13383,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-08 12:18:16",
+        "dateCreationStr": "08 avr.",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 29066,
+        "lu": "2021-04-08 08:30:54",
+        "mailid": 13383,
+        "message": "<p>Bonjour à tous</p><p>Il faut faire les deux activités pour vendredi.</p><p>Bonne soirée</p><p>Cordialement</p><p>ADJAHI</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "travail à faire pour Vendredi",
+        "pjs": [
+          {
+            "dateUpload": "2021-04-08 12:18:41",
+            "id": "e99149bce9daabf8ad828b71bf6d5ca1",
+            "idmail": 13383,
+            "nom": "CamScanner 04-08-2021 00.13.pdf",
+            "ordre": 0,
+            "taille": 438261,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31663f48393d46686b70396d6e6f71673f70643c3e46683f4062683e72376a6b3c&gp=messagerie"
+          }
+        ],
+        "recu": "2021-04-08 12:22:17",
+        "recuStr": "08 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 12844,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12845,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12846,
+            "idpersonne": null,
+            "idstructure": 12,
+            "libelle": "2de3 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 3,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12847,
+            "idpersonne": null,
+            "idstructure": 15,
+            "libelle": "2de4 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 4,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12848,
+            "idpersonne": null,
+            "idstructure": 33,
+            "libelle": "4ème 1 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 5,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12849,
+            "idpersonne": null,
+            "idstructure": 24,
+            "libelle": "5ème 6 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 6,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 12850,
+            "idpersonne": null,
+            "idstructure": 40,
+            "libelle": "6ème 1 (ELEVE)",
+            "mailid": 11723,
+            "nbdest": 7,
+            "profil": 2,
+            "rank": 7,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-07 07:07:18",
+        "dateCreationStr": "07 avr.",
+        "dossier": 1,
+        "expediteur": "SAID OMAR N.",
+        "hasPj": false,
+        "id": 25646,
+        "lu": "2021-04-07 11:30:42",
+        "mailid": 11723,
+        "message": "<p>Bonjour à tous.<br></p><p>J’espère que vous vous portez bien .</p><p>Comme je vous l'ai indiqué à notre dernier cours, cette semaine je suis en formation . Une formation prévu qui aurait entrainé mon absence dans l'établissement si les cours en présentiel étaient maintenus . <br></p><p><br></p><p>De ce fait, ne soyez pas étonné de ne pas avoir reçu du travail de ma part. Essayez de finir ce que nous avons commencé en classe <br></p><p>Je reviendrai vers vous prochainement pour vous expliquer comment nous allons travaillé la semaine du 26 Avril.</p><p>Bien cordialement .&nbsp;</p><p><br></p><p>M. SAID OMAR<br></p>",
+        "nbdestinatairesa": 7,
+        "nbdestinatairescc": 0,
+        "objet": "Cours à distance ",
+        "pjs": [],
+        "recu": "2021-04-07 07:22:16",
+        "recuStr": "07 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 10279,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 9444,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-04-04 07:27:40",
+        "dateCreationStr": "04 avr.",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 20053,
+        "lu": "2021-04-04 10:16:35",
+        "mailid": 9444,
+        "message": "<p><span style=\"font-size: 14px; background-color: unset; text-align: inherit;\">Bonjour à tous</span><br></p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">J'espère que vous allez tous bien.</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">Voici comme prévu les jours et heures qu'on aura RDV sur zoom après avoir écouté vos doléances.</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">Mardi&nbsp; &nbsp; &nbsp; &nbsp;06/04/21&nbsp; de 09 à 10h30&nbsp;</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">Mercredi 07/04/21&nbsp; &nbsp;de \n\n<span style=\"color: rgb(51, 51, 51); font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; font-size: 14px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline !important; float: none;\">09 à 10h30</span>\n\n</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">vendredi&nbsp; &nbsp;09/04/21&nbsp; de \n\n<span style=\"color: rgb(51, 51, 51); font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; font-size: 14px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline !important; float: none;\">09 à 10h30</span>\n\n</p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">L'identifiant et le mot de pass sont</p><p><a target=\"_blank\" classname=\"e-rte-anchor\" href=\"https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09\" title=\"https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09\" style=\"font-size: 14px; background-color: unset; text-align: inherit;\">https://us02web.zoom.us/j/85982671460?pwd=c1UxdWlHTDRqaERvaUNMd0RSSFJ0QT09</a><br></p><p><span style=\"font-size: 14px; background-color: unset; text-align: inherit;\">ID de réunion&nbsp;: 859 8267 1460</span><br></p><p>Code secret&nbsp;: 145274</p><p><span style=\"font-size: 14px; background-color: unset; text-align: inherit;\">Bonne réception.</span><br></p><p style=\" margin: 0px 0px 10px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\">ADJAHI</p><p style=\" margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline;\"><br style=\" color: rgb(51, 51, 51); font-family: Roboto, &quot;Segoe UI&quot;, GeezaPro, &quot;DejaVu Serif&quot;, sans-serif, -apple-system, BlinkMacSystemFont; font-size: 14px; font-style: normal; font-weight: 400; text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"\n\n</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "RDV cours sur Zoom",
+        "pjs": [],
+        "recu": "2021-04-04 07:57:00",
+        "recuStr": "04 avr.",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9897,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 9056,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 9898,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 9056,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-31 12:22:36",
+        "dateCreationStr": "31 mars",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 19093,
+        "lu": "2021-03-31 01:46:55",
+        "mailid": 9056,
+        "message": "<p>Voici le lien pour les élèves qui sont à distance</p><p><br></p><p>Sujet&nbsp;: Zoom meeting invitation - Réunion Zoom de Babylas Adjahi</p><p><br></p><p><br></p><p>Participer à la réunion Zoom</p><p><a target=\"_blank\" classname=\"e-rte-anchor\" href=\"https://us02web.zoom.us/j/89174744116?pwd=S1lWUDAybHRMTXIvR01IczdCNmhDUT09\" title=\"https://us02web.zoom.us/j/89174744116?pwd=S1lWUDAybHRMTXIvR01IczdCNmhDUT09\">https://us02web.zoom.us/j/89174744116?pwd=S1lWUDAybHRMTXIvR01IczdCNmhDUT09 </a></p><p><br></p><p>ID de réunion&nbsp;: 891 7474 4116</p><p>Code secret&nbsp;: 325145</p><p><br></p",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "lien zoom",
+        "pjs": [],
+        "recu": "2021-03-31 12:26:11",
+        "recuStr": "31 mars",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9893,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 9054,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 9894,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 9054,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-31 12:16:50",
+        "dateCreationStr": "31 mars",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": false,
+        "id": 19019,
+        "lu": "2021-03-31 12:21:24",
+        "mailid": 9054,
+        "message": "<p>Bonjour à tous</p><p>Un peu en retard mais voici le lien pour se connecter avec moi sur zoom aujourd'hui à 15h pour me poser vos questions</p><p>ADJAHI</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "Réunion zoom",
+        "pjs": [],
+        "recu": "2021-03-31 12:20:33",
+        "recuStr": "31 mars",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9825,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 8991,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-30 10:02:22",
+        "dateCreationStr": "30 mars",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 18846,
+        "lu": "2021-03-30 11:15:53",
+        "mailid": 8991,
+        "message": "<p>Bonjour à tous</p><p>il y a deux erreurs sur la correction des exo</p><p>j'ai utilisé le mode&nbsp; radian pour des calculs de degré donc dans exo 4 AC = 1.27 et BC = 3.26</p><p>et dans l'exo 6 AA' = 4.8 au lieu de 245</p><p>Désolé</p><p>Bonne journée</p><p>ADJAHI</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "exercice à faire",
+        "pjs": [
+          {
+            "dateUpload": "2021-03-30 10:02:47",
+            "id": "fc1c8715542104d4609eff1f99dcae8d",
+            "idmail": 8991,
+            "nom": "Exercice  à distance (1).pdf",
+            "ordre": 0,
+            "taille": 479822,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31676a3b6e463d3e43383c3e3f3f43673b41313a6f756b3c723b44686b6c71396d&gp=messagerie"
+          }
+        ],
+        "recu": "2021-03-30 10:03:18",
+        "recuStr": "30 mars",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9715,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 8870,
+            "nbdest": 1,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-26 05:18:38",
+        "dateCreationStr": "26 mars",
+        "dossier": 1,
+        "expediteur": "COLLOT F.",
+        "hasPj": false,
+        "id": 18565,
+        "lu": "2021-03-27 03:57:29",
+        "mailid": 8870,
+        "message": "<p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Bonjour,</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"><span style=\" margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-size: 14px; line-height: inherit; font-family: inherit; vertical-align: baseline; background-color: unset; text-align: inherit;\">vous pouvez avoir accès dès maintenant à la correction en ligne de votre travail sur la quizinière.</span><br></p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Rappel: pour avoir accès à votre correction, il vous faudra votre code copie.</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"><br></p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Dès mercredi prochain, vous aurez un bilan (à apprendre) pour cette activité sur la vie scolaire.</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\"><br></p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Bon week-end à tous,</p><p style=\" margin: 0px; padding: 8px 0px; border: 0px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 1.4; font-family: Quicksand, sans-serif; vertical-align: baseline; color: rgb(80, 90, 106); text-align: start; text-indent: 0px; white-space: normal; background-color: rgb(255, 255, 255);\">Mme Collot</p>",
+        "nbdestinatairesa": 1,
+        "nbdestinatairescc": 0,
+        "objet": "Correction la quiziniere",
+        "pjs": [],
+        "recu": "2021-03-26 05:20:34",
+        "recuStr": "26 mars",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9510,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 8701,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 9511,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 8701,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-22 08:49:14",
+        "dateCreationStr": "22 mars",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 18139,
+        "lu": "2021-03-24 11:48:20",
+        "mailid": 8701,
+        "message": "<p>Bonjour à tous ,</p><p>Je vous envoie la correction du poly d'exo donné à distance. La correction est à faire et à me présenter lors de votre semaine en présentiel.</p><p>Demain soir, je vais vous envoyer d'autres exo à faire toujours dans le but de vous exercer.</p><p>Bonne réception.</p><p>M. ADJAHI</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "Correction exo à distance",
+        "pjs": [
+          {
+            "dateUpload": "2021-03-22 08:51:19",
+            "id": "a233d6cc772950c5e2d450d86d0ea8ea",
+            "idmail": 8701,
+            "nom": "correction exercices  distance.pdf",
+            "ordre": 0,
+            "taille": 260771,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e316234373a6e44676a41383a4338386b4065376b3f44346840366a3a6f70386d6e&gp=messagerie"
+          }
+        ],
+        "recu": "2021-03-22 09:04:44",
+        "recuStr": "22 mars",
+        "v2": true
+      },
+      {
+        "a": [
+          {
+            "id": 9193,
+            "idpersonne": null,
+            "idstructure": 10,
+            "libelle": "2de1 (ELEVE)",
+            "mailid": 8411,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 1,
+            "type": "structure",
+            "typedest": "A"
+          },
+          {
+            "id": 9194,
+            "idpersonne": null,
+            "idstructure": 13,
+            "libelle": "2de2 (ELEVE)",
+            "mailid": 8411,
+            "nbdest": 2,
+            "profil": 2,
+            "rank": 2,
+            "type": "structure",
+            "typedest": "A"
+          }
+        ],
+        "cc": [],
+        "dateCreation": "2021-03-18 12:29:56",
+        "dateCreationStr": "18 mars",
+        "dossier": 1,
+        "expediteur": "ADJAHI B.",
+        "hasPj": true,
+        "id": 17534,
+        "lu": "2021-03-18 08:00:31",
+        "mailid": 8411,
+        "message": "<p>Bonjour à tous</p><p>j'ai envoyé la semaine dernière le travail à faire pour le groupe en distanciel. Mais certains me demande encore si je vais donner du travail. C'est pour cette raison que je vous renvoie le travail à faire.</p><p>Cordialement</p><p>Adjahi</p>",
+        "nbdestinatairesa": 2,
+        "nbdestinatairescc": 0,
+        "objet": "cours et exercices",
+        "pjs": [
+          {
+            "dateUpload": "2021-03-18 12:39:24",
+            "id": "0431ec64db67a6133f042ee6f21a079f",
+            "idmail": 8411,
+            "nom": "Exercices distanciel envoyés.pdf",
+            "ordre": 0,
+            "taille": 381726,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31313538396e71373b6f71373e6f4536393c723236386d72386e40316232394268&gp=messagerie"
+          },
+          {
+            "dateUpload": "2021-03-18 12:39:16",
+            "id": "3f41fb6335086d4341b3c33a4db44511",
+            "idmail": 8411,
+            "nom": "Répérage et problème de géometrie-1.pdf",
+            "ordre": 0,
+            "taille": 748450,
+            "url": "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMessagerie/downloadPJ?pj=7c6d6e31346a3e3f75673d4033383840366a3e413536683b6e413465396d6f43373c3d3e&gp=messagerie"
+          }
+        ],
+        "recu": "2021-03-18 12:39:31",
+        "recuStr": "18 mars",
+        "v2": true
+      }
+    ],
+    "nbMails": 29
+  }
