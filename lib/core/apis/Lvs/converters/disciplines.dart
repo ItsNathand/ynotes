@@ -1,6 +1,6 @@
-//https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/releveNote/changeSynthesePeriode?idSynthesePeriode=42
+//https://institut.la-vie-scolaire.fr/vsn.main/releveNote/changeSynthesePeriode?idSynthesePeriode=42
 //periods 1: 44 2:43 3:42
-//https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/dossierRecapEleve/afficheDetailNotes
+//https://institut.la-vie-scolaire.fr/vsn.main/dossierRecapEleve/afficheDetailNotes
 //ex for prev:
 /*<h2></h2>
 <table id="tableNotes" class="tablesorter">

@@ -6,21 +6,22 @@ import 'dart:math';
 abstract class SessionClient {
   http.Client client = new http.Client();
   String token = '';
-  int token_limit = 12000;
-  String user_agent = '';
+  String base_url = '';
+  String? user_agent;
+  int last_refresh = 0;
+  int limit_refresh = 5000;
+  int req = 0;
   final credentials;
 
   SessionClient(this.credentials);
 
-  init(); //init the client by -for example- defining the token
+  init(); //init the client, for example it's where we can define the token
 
   Future<http.Response> get(Uri url,
-      {Map<String, String>? custom_headers,
-      bool token = true,
-      baseUrl = true}) async {
-    Map headers = {};
-    if (custom_headers == Map) {
-      headers.addAll(custom_headers!);
+      {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
+    if (baseUrl) {
+      String requrl = url.toString();
+      url = Uri.parse(this.base_url + requrl);
     }
     return client.get(url);
   }
@@ -31,13 +32,20 @@ abstract class SessionClient {
       Encoding? encoding,
       bool token = true,
       baseUrl = true}) async {
-    return client.post(url, body: body);
+    if (baseUrl) {
+      String requrl = url.toString();
+      url = Uri.parse(this.base_url + requrl);
+    }
+    return client.post(url, body: body, headers: headers);
   }
 
-  String getToken({refresh = false}) {
-    //add timer later on to refresh if necessary with token limit
-    if (this.token == '' || refresh) {
-      this.init();
+  Future<String> getToken({refresh = false}) async {
+    var now = new DateTime.now();
+    if (now.millisecondsSinceEpoch - this.last_refresh > this.limit_refresh) {
+      if (this.token == '' || refresh) {
+        this.last_refresh = now.millisecondsSinceEpoch;
+        await this.init();
+      }
     }
     return this.token;
   }

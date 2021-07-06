@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:ynotes/core/logic/shared/models.dart';
 
 import 'package:ynotes/core/logic/schoolLife/models.dart';
@@ -12,12 +10,11 @@ import 'package:ynotes/core/logic/cloud/models.dart';
 
 import 'package:ynotes/core/logic/agenda/models.dart';
 
-import 'package:http/http.dart' as http;
 import 'package:http/src/request.dart';
 import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/globals.dart';
 
-import 'Lvs/SessionClient.dart';
+import 'Lvs/LvsClient.dart';
 import 'model.dart';
 
 class APILVS extends API {
@@ -27,10 +24,17 @@ class APILVS extends API {
 
   @override
   Future<List> login(username, password, {url, cas, mobileCasLogin}) async {
-    var c = new LVSClient('me');
-    c.init();
-    //create appSys.account
-    print(appSys.account);
+    var credentials = '';
+    //url, username: username, password: password,
+    var c = new LVSClient(credentials);
+    var res = await c.init();
+    if (res[0] == 1) {
+      return ([1, "Bienvenue!" + username]);
+    }
+    return [0, "Erreur"];
+    //var dateTimeFormat = DateFormat('MMMM d, yyyy', 'en_US').parse(date);
+    //  dateTimeFormat.millisecondsSinceEpoch;
+
 //  await storage.write(key: "appAccount", value: jsonEncode(appSys.account!.toJson()));
 //debug S
 
@@ -185,59 +189,5 @@ class APILVS extends API {
   Future uploadFile(String context, String id, String filepath) async {
     // TODO: implement uploadFile
     throw UnimplementedError();
-  }
-}
-
-class LVSClient extends SessionClient {
-  LVSClient(crendentials) : super(crendentials);
-  init() async {
-    print('meee');
-    var map = new Map<String, dynamic>();
-    map['login'] = 'ndemers';
-    map['password'] = 'Matcha27@';
-    map['institut'] =
-        'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr';
-    http.post(
-        Uri.parse(
-            'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSAuth/connexion'),
-        body: json.encode(map),
-        headers: {
-          // 'Cookie': 'JSESSIONID=26EE54DEAE11E85EC4535FDAA534ED83-m2',
-          "Content-Type": "application/json"
-        }).then((rep) {
-      print(rep.statusCode);
-      print(rep.request);
-      print(rep.body);
-      print(rep.request?.headers);
-      print(rep.headers);
-    });
-    //  this.post(Uri.parse('/login'));
-    this.token = 'define token';
-  }
-
-  @override
-  Future<http.Response> get(Uri url,
-      {Map<String, String>? custom_headers,
-      bool token = true,
-      baseUrl = true}) async {
-    Map<String, String>? headers = {};
-    if (token) {
-      headers = {'JWT': this.getToken()};
-    }
-    return super.get(url, custom_headers: headers, baseUrl: baseUrl);
-  }
-
-  @override
-  Future<http.Response> post(Uri url,
-      {Map<String, String>? headers,
-      Object? body,
-      Encoding? encoding,
-      bool token = true,
-      baseUrl = true}) async {
-    Map<String, String>? headers = {};
-    if (token) {
-      headers = {'JWT': this.getToken()};
-    }
-    return super.post(url, body: body, headers: headers, baseUrl: baseUrl);
   }
 }

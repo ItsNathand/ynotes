@@ -24,12 +24,10 @@ class HwClient extends SessionClient {
 
   @override
   Future<http.Response> get(Uri url,
-      {Map<String, String>? custom_headers,
-      bool token = true,
-      baseUrl = true}) async {
-    Map<String, String>? headers = {};
+      {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
+    Map<String, String>? theheaders = {};
 //use a function to do the tricky thing to insert token
-    return super.get(url, custom_headers: headers, baseUrl: baseUrl);
+    return super.get(url, headers: theheaders, baseUrl: baseUrl);
   }
 
   @override
