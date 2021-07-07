@@ -16,8 +16,8 @@ class HwConnector {
 }
 
 class HwClient extends SessionClient {
-  HwClient() : super(Map);
-  init() {
+  HwClient() : super();
+  init(credentials) {
     //print(this.get(Uri.parse('https://www.google.com/')));
     this.token = 'TokEN';
   }

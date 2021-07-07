@@ -7,15 +7,24 @@ abstract class SessionClient {
   http.Client client = new http.Client();
   String token = '';
   String base_url = '';
+  bool started = false;
   String? user_agent;
   int last_refresh = 0;
   int limit_refresh = 5000;
+  int token_expiration = 0;
   int req = 0;
-  final credentials;
+  late Map<dynamic, String> credentials;
 
-  SessionClient(this.credentials);
+  SessionClient();
 
-  init(); //init the client, for example it's where we can define the token
+  init(
+      credentials); //init the client, for example it's where we can define the token
+
+  start(credentials) async {
+    this.credentials = credentials;
+    this.started = true;
+    return await this.init(credentials);
+  }
 
   Future<http.Response> get(Uri url,
       {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
@@ -23,7 +32,11 @@ abstract class SessionClient {
       String requrl = url.toString();
       url = Uri.parse(this.base_url + requrl);
     }
-    return client.get(url);
+    print('headers:');
+    print(headers);
+    if (this.user_agent != null) {}
+
+    return await await client.get(url, headers: headers);
   }
 
   Future<http.Response> post(Uri url,
@@ -40,12 +53,14 @@ abstract class SessionClient {
   }
 
   Future<String> getToken({refresh = false}) async {
+    if (!this.started) {
+      return '';
+    }
     var now = new DateTime.now();
-    if (now.millisecondsSinceEpoch - this.last_refresh > this.limit_refresh) {
-      if (this.token == '' || refresh) {
-        this.last_refresh = now.millisecondsSinceEpoch;
-        await this.init();
-      }
+    if (refresh &&
+        now.millisecondsSinceEpoch - this.last_refresh > this.limit_refresh) {
+      this.last_refresh = now.millisecondsSinceEpoch;
+      await this.init(this.credentials);
     }
     return this.token;
   }

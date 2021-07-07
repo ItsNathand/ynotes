@@ -12,22 +12,21 @@ import 'package:ynotes/core/logic/agenda/models.dart';
 
 import 'package:http/src/request.dart';
 import 'package:ynotes/core/offline/offline.dart';
-import 'package:ynotes/globals.dart';
 
 import 'Lvs/LvsClient.dart';
 import 'model.dart';
 
 class APILVS extends API {
+  LVSClient client = new LVSClient();
   APILVS(Offline offlineController) : super(offlineController);
 
-  late LVSClient client;
-
+//make a function getClient()
   @override
   Future<List> login(username, password, {url, cas, mobileCasLogin}) async {
-    var credentials = '';
+    var credentials = Map<dynamic, String>();
     //url, username: username, password: password,
-    var c = new LVSClient(credentials);
-    var res = await c.init();
+
+    var res = await this.client.start(credentials);
     if (res[0] == 1) {
       return ([1, "Bienvenue!" + username]);
     }
@@ -114,7 +113,7 @@ class APILVS extends API {
     } else {
       return [0, "Erreur"];
     } */
-    return ([1, "Bienvenue!" + username]);
+    //return ([1, "Bienvenue!" + username]);
   }
 
   @override
