@@ -13,14 +13,15 @@ abstract class SessionClient {
   int limit_refresh = 5000;
   int token_expiration = 0;
   int req = 0;
-  late Map<dynamic, String> credentials;
+  late Map<String, dynamic> credentials;
 
   SessionClient();
 
   init(
-      credentials); //init the client, for example it's where we can define the token
+      Map<String, dynamic>
+          credentials); //init the client, for example it's where we can define the token
 
-  start(credentials) async {
+  start(Map<String, dynamic> credentials) async {
     this.credentials = credentials;
     this.started = true;
     return await this.init(credentials);
@@ -32,10 +33,13 @@ abstract class SessionClient {
       String requrl = url.toString();
       url = Uri.parse(this.base_url + requrl);
     }
-    print('headers:');
-    print(headers);
-    if (this.user_agent != null) {}
 
+    if (this.user_agent != null) {
+      if (headers == null) {
+        headers = {};
+      }
+      headers['User-Agent'] = this.user_agent!;
+    }
     return await await client.get(url, headers: headers);
   }
 
@@ -49,6 +53,12 @@ abstract class SessionClient {
       String requrl = url.toString();
       url = Uri.parse(this.base_url + requrl);
     }
+    if (this.user_agent != null) {
+      if (headers == null) {
+        headers = {};
+      }
+      headers['User-Agent'] = this.user_agent!;
+    }
     return client.post(url, body: body, headers: headers);
   }
 
@@ -59,8 +69,12 @@ abstract class SessionClient {
     var now = new DateTime.now();
     if (refresh &&
         now.millisecondsSinceEpoch - this.last_refresh > this.limit_refresh) {
+      var previous_token = this.token;
       this.last_refresh = now.millisecondsSinceEpoch;
       await this.init(this.credentials);
+      if (this.token == previous_token) {
+        return '';
+      }
     }
     return this.token;
   }

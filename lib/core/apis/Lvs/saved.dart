@@ -26,6 +26,7 @@ class LVSClient extends SessionClient {
         headers: {"Content-Type": "application/json"},
         token: false,
         baseUrl: false);
+    print(rep.headers);
     if (rep.statusCode == 200) {
       print('successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();

@@ -7,25 +7,22 @@ class LVSClient extends SessionClient {
   HwClient? hw_client;
 
   init(credentials) async {
-    if (credentials['username'] is! String ||
-        credentials['password'] is! String) {
-      throw ('Lvs credentials username and password must be string');
+    if (credentials['username'] is String ||
+        !credentials['password'] is String) {
+      // throw ('Lvs credentials must be string');
     }
-    if (credentials['url'] is! Uri) {
-      throw ('Lvs credentials url must be Uri');
-    }
-    var data = {
-      'login': credentials['username'],
-      'password': credentials['password']
-    };
-
+    var map = {'login': 'ndemers', 'password': 'Matcha27@'};
+    map['login'] = 'ndemers';
+    map['password'] = 'Matcha27@';
+    map = {'login': 'ndemers', 'password': 'Matcha27@'};
     var rep = await this.post(
         Uri.parse(
             'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSAuth/connexion'),
-        body: json.encode(data),
+        body: json.encode(map),
         headers: {"Content-Type": "application/json"},
         token: false,
         baseUrl: false);
+    print(rep.body);
     if (rep.statusCode == 200) {
       print('successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();

@@ -23,8 +23,22 @@ class APILVS extends API {
 //make a function getClient()
   @override
   Future<List> login(username, password, {url, cas, mobileCasLogin}) async {
-    var credentials = Map<dynamic, String>();
-    //url, username: username, password: password,
+    if (username == null) {
+      username = "";
+    }
+    if (password == null) {
+      password = "";
+    }
+    if (url == null) {
+      url = "";
+    }
+
+    Map<String, dynamic> credentials = {
+      'url': Uri.parse(
+          'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr'),
+      'username': 'ndemers',
+      'password': 'Matcha27@'
+    };
 
     var res = await this.client.start(credentials);
     if (res[0] == 1) {
@@ -37,14 +51,8 @@ class APILVS extends API {
 //  await storage.write(key: "appAccount", value: jsonEncode(appSys.account!.toJson()));
 //debug S
 
-    // TODO: implement login
     /*      final prefs = await SharedPreferences.getInstance();
-    if (username == null) {
-      username = "";
-    }
-    if (password == null) {
-      password = "";
-    }
+
 
     var url = 'https://api.ecoledirecte.com/v3/login.awp';
     Map<String, String> headers = {"Content-type": "text/plain"};
