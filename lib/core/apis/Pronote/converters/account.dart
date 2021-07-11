@@ -6,12 +6,15 @@ import 'package:uuid/uuid.dart';
 class PronoteAccountConverter {
   static AppAccount account(Map accountData) {
     Map? data = mapGet(accountData, ["donneesSec", "donnees", "ressource"]);
-    List<appTabs> tabs = availableTabs(mapGet(accountData, ["donneesSec", "donnees", "listeOnglets"]),
-        mapGet(accountData, ["donneesSec", "donnees", "listeOngletsInvisibles"]));
+    List<appTabs> tabs = availableTabs(
+        mapGet(accountData, ["donneesSec", "donnees", "listeOnglets"]),
+        mapGet(
+            accountData, ["donneesSec", "donnees", "listeOngletsInvisibles"]));
     if (mapGet(data, ["listeRessources"]) != null) {
       String? name = mapGet(data, ["L"]);
       bool isParentMainAccount = true;
-      List<SchoolAccount> accounts = schoolAccounts(mapGet(data, ["listeRessources"]));
+      List<SchoolAccount> accounts =
+          schoolAccounts(mapGet(data, ["listeRessources"]));
       (accounts).forEach((element) {
         element.availableTabs = tabs;
       });
@@ -49,10 +52,12 @@ class PronoteAccountConverter {
       tabsNumbers.add(tab["G"]);
 
       (tab["Onglet"] ?? []).forEach((subtab) {
-        tabsNumbers += subtab.values.where((b) => b is int).toList().cast<int>();
+        tabsNumbers +=
+            subtab.values.where((b) => b is int).toList().cast<int>();
         //Sub sub tab
         (subtab["Onglet"] ?? []).forEach((subsubtab) {
-          tabsNumbers += tabsNumbers + subsubtab.values.where((b) => b is int).toList().cast<int>();
+          tabsNumbers += tabsNumbers +
+              subsubtab.values.where((b) => b is int).toList().cast<int>();
         });
       });
     });
@@ -92,7 +97,11 @@ class PronoteAccountConverter {
       String? studentID = mapGet(studentData, ["N"]);
 
       accounts.add(SchoolAccount(
-          name: name, studentClass: studentClass, studentID: studentID, availableTabs: [], schoolName: schoolName));
+          name: name,
+          studentClass: studentClass,
+          studentID: studentID,
+          availableTabs: [],
+          schoolName: schoolName));
     });
     return accounts;
   }
@@ -103,6 +112,10 @@ class PronoteAccountConverter {
     String? studentClass = mapGet(schoolAccountData, ["classeDEleve", "L"]);
     String? studentID = mapGet(schoolAccountData, ["N"]);
     return SchoolAccount(
-        name: name, studentClass: studentClass, studentID: studentID, availableTabs: [], schoolName: schoolName);
+        name: name,
+        studentClass: studentClass,
+        studentID: studentID,
+        availableTabs: [],
+        schoolName: schoolName);
   }
 }

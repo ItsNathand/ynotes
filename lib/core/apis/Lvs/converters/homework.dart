@@ -4,7 +4,7 @@ import 'package:ynotes/core/apis/Pronote/convertersExporter.dart';
 import 'package:ynotes/core/logic/modelsExporter.dart';
 import 'package:ynotes/core/utils/nullSafeMapGetter.dart';
 
-class PronoteHomeworkConverter {
+class LvsHomeworkConverter {
   static List<Homework> homework(PronoteClient client, Map homeworkData) {
     List<Homework> hwList = [];
     List data = mapGet(homeworkData,

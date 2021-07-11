@@ -69,7 +69,8 @@ class _Page1State extends State<Page1> {
       child: Stack(
         children: <Widget>[
           Transform.translate(
-            offset: Offset(-widget.offset! * 400 - 75 + 75 * widget.offset!, -135 + 135 * widget.offset!),
+            offset: Offset(-widget.offset! * 400 - 75 + 75 * widget.offset!,
+                -135 + 135 * widget.offset!),
             child: Align(
                 alignment: Alignment.center,
                 child: Transform.rotate(
@@ -94,7 +95,9 @@ class _Page1State extends State<Page1> {
                         TextSpan(
                           text: "Bienvenue dans",
                           children: <TextSpan>[
-                            TextSpan(text: ' yNotes !', style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: ' yNotes !',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
                         textAlign: TextAlign.center,
@@ -160,7 +163,9 @@ class _Page1State extends State<Page1> {
                   angle: -0.2 + (widget.offset! * 0.2),
                   child: Stack(
                     children: <Widget>[
-                      Align(alignment: Alignment.center, child: buildGradesBox(Color(0xFF1CA68A))),
+                      Align(
+                          alignment: Alignment.center,
+                          child: buildGradesBox(Color(0xFF1CA68A))),
                     ],
                   ),
                 ),
@@ -181,9 +186,13 @@ class _Page1State extends State<Page1> {
                         TextSpan(
                           text: "Car les",
                           children: <TextSpan>[
-                            TextSpan(text: ' outils ', style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: ' outils ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(text: ' sont aussi importants que le'),
-                            TextSpan(text: ' travail...', style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: ' travail...',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
                         textAlign: TextAlign.center,
@@ -211,7 +220,8 @@ class _Page1State extends State<Page1> {
         decoration: ShapeDecoration(
           color: Color(0xFF3F3F3F),
           shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(MediaQuery.of(context).size.width),
+            borderRadius:
+                new BorderRadius.circular(MediaQuery.of(context).size.width),
           ),
         ),
         child: Container(
@@ -220,14 +230,23 @@ class _Page1State extends State<Page1> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text("18",
-                style: TextStyle(fontFamily: "Asap", color: Colors.white, fontWeight: FontWeight.bold, fontSize: 46)),
+                style: TextStyle(
+                    fontFamily: "Asap",
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 46)),
             Container(
               width: 70,
               height: 5,
-              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(15)),
             ),
             Text("20",
-                style: TextStyle(fontFamily: "Asap", color: Colors.white, fontWeight: FontWeight.bold, fontSize: 46)),
+                style: TextStyle(
+                    fontFamily: "Asap",
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 46)),
           ],
         )),
       ),
@@ -252,28 +271,40 @@ class _Page2State extends State<Page2> {
                   child: Container(
                       height: 100,
                       width: 100,
-                      child: FittedBox(fit: BoxFit.fill, child: Image.asset('assets/images/shelves/calendar.png'))),
+                      child: FittedBox(
+                          fit: BoxFit.fill,
+                          child: Image.asset(
+                              'assets/images/shelves/calendar.png'))),
                 ),
                 Transform.translate(
                   offset: Offset(70 - (widget.offset! - 1) * 20, -157),
                   child: Container(
                       height: 120,
                       width: 120,
-                      child: FittedBox(fit: BoxFit.fill, child: Image.asset('assets/images/shelves/clock.png'))),
+                      child: FittedBox(
+                          fit: BoxFit.fill,
+                          child:
+                              Image.asset('assets/images/shelves/clock.png'))),
                 ),
                 Transform.translate(
                   offset: Offset(0 - (widget.offset! - 1) * 400, -90),
                   child: Container(
                       height: 170,
                       width: 320,
-                      child: FittedBox(fit: BoxFit.fill, child: Image.asset('assets/images/shelves/shelve1.png'))),
+                      child: FittedBox(
+                          fit: BoxFit.fill,
+                          child: Image.asset(
+                              'assets/images/shelves/shelve1.png'))),
                 ),
                 Transform.translate(
                   offset: Offset(0 - (widget.offset! - 1) * 300, 90),
                   child: Container(
                       height: 90,
                       width: 320,
-                      child: FittedBox(fit: BoxFit.fill, child: Image.asset('assets/images/shelves/shelve2.png'))),
+                      child: FittedBox(
+                          fit: BoxFit.fill,
+                          child: Image.asset(
+                              'assets/images/shelves/shelve2.png'))),
                 ),
               ],
             ),
@@ -292,7 +323,9 @@ class _Page2State extends State<Page2> {
                         TextSpan(
                           text: "...emmenez l'école",
                           children: <TextSpan>[
-                            TextSpan(text: ' dans votre poche ! ', style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: ' dans votre poche ! ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
                         textAlign: TextAlign.center,
@@ -312,7 +345,8 @@ class _Page3State extends State<Page3> {
     return Stack(
       children: <Widget>[
         Positioned(
-          left: MediaQuery.of(context).size.width / 8 - (widget.offset! - 2) * 250,
+          left: MediaQuery.of(context).size.width / 8 -
+              (widget.offset! - 2) * 250,
           child: Align(
               alignment: Alignment.center,
               child: Opacity(
@@ -328,7 +362,8 @@ class _Page3State extends State<Page3> {
               )),
         ),
         Positioned(
-          right: MediaQuery.of(context).size.width / 8 + (widget.offset! - 2) * 70,
+          right:
+              MediaQuery.of(context).size.width / 8 + (widget.offset! - 2) * 70,
           top: MediaQuery.of(context).size.height / 5,
           child: Align(
               alignment: Alignment.center,
@@ -345,7 +380,8 @@ class _Page3State extends State<Page3> {
               )),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.width / 3.5 - (widget.offset! - 2) * 310,
+          left: MediaQuery.of(context).size.width / 3.5 -
+              (widget.offset! - 2) * 310,
           top: MediaQuery.of(context).size.height / 2.3,
           child: Align(
               alignment: Alignment.center,
@@ -362,7 +398,8 @@ class _Page3State extends State<Page3> {
               )),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.width / 12 - (widget.offset! - 2) * 280,
+          left: MediaQuery.of(context).size.width / 12 -
+              (widget.offset! - 2) * 280,
           top: MediaQuery.of(context).size.height / 4,
           child: Align(
               alignment: Alignment.center,
@@ -393,11 +430,17 @@ class _Page3State extends State<Page3> {
                         text: "...sans oublier de gérer votre",
                         children: <TextSpan>[
                           TextSpan(
-                              text: ' espace !', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                              text: ' espace !',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
                         ],
                       ),
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: "Asap", fontSize: 30.0, color: Colors.white)))),
+                      style: TextStyle(
+                          fontFamily: "Asap",
+                          fontSize: 30.0,
+                          color: Colors.white)))),
         ),
       ],
     );
@@ -449,7 +492,8 @@ class _Page4State extends State<Page4> {
                               color: ThemeUtils.textColor(),
                               fontSize: screenSize.size.height / 10 * 0.28),
                         ),
-                        leading: Icon(MdiIcons.formatListBulleted, color: ThemeUtils.textColor()),
+                        leading: Icon(MdiIcons.formatListBulleted,
+                            color: ThemeUtils.textColor()),
                         onTap: () {
                           CustomDialogs.showSpecialtiesChoice(context);
                         }),
@@ -464,27 +508,40 @@ class _Page4State extends State<Page4> {
                               color: ThemeUtils.textColor(),
                               fontSize: screenSize.size.height / 10 * 0.28),
                         ),
-                        leading: Icon(MdiIcons.account, color: ThemeUtils.textColor()),
+                        leading: Icon(MdiIcons.account,
+                            color: ThemeUtils.textColor()),
                         subtitle: appSys.account!.isParentMainAccount
                             ? Text(
-                                (appSys.currentSchoolAccount?.name) ?? "(non choisi)",
+                                (appSys.currentSchoolAccount?.name) ??
+                                    "(non choisi)",
                                 style: TextStyle(
                                     fontFamily: "Asap",
-                                    color: ThemeUtils.textColor().withOpacity(0.4),
-                                    fontSize: screenSize.size.height / 10 * 0.28),
+                                    color:
+                                        ThemeUtils.textColor().withOpacity(0.4),
+                                    fontSize:
+                                        screenSize.size.height / 10 * 0.28),
                               )
                             : null,
                         onTap: () async {
-                          if (appSys.account != null && appSys.account!.managableAccounts != null) {
-                            List? choices = await CustomDialogs.showMultipleChoicesDialog(
-                                context,
-                                appSys.account!.managableAccounts!.map((e) => e.name).toList(),
-                                (appSys.currentSchoolAccount != null)
-                                    ? [appSys.account!.managableAccounts!.indexOf(appSys.currentSchoolAccount!)]
-                                    : [],
-                                singleChoice: true);
+                          if (appSys.account != null &&
+                              appSys.account!.managableAccounts != null) {
+                            List? choices =
+                                await CustomDialogs.showMultipleChoicesDialog(
+                                    context,
+                                    appSys.account!.managableAccounts!
+                                        .map((e) => e.name)
+                                        .toList(),
+                                    (appSys.currentSchoolAccount != null)
+                                        ? [
+                                            appSys.account!.managableAccounts!
+                                                .indexOf(appSys
+                                                    .currentSchoolAccount!)
+                                          ]
+                                        : [],
+                                    singleChoice: true);
                             if (choices != null) {
-                              appSys.currentSchoolAccount = appSys.account!.managableAccounts![choices.first];
+                              appSys.currentSchoolAccount = appSys
+                                  .account!.managableAccounts![choices.first];
                             }
                           }
                         }),
@@ -529,7 +586,8 @@ class _Page4State extends State<Page4> {
                       textAlign: TextAlign.center,
                     ),
                     SwitchListTile(
-                        value: model.settings!["user"]["global"]["notificationNewGrade"],
+                        value: model.settings!["user"]["global"]
+                            ["notificationNewGrade"],
                         title: Text(
                           "Notification de nouvelle note",
                           style: TextStyle(
@@ -546,17 +604,30 @@ class _Page4State extends State<Page4> {
                         ),
                         onChanged: (value) async {
                           if (value == false ||
-                              (!kIsWeb && (Platform.isIOS && await Permission.notification.request().isGranted) ||
-                                  (await Permission.ignoreBatteryOptimizations.isGranted))) {
-                            model.updateSetting(appSys.settings!["user"]["global"], "notificationNewGrade", value);
+                              (!kIsWeb &&
+                                      (Platform.isIOS &&
+                                          await Permission.notification
+                                              .request()
+                                              .isGranted) ||
+                                  (await Permission
+                                      .ignoreBatteryOptimizations.isGranted))) {
+                            model.updateSetting(
+                                appSys.settings!["user"]["global"],
+                                "notificationNewGrade",
+                                value);
                           } else {
                             if (await (CustomDialogs.showAuthorizationsDialog(
                                     context,
                                     "la configuration d'optimisation de batterie",
                                     "Pouvoir s'exécuter en arrière plan sans être automatiquement arrêté par Android.")) ??
                                 false) {
-                              if (await Permission.ignoreBatteryOptimizations.request().isGranted) {
-                                model.updateSetting(appSys.settings!["user"]["global"], "notificationNewGrade", value);
+                              if (await Permission.ignoreBatteryOptimizations
+                                  .request()
+                                  .isGranted) {
+                                model.updateSetting(
+                                    appSys.settings!["user"]["global"],
+                                    "notificationNewGrade",
+                                    value);
                               }
                             }
                           }
@@ -565,7 +636,8 @@ class _Page4State extends State<Page4> {
                       color: ThemeUtils.textColor().withOpacity(0.4),
                     ),
                     SwitchListTile(
-                      value: appSys.settings!["user"]["global"]["notificationNewMail"],
+                      value: appSys.settings!["user"]["global"]
+                          ["notificationNewMail"],
                       title: Text(
                         "Notification de nouveau mail",
                         style: TextStyle(
@@ -575,17 +647,30 @@ class _Page4State extends State<Page4> {
                       ),
                       onChanged: (value) async {
                         if (value == false ||
-                            (!kIsWeb && (Platform.isIOS && await Permission.notification.request().isGranted) ||
-                                (await Permission.ignoreBatteryOptimizations.isGranted))) {
-                          model.updateSetting(appSys.settings!["user"]["global"], "notificationNewMail", value);
+                            (!kIsWeb &&
+                                    (Platform.isIOS &&
+                                        await Permission.notification
+                                            .request()
+                                            .isGranted) ||
+                                (await Permission
+                                    .ignoreBatteryOptimizations.isGranted))) {
+                          model.updateSetting(
+                              appSys.settings!["user"]["global"],
+                              "notificationNewMail",
+                              value);
                         } else {
                           if (await (CustomDialogs.showAuthorizationsDialog(
                                   context,
                                   "la configuration d'optimisation de batterie",
                                   "Pouvoir s'exécuter en arrière plan sans être automatiquement arrêté par Android.")) ??
                               false) {
-                            if (await Permission.ignoreBatteryOptimizations.request().isGranted) {
-                              appSys.updateSetting(appSys.settings!["user"]["global"], "notificationNewMail", value);
+                            if (await Permission.ignoreBatteryOptimizations
+                                .request()
+                                .isGranted) {
+                              appSys.updateSetting(
+                                  appSys.settings!["user"]["global"],
+                                  "notificationNewMail",
+                                  value);
                             }
                           }
                         }
@@ -601,10 +686,15 @@ class _Page4State extends State<Page4> {
                     SizedBox(
                       height: screenSize.size.height / 10 * 0.1,
                     ),
-                    CustomButtons.materialButton(context, null, screenSize.size.height / 10 * 0.5, () async {
+                    CustomButtons.materialButton(
+                        context, null, screenSize.size.height / 10 * 0.5,
+                        () async {
                       createStorage("agreedTermsAndConfiguredApp", "true");
                       Navigator.pushReplacementNamed(context, "/summary");
-                    }, label: "Allons-y !", textColor: ThemeUtils.textColor(), backgroundColor: Color(0xff5DADE2))
+                    },
+                        label: "Allons-y !",
+                        textColor: ThemeUtils.textColor(),
+                        backgroundColor: Color(0xff5DADE2))
                     /*RaisedButton(
                       color: Color(0xff5DADE2),
                       shape: StadiumBorder(),
@@ -674,7 +764,9 @@ class _SlidingCarouselState extends State<SlidingCarousel> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: _pageOffset!.toInt() == 3 ? Theme.of(context).backgroundColor : _getBGColor(),
+      backgroundColor: _pageOffset!.toInt() == 3
+          ? Theme.of(context).backgroundColor
+          : _getBGColor(),
       body: //Disable back button
           WillPopScope(
         onWillPop: () async {
@@ -693,7 +785,8 @@ class _SlidingCarouselState extends State<SlidingCarousel> {
                         itemCount: _pageInfoList.length,
                         itemBuilder: (context, idx) {
                           return Container(
-                              height: MediaQuery.of(context).size.height, child: Center(child: _setOffset(idx)));
+                              height: MediaQuery.of(context).size.height,
+                              child: Center(child: _setOffset(idx)));
                         }),
                   ),
                   Container(
@@ -704,21 +797,27 @@ class _SlidingCarouselState extends State<SlidingCarousel> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: Visibility(
-                            visible: _pageController!.hasClients ? (_pageIndex != 3) : true,
+                            visible: _pageController!.hasClients
+                                ? (_pageIndex != 3)
+                                : true,
                             child: Container(
                               margin: EdgeInsets.only(
-                                  right: screenSize.size.width / 5 * 0.1, top: screenSize.size.height / 10 * 0.08),
+                                  right: screenSize.size.width / 5 * 0.1,
+                                  top: screenSize.size.height / 10 * 0.08),
                               // ignore: deprecated_member_use
                               child: OutlineButton(
                                 color: Colors.transparent,
                                 highlightColor: Colors.black,
                                 focusColor: Colors.black,
                                 borderSide: BorderSide(color: Colors.indigo),
-                                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                                shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(30.0)),
                                 highlightedBorderColor: Colors.black,
                                 onPressed: () async {
-                                  _pageController!
-                                      .animateToPage(3, duration: Duration(milliseconds: 250), curve: Curves.easeIn);
+                                  _pageController!.animateToPage(3,
+                                      duration: Duration(milliseconds: 250),
+                                      curve: Curves.easeIn);
                                 },
                                 child: AutoSizeText(
                                   "Passer",
@@ -814,7 +913,8 @@ class _SlidingCarouselState extends State<SlidingCarousel> {
             offset: offset,
             idx: idx,
           ),
-          backgroundColor: ThemeUtils.isThemeDark ? Color(0xff313131) : Colors.white),
+          backgroundColor:
+              ThemeUtils.isThemeDark ? Color(0xff313131) : Colors.white),
     ];
   }
 

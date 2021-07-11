@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:ynotes/core/logic/shared/models.dart';
 
 import 'package:ynotes/core/logic/schoolLife/models.dart';
@@ -12,9 +15,17 @@ import 'package:ynotes/core/logic/agenda/models.dart';
 
 import 'package:http/src/request.dart';
 import 'package:ynotes/core/offline/offline.dart';
+import 'package:ynotes/globals.dart';
 
 import 'Lvs/LvsClient.dart';
+import 'Lvs/converters/account.dart';
 import 'model.dart';
+
+final storage = new FlutterSecureStorage();
+
+void createStorage(String key, String? data) async {
+  await storage.write(key: key, value: data);
+}
 
 class APILVS extends API {
   LVSClient client = new LVSClient();
@@ -23,6 +34,7 @@ class APILVS extends API {
 //make a function getClient()
   @override
   Future<List> login(username, password, {url, cas, mobileCasLogin}) async {
+    print(username);
     if (username == null) {
       username = "";
     }
@@ -33,95 +45,70 @@ class APILVS extends API {
       url = "";
     }
 
+    //TODO:Remove dev thing under
+    //  username = 'ndemers';
+    // password = 'Matcha27@';
+    url = 'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr';
+
     Map<String, dynamic> credentials = {
-      'url': Uri.parse(
-          'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr'),
-      'username': 'ndemers',
-      'password': 'Matcha27@'
+      'url': Uri.parse(url),
+      'username': username,
+      'password': password
     };
 
-    var res = await this.client.start(credentials);
+    //TODO:Update dev thing under
+    List res = await this.client.start(credentials);
+    //List res = [1];
+
     if (res[0] == 1) {
-      return ([1, "Bienvenue!" + username]);
-    }
-    return [0, "Erreur"];
-    //var dateTimeFormat = DateFormat('MMMM d, yyyy', 'en_US').parse(date);
-    //  dateTimeFormat.millisecondsSinceEpoch;
+      try {
+        //TODO:Update dev thing under
+        var req_infos = await this
+            .client
+            .get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
 
-//  await storage.write(key: "appAccount", value: jsonEncode(appSys.account!.toJson()));
-//debug S
+        Map<String, dynamic> raw_infos = jsonDecode(req_infos.body);
+        /* Map<String, dynamic> raw_infos = {
+          "infoUser": {
+            "logo":
+                "https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
+            "etabName": "Institut Saint Pierre Saint Paul - Dreux (28100)",
+            "userPrenom": "Nathan",
+            "userNom": "DEMERS",
+            "profil": "Elève"
+          },
+          "plateform": ""
+        }; */
 
-    /*      final prefs = await SharedPreferences.getInstance();
+        var ress = LvsAccountConverter.account(raw_infos);
+        print(ress.surname);
+        print(ress.name);
+        print(ress.managableAccounts![0].availableTabs);
 
-
-    var url = 'https://api.ecoledirecte.com/v3/login.awp';
-    Map<String, String> headers = {"Content-type": "text/plain"};
-    String data = 'data={"identifiant": "$username", "motdepasse": "$password"}';
-    //encode Map to JSON
-    var body = data;
-    //var response = await http.post(Uri.parse(url), headers: headers, body: body).catchError((e) {
-    // throw "Impossible de se connecter. Essayez de vérifier votre connexion à Internet ou réessayez plus tard.";
-    //});
-    response.statusCode = 200;
-    if (response.statusCode == 200) {
-      Map<String, dynamic> req = jsonDecode(response.body);
-      if (req['code'] == 200) {
-        try {
-          //we register accounts
-          //Put the value of the name in a variable
-          //
-          try {
-            appSys.account = EcoleDirecteAccountConverter.account(req);
-          } catch (e) {
-            print("Impossible to get accounts " + e.toString());
-            print(e);
-          }
-
-          if (appSys.account != null && appSys.account!.managableAccounts != null) {
-            await storage.write(key: "appAccount", value: jsonEncode(appSys.account!.toJson()));
-            appSys.currentSchoolAccount = appSys.account!.managableAccounts![0];
-          } else {
-            return [0, "Impossible de collecter les comptes."];
-          }
-
-          String userID = req['data']['accounts'][0]['id'].toString();
-          String classe;
-          try {
-            classe = req['data']['accounts'][0]['profile']["classe"]["libelle"] ?? "";
-          } catch (e) {
-            classe = "";
-          }
-          //Store the token
-          token = req['token'];
-          //Create secure storage for credentials
-
-          createStorage("password", password ?? "");
-          createStorage("username", username ?? "");
-          //IMPORTANT ! store the user ID
-          createStorage("userID", userID);
-          createStorage("classe", classe);
-          //random date
-          createStorage("startday", DateTime.parse("2020-02-02").toString());
-
-          //Ensure that the user will not see the carousel anymore
-          prefs.setBool('firstUse', false);
-        } catch (e) {
-          print("Error while getting user info " + e.toString());
-          //log in file
-          logFile(e.toString());
+        appSys.account = LvsAccountConverter.account(raw_infos);
+        if (appSys.account != null &&
+            appSys.account!.managableAccounts != null) {
+          await storage.write(
+              key: "appAccount", value: jsonEncode(appSys.account!.toJson()));
+          appSys.currentSchoolAccount = appSys.account!.managableAccounts![0];
+        } else {
+          return [0, "Impossible de collecter les comptes."];
         }
+        createStorage("password", password ?? "");
+        createStorage("username", username ?? "");
         this.loggedIn = true;
-        return [1, "Bienvenue ${appSys.account?.name ?? "Invité"} !"];
+
+        await this.client.getHwClient();
+        return ([1, "Bienvenue ${appSys.account?.name ?? "Invité"}!"]);
+      } catch (e) {
+        print('An error occured while registering the account');
       }
-      //Return an error
-      else {
-        String? message = req['message'];
-        return [0, "Oups ! Une erreur a eu lieu :\n$message"];
-      }
-    } else {
-      return [0, "Erreur"];
-    } */
-    //return ([1, "Bienvenue!" + username]);
+      return [
+        0,
+        "Erreur à l'inscription du compte. Seuls les comptes élèves sont supportés."
+      ];
+    }
+    return [0, "Erreur à la connection"];
   }
 
   @override
@@ -152,7 +139,7 @@ class APILVS extends API {
   @override
   Future<List<Discipline>?> getGrades({bool? forceReload}) async {
     // TODO: implement getGrades
-    print('oops');
+
     throw UnimplementedError();
   }
 
@@ -160,7 +147,7 @@ class APILVS extends API {
   Future<List<Homework>?> getHomeworkFor(DateTime? dateHomework,
       {bool? forceReload}) async {
     // TODO: implement getHomeworkFor
-    print('oops');
+
     // throw UnimplementedError();
     return [];
   }
