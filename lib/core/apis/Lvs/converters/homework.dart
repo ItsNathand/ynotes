@@ -1,11 +1,11 @@
 import 'package:intl/intl.dart';
-import 'package:ynotes/core/apis/Pronote/PronoteAPI.dart';
 import 'package:ynotes/core/apis/Pronote/convertersExporter.dart';
 import 'package:ynotes/core/logic/modelsExporter.dart';
 import 'package:ynotes/core/utils/nullSafeMapGetter.dart';
 
 class LvsHomeworkConverter {
-  static List<Homework> homework(PronoteClient client, Map homeworkData) {
+  static List<Homework> homework(homeworkData) {
+    return [];
     List<Homework> hwList = [];
     List data = mapGet(homeworkData,
             ['donneesSec', 'donnees', 'ListeTravauxAFaire', 'V']) ??
@@ -56,3 +56,16 @@ class LvsHomeworkConverter {
     return hwList;
   }
 }
+
+//data exemple
+/* Map<String, dynamic> raw_infos = {
+          "infoUser": {
+            "logo":
+                "https://institut.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
+            "etabName": "Inserer Institut",
+            "userPrenom": "Inserer prenom",
+            "userNom": "Inserer nom",
+            "profil": "Elève"
+          },
+          "plateform": ""
+        }; */

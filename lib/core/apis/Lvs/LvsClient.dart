@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'SessionClient.dart';
 
-class LVSClient extends SessionClient {
+class LvsClient extends SessionClient {
   HwClient? hw_client;
 
   Future<List> init(credentials) async {
@@ -19,6 +19,7 @@ class LVSClient extends SessionClient {
       'password': credentials['password']
     };
 
+    this.setUser_agent();
     var rep = await this.post(
         Uri.parse(credentials['url'].toString() + '/vsn.main/WSAuth/connexion'),
         body: json.encode(data),
@@ -82,7 +83,7 @@ class LVSClient extends SessionClient {
   }
 
   getHwClient() async {
-//    if (this.hw_client == null || !this.hw_client!.started) {
+    //  if (this.hw_client == null || !this.hw_client!.started) {
     var theclient = new HwClient();
     await theclient.start({
       'method': this.get,
@@ -94,12 +95,6 @@ class LVSClient extends SessionClient {
     // }
     return this.hw_client;
   }
-
-  gett(uri) {
-    super.get(Uri.parse('https://www.google.com/')).then((res) {
-      print(res.body);
-    });
-  }
 }
 
 class HwClient extends SessionClient {
@@ -108,33 +103,50 @@ class HwClient extends SessionClient {
     var entry_url =
         await Function.apply(credentials['method'], [credentials['args']]);
 
-    print(jsonDecode(entry_url.body)['location']);
-    Response redirect =
-        await this.get(Uri.parse(jsonDecode(entry_url.body)['location']));
-    print(redirect.statusCode);
-    print(redirect.body);
+    if (entry_url.statusCode == 200) {
+      this.base_url = 'https://ent05.la-vie-scolaire.fr/eliot-textes';
 
-    /* if (redirect.statusCode == 301 && redirect.headers['location'] != null) {
-      String raw_token = redirect.headers['location']!;
-      //exemple of raw_token: https://ent05.la-vie-scolaire.fr/eliot-textes/;jsessionid=562ECA43A24163DB05C49275126B7D86?extautolog=VS0bXcJU24VwfZe42ocMpyUuwBH5IhAEt%2FUTgbT%2BQ7hiRCKJlogcFLzuxzXRiXAIk09xNxrgJyr5%0AvvRoHZQZUTe6NnH6kG0a%2BU43wQgg8dxLpcM8BhoUP9MvFbCtleLNVgmgRqLet1%2F5mTrg2L8SkZty%0AdnnRfwcPLRFFWwE7wH%2FUfvX5NCSd9tPAlEubeTQEAWC%2F%2FXHqeGQCRMX%2BxNwgRdD%2BejfG6W6t90Ad%0A81w4pmivo9OV2X43%2Fi2dB6TheWIDyrywepUUrUTP3rNO8YE4B9IvQdRnIT0SVCXExS9lxCrB3kau%0AOgGnW%2FuIVGhN%2Fb%2Fy0HFgynrQ%2B3UsP%2BnJipJOjQ%3D%3D
+      var request =
+          new Request('GET', Uri.parse(jsonDecode(entry_url.body)['location']))
+            ..followRedirects = false;
+      var response = await client.send(request);
+
+      var i = 1;
+      while (i < 6 && response.statusCode == 302) {
+        request = new Request('GET', Uri.parse(response.headers['location']!))
+          ..followRedirects = false;
+        response = await client.send(request);
+        i++;
+      }
+
+      var raw_token = response.headers['location']!;
+
       var debut = raw_token.indexOf(';');
       var end = raw_token.indexOf('?');
-      var token = raw_token.substring(debut, end); */
-    var token = 'mee';
-    if (token != '') {
-      this.token = token;
-      print('successful authentication for Lvs Hw');
-      return [1, "success"];
+      var token = raw_token.substring(debut, end);
+
+      if (token != '') {
+        this.token = token;
+        /* var resp = await this.post(
+            Uri.parse('/rechercheActivite/rechercheJournaliere'),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
+            body:
+                "params=%7B%22start%22%3A0%2C%22limit%22%3A100%2C%22contexteId%22%3A-1%2C%22typeId%22%3A-1%2C%22cdtId%22%3A-1%2C%22matiereId%22%3A-1%2C%22groupeId%22%3A-1%2C%22dateDebut%22%3A%2208%2F06%2F2021%22%2C%22dateFin%22%3A%2208%2F06%2F2021%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
+        print(resp.statusCode);
+        print(resp.body); */
+        print('successful authentication for Lvs Hw');
+        return [1, "success"];
+      }
+      return [0, "invalid token for Lvs Hw"];
     }
-    return [0, "invalid token for Lvs Hw"];
-    // }
-    return [0, "error"];
+    return [0, "error while retrieving homeworks"];
   }
 
   @override
   Future<http.Response> get(Uri url,
       {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
-    Map<String, String>? theheaders = {};
     if (token) {
       var thetoken = await this.getToken();
       if (thetoken == '') {
@@ -143,7 +155,7 @@ class HwClient extends SessionClient {
       String requrl = url.toString();
       url = Uri.parse(requrl + thetoken);
     }
-    return super.get(url, headers: theheaders, baseUrl: baseUrl);
+    return super.get(url, headers: headers, baseUrl: baseUrl);
   }
 
   @override
@@ -153,7 +165,6 @@ class HwClient extends SessionClient {
       Encoding? encoding,
       bool token = true,
       baseUrl = true}) async {
-    Map<String, String>? headers = {};
     if (token) {
       var thetoken = await this.getToken();
       if (thetoken == '') {

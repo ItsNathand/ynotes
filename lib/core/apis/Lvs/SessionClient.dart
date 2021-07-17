@@ -20,7 +20,6 @@ abstract class SessionClient {
           credentials); //init the client, for example it's where we can define the token
 
   Future<List> start(Map<String, dynamic> credentials) async {
-    print('innnit!');
     this.credentials = credentials;
     this.started = true;
     return await this.init(credentials);
