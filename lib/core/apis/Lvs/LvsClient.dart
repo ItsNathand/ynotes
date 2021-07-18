@@ -4,7 +4,7 @@ import 'package:http/http.dart';
 import 'SessionClient.dart';
 
 class LvsClient extends SessionClient {
-  HwClient? hw_client;
+  HwClient hw_client = new HwClient();
 
   Future<List> init(credentials) async {
     if (credentials['username'] is! String ||
@@ -32,6 +32,7 @@ class LvsClient extends SessionClient {
       this.token = rep.headers['set-cookie'].toString();
       this.base_url =
           'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr';
+      this.hw_client.started = false;
       return [1, "success"];
     }
     return [0, "error"];
@@ -83,16 +84,16 @@ class LvsClient extends SessionClient {
   }
 
   getHwClient() async {
-    //  if (this.hw_client == null || !this.hw_client!.started) {
-    var theclient = new HwClient();
-    await theclient.start({
-      'method': this.get,
-      'args': Uri.parse(
-          '/vsn.main/WSMenu/getModuleUrl?mod=CDT&minuteEcartGMTClient=-120&add=123'),
-      'named': {}
-    });
-    this.hw_client = theclient;
-    // }
+    if (!this.hw_client.started) {
+      var theclient = new HwClient();
+      await theclient.start({
+        'method': this.get,
+        'args': Uri.parse(
+            '/vsn.main/WSMenu/getModuleUrl?mod=CDT&minuteEcartGMTClient=-120&add=123'),
+        'named': {}
+      });
+      this.hw_client = theclient;
+    }
     return this.hw_client;
   }
 }
@@ -136,6 +137,7 @@ class HwClient extends SessionClient {
                 "params=%7B%22start%22%3A0%2C%22limit%22%3A100%2C%22contexteId%22%3A-1%2C%22typeId%22%3A-1%2C%22cdtId%22%3A-1%2C%22matiereId%22%3A-1%2C%22groupeId%22%3A-1%2C%22dateDebut%22%3A%2208%2F06%2F2021%22%2C%22dateFin%22%3A%2208%2F06%2F2021%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
         print(resp.statusCode);
         print(resp.body); */
+
         print('successful authentication for Lvs Hw');
         return [1, "success"];
       }
@@ -146,14 +148,17 @@ class HwClient extends SessionClient {
 
   @override
   Future<http.Response> get(Uri url,
-      {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
+      {Map<String, String>? headers,
+      bool token = true,
+      baseUrl = true,
+      params = ''}) async {
     if (token) {
       var thetoken = await this.getToken();
       if (thetoken == '') {
         return http.Response('', 401);
       }
       String requrl = url.toString();
-      url = Uri.parse(requrl + thetoken);
+      url = Uri.parse(requrl + thetoken + params);
     }
     return super.get(url, headers: headers, baseUrl: baseUrl);
   }

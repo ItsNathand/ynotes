@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:ynotes/core/apis/Lvs/LvsMethods.dart';
@@ -31,7 +30,7 @@ void createStorage(String key, String? data) async {
 }
 
 class APILVS extends API {
-  LvsClient client = new LvsClient();
+  LvsClient client = LvsClient();
   APILVS(Offline offlineController) : super(offlineController);
 
   @override
@@ -102,6 +101,26 @@ class APILVS extends API {
   }
 
   @override
+  Future<List<Homework>?> getHomeworkFor(DateTime? dateHomework,
+      {bool? forceReload}) async {
+    return await fetch(
+        () async => LvsMethods(await this.getClient(), this.offlineController)
+            .homeworkFor(DateTime(2005)),
+        () async =>
+            HomeworkOffline(offlineController).getHomeworkFor(dateHomework!),
+        forceFetch: forceReload ?? false);
+  }
+
+  @override
+  Future<List<Homework>?> getNextHomework({bool? forceReload}) async {
+    return await fetch(
+        () async => LvsMethods(await this.getClient(), this.offlineController)
+            .nextHomework(),
+        () => HomeworkOffline(offlineController).getAllHomework(),
+        forceFetch: forceReload ?? false);
+  }
+
+  @override
   Future<Request> downloadRequest(Document document) async {
     //TODO: implement downloadRequest
     //I will take care of this function later on.
@@ -119,27 +138,6 @@ class APILVS extends API {
     // TODO: implement getGrades
 
     throw UnimplementedError();
-  }
-
-  @override
-  Future<List<Homework>?> getHomeworkFor(DateTime? dateHomework,
-      {bool? forceReload}) async {
-    return await fetch(
-        () async => LvsMethods(await this.getClient(), this.offlineController)
-            .homeworkFor(DateTime(2005)),
-        () async =>
-            HomeworkOffline(offlineController).getHomeworkFor(dateHomework!),
-        forceFetch: forceReload ?? false);
-  }
-
-  @override
-  Future<List<Homework>?> getNextHomework({bool? forceReload}) async {
-    print('uuu');
-    return await fetch(
-        () => LvsMethods(client, this.offlineController)
-            .homeworkFor(DateTime(2005)),
-        () => HomeworkOffline(offlineController).getAllHomework(),
-        forceFetch: forceReload ?? false);
   }
 
   @override
@@ -170,8 +168,15 @@ class APILVS extends API {
 
   getClient() async {
     if (!this.client.started) {
-      await appSys.loginController.init();
+      throw ('Client is called but not started.');
     }
     return this.client;
   }
+  //the under is not bad but it's not working as it should be, we'll see that later
+  /* if (!this.client.started) {
+      appSys.api!.loggedIn == false;
+      await appSys.loginController.init();
+    }
+    return this.client; 
+  } */
 }
