@@ -11,7 +11,7 @@ abstract class SessionClient {
   String? user_agent;
   int last_refresh = 0;
   int limit_refresh = 5000;
-  int token_expiration = 0;
+  int token_expiration = 1200000;
   int req = 0;
   late Map<String, dynamic> credentials;
 
@@ -66,7 +66,9 @@ abstract class SessionClient {
     }
     var now = new DateTime.now();
     if (refresh &&
-        now.millisecondsSinceEpoch - this.last_refresh > this.limit_refresh) {
+            now.millisecondsSinceEpoch - this.last_refresh >
+                this.limit_refresh ||
+        now.microsecondsSinceEpoch - last_refresh >= token_expiration) {
       var previous_token = this.token;
       this.last_refresh = now.millisecondsSinceEpoch;
       await this.init(this.credentials);
