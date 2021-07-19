@@ -30,8 +30,7 @@ class LvsClient extends SessionClient {
     if (rep.statusCode == 200) {
       print('successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();
-      this.base_url =
-          'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr';
+      this.base_url = credentials['url'].toString();
       this.hw_client.started = false;
       return [1, "success"];
     }
