@@ -19,7 +19,7 @@ import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/core/utils/logging_utils.dart';
 import 'package:ynotes/core/utils/null_safe_map_getter.dart';
 import 'package:ynotes/globals.dart';
-import 'package:ynotes/ui/screens/settings/index.dart';
+import 'package:ynotes/ui/screens/settings/settings.dart';
 
 class APIPronote extends API {
   bool loginLock = false;
@@ -28,7 +28,7 @@ class APIPronote extends API {
 
   int loginReqNumber = 0;
 
-  APIPronote(Offline offlineController) : super(offlineController) {
+  APIPronote(Offline offlineController) : super(offlineController, apiName: "Pronote") {
     localClient = PronoteClient("");
   }
 
@@ -49,12 +49,6 @@ class APIPronote extends API {
     http.Request request = http.Request('GET', Uri.parse(url));
     return request;
   }
-
-  @override
-  Future<List<DateTime>> getDatesNextHomework() {
-    throw UnimplementedError();
-  }
-
   @override
   @override
   Future<List<Discipline>?> getGrades({bool? forceReload}) async {

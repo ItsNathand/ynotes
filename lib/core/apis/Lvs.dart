@@ -30,7 +30,7 @@ void createStorage(String key, String? data) async {
 
 class APILVS extends API {
   LvsClient client = LvsClient();
-  APILVS(Offline offlineController) : super(offlineController);
+  APILVS(Offline offlineController) : super(offlineController, apiName: "Lvs");
 
   @override
   Future<List> login(username, password, {Map? additionnalSettings}) async {

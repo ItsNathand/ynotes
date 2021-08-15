@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:ynotes/core/logic/app_config/models.dart';
 import 'package:ynotes/core/utils/logging_utils.dart';
-import 'package:ynotes/ui/screens/agenda/index.dart';
-import 'package:ynotes/ui/screens/carousel/index.dart';
-import 'package:ynotes/ui/screens/cloud/index.dart';
-import 'package:ynotes/ui/screens/downloads/index.dart';
-import 'package:ynotes/ui/screens/error_page.dart';
-import 'package:ynotes/ui/screens/grades/index.dart';
-import 'package:ynotes/ui/screens/homework/index.dart';
-import 'package:ynotes/main.dart';
-import 'package:ynotes/ui/screens/mailbox/index.dart';
-import 'package:ynotes/ui/screens/polls/index.dart';
-import 'package:ynotes/ui/screens/school_life/index.dart';
-import 'package:ynotes/ui/screens/summary/index.dart';
+import 'package:ynotes/ui/screens/agenda/agenda.dart';
+import 'package:ynotes/ui/screens/carousel/carousel.dart';
+import 'package:ynotes/ui/screens/cloud/cloud.dart';
+import 'package:ynotes/ui/screens/downloads/downloads.dart';
+import 'package:ynotes/ui/screens/error.dart';
+import 'package:ynotes/ui/screens/grades/grades.dart';
+import 'package:ynotes/ui/screens/homework/homework.dart';
+import 'package:ynotes/ui/screens/login/login.dart';
+import 'package:ynotes/ui/screens/mailbox/mailbox.dart';
+import 'package:ynotes/ui/screens/polls/polls.dart';
+import 'package:ynotes/ui/screens/school_life/school_life.dart';
+import 'package:ynotes/ui/screens/summary/summary.dart';
 
 class CustomRoute {
   final String path;
@@ -30,8 +30,7 @@ class CustomRoute {
 
 final List<CustomRoute> routes = [
   CustomRoute(path: "/login", page: Login(), relatedApi: -1, show: false),
-  CustomRoute(
-      path: "/intro", icon: Icons.info, title: "Introduction", page: SlidingCarousel(), relatedApi: -1, show: false),
+  CustomRoute(path: "/intro", icon: Icons.info, page: Carousel(), relatedApi: -1, show: false),
   CustomRoute(path: "/summary", icon: MdiIcons.home, title: "Résumé", page: SummaryPage(), tab: appTabs.SUMMARY),
   CustomRoute(path: "/grades", icon: MdiIcons.trophy, title: "Notes", page: GradesPage(), tab: appTabs.GRADES),
   CustomRoute(
