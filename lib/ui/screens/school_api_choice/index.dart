@@ -14,7 +14,8 @@ class SchoolAPIChoice extends StatefulWidget {
   }
 }
 
-class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderStateMixin {
+class _SchoolAPIChoiceState extends State<SchoolAPIChoice>
+    with TickerProviderStateMixin {
   late Animation<double> chosenAnimation1;
   late AnimationController chosenAnimation1Controller;
   late Animation<double> chosenAnimation2;
@@ -36,7 +37,8 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                 width: 50,
                 height: 40,
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/icons/ecoledirecte/EcoleDirecteIcon.png')),
+                image: AssetImage(
+                    'assets/images/icons/ecoledirecte/EcoleDirecteIcon.png')),
           ),
         },
         {
@@ -51,10 +53,11 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                 width: 50,
                 height: 50,
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/icons/pronote/PronoteIcon.png')),
+                image:
+                    AssetImage('assets/images/icons/pronote/PronoteIcon.png')),
           ),
         },
-        /*{
+        {
           "name": "La Vie Scolaire",
           "animation": chosenAnimation3,
           "controller": chosenAnimation3Controller,
@@ -66,9 +69,10 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                 width: 50,
                 height: 50,
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/icons/laviescolaire/LVSIcon.png')),
+                image: AssetImage(
+                    'assets/images/icons/laviescolaire/LVSIcon.png')),
           ),
-        },*/
+        },
       ];
 
   @override
@@ -99,12 +103,16 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                     Text(
                       "Pour commencer...",
                       style: TextStyle(
-                          fontFamily: "Asap", fontWeight: FontWeight.w300, fontSize: screenSize.size.height / 10 * 0.4),
+                          fontFamily: "Asap",
+                          fontWeight: FontWeight.w300,
+                          fontSize: screenSize.size.height / 10 * 0.4),
                       textAlign: TextAlign.center,
                     ),
                     Text(
                       "Choisissez votre service scolaire :",
-                      style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.25),
+                      style: TextStyle(
+                          fontFamily: "Asap",
+                          fontSize: screenSize.size.height / 10 * 0.25),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
@@ -128,7 +136,9 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                                   child: InkWell(
                                     onTap: () {
                                       apis()
-                                          .where((element) => element["name"] != apis()[index]["name"])
+                                          .where((element) =>
+                                              element["name"] !=
+                                              apis()[index]["name"])
                                           .forEach((others) {
                                         others["controller"].reverse();
                                       });
@@ -141,19 +151,27 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                                     },
                                     borderRadius: BorderRadius.circular(25),
                                     child: ConstrainedBox(
-                                      constraints: BoxConstraints(maxWidth: 350),
+                                      constraints:
+                                          BoxConstraints(maxWidth: 350),
                                       child: Container(
-                                        width: MediaQuery.of(context).size.width / 5 * 4.2,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                5 *
+                                                4.2,
                                         height: 70,
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             apis()[index]["icon"],
                                             Expanded(
-                                                child: Text(apis()[index]["name"],
+                                                child: Text(
+                                                    apis()[index]["name"],
                                                     textAlign: TextAlign.start,
                                                     style: TextStyle(
-                                                        fontFamily: "Asap", fontSize: 30, color: Colors.white))),
+                                                        fontFamily: "Asap",
+                                                        fontSize: 30,
+                                                        color: Colors.white))),
                                           ],
                                         ),
                                       ),
@@ -161,7 +179,8 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                                   ),
                                 ),
                               ),
-                              SizedBox(height: screenSize.size.height / 10 * 0.1)
+                              SizedBox(
+                                  height: screenSize.size.height / 10 * 0.1)
                             ],
                           );
                         },
@@ -173,7 +192,9 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                   right: 15,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: chosen != null ? Color(0xff5DADE2) : Color(0xffECECEC),
+                      primary: chosen != null
+                          ? Color(0xff5DADE2)
+                          : Color(0xffECECEC),
                       shape: StadiumBorder(),
                     ),
                     onPressed: chosen == null
@@ -184,7 +205,8 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
                             setState(() {
                               appSys.api = apiManager(appSys.offline);
                             });
-                            Navigator.of(context).pushReplacement(router(LoginSlider(
+                            Navigator.of(context)
+                                .pushReplacement(router(LoginSlider(
                               setupNeeded: chosen == 1,
                             )));
                           },
@@ -202,20 +224,26 @@ class _SchoolAPIChoiceState extends State<SchoolAPIChoice> with TickerProviderSt
   @override
   void initState() {
     super.initState();
-    chosenAnimation1Controller = AnimationController(vsync: this, duration: Duration(milliseconds: 450));
-    chosenAnimation2Controller = AnimationController(vsync: this, duration: Duration(milliseconds: 450));
-    chosenAnimation3Controller = AnimationController(vsync: this, duration: Duration(milliseconds: 450));
+    chosenAnimation1Controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 450));
+    chosenAnimation2Controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 450));
+    chosenAnimation3Controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 450));
     chosenAnimation1 = new Tween(
       begin: 1.0,
       end: 1.1,
-    ).animate(new CurvedAnimation(parent: chosenAnimation1Controller, curve: Curves.easeInOutQuint));
+    ).animate(new CurvedAnimation(
+        parent: chosenAnimation1Controller, curve: Curves.easeInOutQuint));
     chosenAnimation2 = new Tween(
       begin: 1.0,
       end: 1.1,
-    ).animate(new CurvedAnimation(parent: chosenAnimation2Controller, curve: Curves.easeInOutQuint));
+    ).animate(new CurvedAnimation(
+        parent: chosenAnimation2Controller, curve: Curves.easeInOutQuint));
     chosenAnimation3 = new Tween(
       begin: 1.0,
       end: 1.1,
-    ).animate(new CurvedAnimation(parent: chosenAnimation3Controller, curve: Curves.easeInOutQuint));
+    ).animate(new CurvedAnimation(
+        parent: chosenAnimation3Controller, curve: Curves.easeInOutQuint));
   }
 }

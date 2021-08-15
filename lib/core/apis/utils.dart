@@ -36,8 +36,9 @@ apiManager(Offline _offline) {
   switch (appSys.settings.system.chosenParser) {
     case 0:
       return APIEcoleDirecte(_offline);
-
     case 1:
+      return APILVS(_offline);
+    case 2:
       return APILVS(_offline);
   }
 }

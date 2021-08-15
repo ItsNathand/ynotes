@@ -34,7 +34,7 @@ class APILVS extends API {
 
   @override
   Future<List> login(username, password, {Map? additionnalSettings}) async {
-    print('uu');
+    print('[LVS] login called');
     if (username == null) {
       username = "";
     }
@@ -45,7 +45,7 @@ class APILVS extends API {
     //   url = "";
     // }
 
-    var url = 'https://institut.la-vie-scolaire.fr';
+    var url = 'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr';
 
     Map<String, dynamic> credentials = {
       'url': Uri.parse(url),

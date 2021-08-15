@@ -8,7 +8,7 @@ import 'package:ynotes/core/offline/offline.dart';
 import 'converters/homework.dart';
 
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
-    {bool forceFetch = true}) async {
+    {bool forceFetch = false}) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult == ConnectivityResult.none) {
     return await offlineFetch();
