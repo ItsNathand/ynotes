@@ -22,3 +22,4 @@ exemple de données attendues pour `account()`:
           "plateform": ""
         }
 ```
+!!
