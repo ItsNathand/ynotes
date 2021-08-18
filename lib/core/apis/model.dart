@@ -18,7 +18,6 @@ abstract class API {
   bool loggedIn = false;
   final Offline offlineController;
   final String apiName;
-
   List<Grade>? gradesList;
 
   API(this.offlineController, {required this.apiName});
