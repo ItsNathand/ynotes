@@ -5,6 +5,7 @@ import 'package:ynotes/core/apis/Lvs/LvsClient.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/offline/data/homework/homework.dart';
 import 'package:ynotes/core/offline/offline.dart';
+import 'converters/disciplines.dart';
 import 'converters/homework.dart';
 
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
@@ -28,6 +29,19 @@ class LvsMethods {
   final Offline _offlineController;
 
   LvsMethods(this.client, this._offlineController);
+
+  Future<List<Discipline>> grades() async {
+    var periodData = ['44', '43', '42'];
+    List<Discipline> disciplines = [];
+    periodData.forEach((element) {
+      var url =
+          'https://institut.la-vie-scolaire.fr/vsn.main/releveNote/changeSynthesePeriode?idSynthesePeriode=' +
+              element;
+      var content = {};
+      disciplines.add(LvsDisciplineConverter.disciplines(content));
+    });
+    return disciplines;
+  }
 
   Future<List<Homework>?> homeworkFor(DateTime date) async {
     HwClient hwClient = await this.client.getHwClient();
