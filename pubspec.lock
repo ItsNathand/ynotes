@@ -452,12 +452,10 @@ packages:
   flutter_secure_storage:
     dependency: "direct main"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: d8aeaee6ed2898e622f3ec83e2c75af41294f22e
-      url: "https://github.com/mogol/flutter_secure_storage"
-    source: git
-    version: "4.2.0"
+      name: flutter_secure_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.2.1"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -873,7 +871,7 @@ packages:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   pointycastle:
     dependency: "direct main"
     description:
