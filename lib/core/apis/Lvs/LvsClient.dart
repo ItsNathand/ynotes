@@ -27,7 +27,7 @@ class LvsClient extends SessionClient {
         token: false,
         baseUrl: false);
     print(rep.body);
-    if (rep.statusCode == 200) {
+    if (rep.statusCode == 200) /* && message == 'success"*/ {
       print('successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();
       this.base_url = credentials['url'].toString();

@@ -15,9 +15,7 @@ abstract class SessionClient {
   int req = 0;
   late Map<String, dynamic> credentials;
 
-  Future<List> init(
-      Map<String, dynamic>
-          credentials); //init the client, for example it's where we can define the token
+  Future<List> init(Map<String, dynamic> credentials);
 
   Future<List> start(Map<String, dynamic> credentials) async {
     this.credentials = credentials;

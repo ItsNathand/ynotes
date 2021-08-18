@@ -14,6 +14,7 @@ import 'package:ynotes/core/logic/cloud/models.dart';
 import 'package:ynotes/core/logic/agenda/models.dart';
 
 import 'package:http/src/request.dart';
+import 'package:ynotes/core/offline/data/disciplines/disciplines.dart';
 import 'package:ynotes/core/offline/data/homework/homework.dart';
 import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/globals.dart';
@@ -62,8 +63,18 @@ class APILVS extends API {
             .get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
 
         Map<String, dynamic> raw_infos = jsonDecode(req_infos.body);
-
+        raw_infos = {
+          "infoUser": {
+            "logo": "https://institut.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
+            "etabName": "Intitut",
+            "userPrenom": "Inom",
+            "userNom": "Iom",
+            "profil": "Elève"
+          },
+          "plateform": ""
+        };
         appSys.account = LvsAccountConverter.account(raw_infos);
+
         if (appSys.account != null &&
             appSys.account!.managableAccounts != null) {
           await storage.write(
@@ -128,16 +139,15 @@ class APILVS extends API {
   }
 
   @override
-  Future<List<DateTime>?> getDatesNextHomework() async {
-    // TODO: implement getDatesNextHomework
-    throw UnimplementedError();
-  }
-
-  @override
   Future<List<Discipline>?> getGrades({bool? forceReload}) async {
     // TODO: implement getGrades
 
     throw UnimplementedError();
+    return await fetch(
+        () async => LvsMethods(await this.getClient(), this.offlineController)
+            .nextHomework(),
+        () => DisciplinesOffline(offlineController).getDisciplines,
+        forceFetch: forceReload ?? false);
   }
 
   @override
@@ -172,7 +182,7 @@ class APILVS extends API {
     }
     return this.client;
   }
-  //the under is not bad but it's not working as it should be, we'll see that later
+  //the under is not bad but it's not working as it should, we'll see that later
   /* if (!this.client.started) {
       appSys.api!.loggedIn == false;
       await appSys.loginController.init();

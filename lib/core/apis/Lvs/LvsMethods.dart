@@ -142,4 +142,26 @@ class LvsMethods {
     print(hw);
     return hw.reversed.toList();
   }
+
+  searchHw(HwClient hwClient, List<DateTime> period) async {
+    var search = await hwClient.post(
+        Uri.parse('/rechercheActivite/rechercheJournaliere'),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: "params=%7B%22start%22%3A0%2C%22limit%22%3A100%2C%22contexteId%22%3A-1%2C%22typeId%22%3A-1%2C%22cdtId%22%3A-1%2C%22matiereId%22%3A-1%2C%22groupeId%22%3A-1%2C%22dateDebut%22%3A%22" +
+            period[0].day.toString() +
+            "%2F" +
+            period[0].month.toString() +
+            "%2F" +
+            period[0].year.toString() +
+            "%22%2C%22dateFin%22%3A%22" +
+            period[1].day.toString() +
+            "%2F" +
+            period[1].month.toString() +
+            "%2F" +
+            period[1].year.toString() +
+            "%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
+    return json.decode(search.body);
+  }
 }

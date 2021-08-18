@@ -24,6 +24,7 @@ class LvsAccountConverter {
     List<appTabs> tabs = [];
     tabs.add(appTabs.HOMEWORK);
     tabs.add(appTabs.SUMMARY);
+    tabs.add(appTabs.GRADES);
     return tabs;
   }
 
@@ -48,16 +49,3 @@ class LvsAccountConverter {
         schoolName: schoolName);
   }
 }
-
-//data exemple
-/* Map<String, dynamic> raw_infos = {
-          "infoUser": {
-            "logo":
-                "https://institut.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
-            "etabName": "Inserer Institut",
-            "userPrenom": "Inserer prenom",
-            "userNom": "Inserer nom",
-            "profil": "Elève"
-          },
-          "plateform": ""
-        }; */

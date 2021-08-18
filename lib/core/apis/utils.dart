@@ -37,7 +37,7 @@ apiManager(Offline _offline) {
     case 0:
       return APIEcoleDirecte(_offline);
     case 1:
-      return APILVS(_offline);
+      return APIPronote(_offline);
     case 2:
       return APILVS(_offline);
   }
