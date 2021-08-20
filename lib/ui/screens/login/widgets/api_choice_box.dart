@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:ynotes/core/apis/model.dart';
 import 'package:ynotes/core/apis/utils.dart';
 import 'package:ynotes/globals.dart';
 import 'package:ynotes/ui/components/column_generator.dart';
@@ -14,17 +15,31 @@ class ApiChoiceBox extends StatefulWidget {
   _ApiChoiceBoxState createState() => _ApiChoiceBoxState();
 }
 
-class _ApiChoiceBoxState extends State<ApiChoiceBox> with TickerProviderStateMixin {
+class _ApiChoiceBoxState extends State<ApiChoiceBox>
+    with TickerProviderStateMixin {
+  var pronoteMetas = apiMetas(API_TYPE.Pronote);
+  var edMetas = apiMetas(API_TYPE.Pronote);
   List<Map> apis() => [
         {
           "name": "EcoleDirecte",
           "mainColor": Color(0xff2874A6),
-          "icon": AssetImage('assets/images/icons/ecoledirecte/EcoleDirecteIcon.png'),
+          "icon": AssetImage(
+              'assets/images/icons/ecoledirecte/EcoleDirecteIcon.png'),
         },
         {
           "name": "Pronote",
           "mainColor": Color(0xff61b872),
           "icon": AssetImage('assets/images/icons/pronote/PronoteIcon.png'),
+        },
+        {
+          "name": edMetas.name,
+          "mainColor": edMetas.color,
+          "icon": edMetas.icon,
+        },
+        {
+          "name": pronoteMetas.name,
+          "mainColor": pronoteMetas.color,
+          "icon": pronoteMetas.icon,
         },
         /*{
           "name": "La Vie Scolaire",
@@ -39,7 +54,9 @@ class _ApiChoiceBoxState extends State<ApiChoiceBox> with TickerProviderStateMix
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 11, vertical: 1.1.h),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: theme.colors.neutral.shade300),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: theme.colors.neutral.shade300),
       child: Column(
         children: [
           ColumnBuilder(
@@ -79,7 +96,10 @@ class _ApiChoiceBoxState extends State<ApiChoiceBox> with TickerProviderStateMix
                                 Expanded(
                                     child: Text(apis()[index]["name"],
                                         textAlign: TextAlign.start,
-                                        style: TextStyle(fontFamily: "Asap", fontSize: 25, color: Colors.white))),
+                                        style: TextStyle(
+                                            fontFamily: "Asap",
+                                            fontSize: 25,
+                                            color: Colors.white))),
                               ],
                             ),
                           ),
@@ -97,7 +117,9 @@ class _ApiChoiceBoxState extends State<ApiChoiceBox> with TickerProviderStateMix
               Text(
                 LoginPageTextContent.login.unavailableService,
                 style: TextStyle(
-                    fontFamily: "Asap", color: theme.colors.neutral.shade400, decoration: TextDecoration.underline),
+                    fontFamily: "Asap",
+                    color: theme.colors.neutral.shade400,
+                    decoration: TextDecoration.underline),
               )
             ],
           )
