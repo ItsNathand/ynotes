@@ -8,11 +8,16 @@ class CustomSecureStorage {
   }
 
   Future<String?> read({required key}) async {
-    if (await secureStorage.containsKey(key: key)) {
+    //if (await secureStorage.containsKey(key: key)) {
+    try {
       return await secureStorage.read(key: key);
-    } else {
+    } catch (e) {
+      print('ooops');
       return null;
     }
+    // } else {
+    //   return null;
+    // }
   }
 
   Future<void> write({required key, required value}) async {
