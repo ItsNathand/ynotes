@@ -11,7 +11,7 @@ import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/core/utils/logging_utils.dart';
 import 'package:ynotes/globals.dart';
 
-import 'Lvs.dart';
+import 'lvs.dart';
 
 //Return the good API (will be extended to Pronote)
 List<String> colorList = [

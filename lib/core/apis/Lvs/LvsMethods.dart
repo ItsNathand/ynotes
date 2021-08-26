@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:ynotes/core/apis/Lvs/LvsClient.dart';
+import 'package:ynotes/core/apis/lvs/lvs_client.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/offline/data/homework/homework.dart';
 import 'package:ynotes/core/offline/offline.dart';
@@ -30,15 +30,18 @@ class LvsMethods {
 
   LvsMethods(this.client, this._offlineController);
 
-  Future<List<Discipline>> grades() async {
-    var periodData = ['44', '43', '42'];
+  Future<List<Discipline>?> grades() async {
     List<Discipline> disciplines = [];
-    periodData.forEach((element) {
+    //  var periodsData = ['44', '43', '42'];
+    var periodsData = LvsDisciplineConverter.getPeriods('me');
+
+    periodsData.forEach((periodId) {
       var url =
           'https://institut.la-vie-scolaire.fr/vsn.main/releveNote/changeSynthesePeriode?idSynthesePeriode=' +
-              element;
-      var content = {};
-      disciplines.add(LvsDisciplineConverter.disciplines(content));
+              periodId.toString();
+      print(url);
+      //var content = {};
+      //disciplines.add(LvsDisciplineConverter.disciplines(content));
     });
     return disciplines;
   }

@@ -11,9 +11,10 @@ class DisciplinesOffline {
   //Used to get disciplines, from db or locally
   Future<List<Discipline>?> getDisciplines() async {
     try {
-      return await parent.offlineBox?.get("disciplines").cast<Discipline>();
+      return await parent.offlineBox?.get("disciplines")?.cast<Discipline>();
     } catch (e) {
-      CustomLogger.log("DISCIPLINES", "An error occured while returning disciplines");
+      CustomLogger.log(
+          "DISCIPLINES", "An error occured while returning disciplines");
       CustomLogger.error(e);
       return null;
     }
@@ -26,7 +27,8 @@ class DisciplinesOffline {
       List<Discipline>? disciplines = await getDisciplines();
       List<Grade>? grades = getAllGrades(disciplines, overrideLimit: true);
       grades?.forEach((grade) {
-        if (!listPeriods.any((period) => period.name == grade.periodName || period.id == grade.periodCode)) {
+        if (!listPeriods.any((period) =>
+            period.name == grade.periodName || period.id == grade.periodCode)) {
           if (grade.periodName != null && grade.periodName != "") {
             listPeriods.add(Period(grade.periodName, grade.periodCode));
           } else {}
@@ -35,7 +37,8 @@ class DisciplinesOffline {
       try {
         listPeriods.sort((a, b) => a.name!.compareTo(b.name!));
       } catch (e) {
-        CustomLogger.log("DISCIPLINES", "An error occured while sorting disciplines");
+        CustomLogger.log(
+            "DISCIPLINES", "An error occured while sorting disciplines");
         CustomLogger.error(e);
       }
       return listPeriods;
@@ -51,7 +54,8 @@ class DisciplinesOffline {
       await parent.offlineBox?.delete("disciplines");
       await parent.offlineBox?.put("disciplines", newData);
     } catch (e) {
-      CustomLogger.log("DISCIPLINES", "An error occured while updating disciplines");
+      CustomLogger.log(
+          "DISCIPLINES", "An error occured while updating disciplines");
       CustomLogger.error(e);
     }
   }

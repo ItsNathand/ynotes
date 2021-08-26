@@ -19,7 +19,7 @@ import 'package:ynotes/core/offline/data/homework/homework.dart';
 import 'package:ynotes/core/offline/offline.dart';
 import 'package:ynotes/globals.dart';
 
-import 'Lvs/LvsClient.dart';
+import 'lvs/lvs_client.dart';
 import 'Lvs/converters/account.dart';
 import 'model.dart';
 
@@ -140,13 +140,10 @@ class APILVS extends API {
 
   @override
   Future<List<Discipline>?> getGrades({bool? forceReload}) async {
-    // TODO: implement getGrades
-
-    throw UnimplementedError();
     return await fetch(
-        () async => LvsMethods(await this.getClient(), this.offlineController)
-            .nextHomework(),
-        () => DisciplinesOffline(offlineController).getDisciplines,
+        () async =>
+            LvsMethods(await this.getClient(), this.offlineController).grades(),
+        () => DisciplinesOffline(offlineController).getDisciplines(),
         forceFetch: forceReload ?? false);
   }
 
