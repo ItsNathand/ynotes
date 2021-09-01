@@ -60,7 +60,8 @@ class AppNotification {
       Hive.registerAdapter(LessonAdapter());
       Hive.registerAdapter(PollInfoAdapter());
     } catch (e) {
-      CustomLogger.log("NOTIFICATIONS", "An error occured while registering adapter");
+      CustomLogger.log(
+          "NOTIFICATIONS", "An error occured while registering adapter");
       CustomLogger.error(e);
     }
     if (connectivityResult == ConnectivityResult.none || !api.loggedIn) {
@@ -73,7 +74,8 @@ class AppNotification {
       try {
         lessons = await (api.getNextLessons(date) as Future<List<Lesson>>);
       } catch (e) {
-        CustomLogger.log("NOTIFICATIONS", "An error occured collecting online lessons");
+        CustomLogger.log(
+            "NOTIFICATIONS", "An error occured collecting online lessons");
         CustomLogger.error(e);
 
         Box _offlineBox = await Hive.openBox("offlineData");
@@ -97,8 +99,8 @@ class AppNotification {
       final prefs = await (SharedPreferences.getInstance());
       bool? value = prefs.getBool("disableAtDayEnd");
       CustomLogger.log("NOTIFICATIONS", "disableAtDayEnd (prefs): $value");
-      CustomLogger.log(
-          "NOTIFICATIONS", "disableAtDayEnd (settings): ${appSys.settings.user.agendaPage.disableAtDayEnd}");
+      CustomLogger.log("NOTIFICATIONS",
+          "disableAtDayEnd (settings): ${appSys.settings.user.agendaPage.disableAtDayEnd}");
 
       if (appSys.settings.user.agendaPage.disableAtDayEnd) {
         await cancelOnGoingNotification();
@@ -115,7 +117,9 @@ class AppNotification {
               "Persistant notification next lesson callback triggered for the lesson ${lesson.disciplineCode} ${lesson.room}");
     } else {
       CustomLogger.saveLog(
-          object: "NOTIFICATIONS", text: "Persistant notification next lesson callback triggered : you are in break.");
+          object: "NOTIFICATIONS",
+          text:
+              "Persistant notification next lesson callback triggered : you are in break.");
     }
   }
 
@@ -130,24 +134,31 @@ class AppNotification {
     CustomLogger.log("NOTIFICATIONS", "Cancelled on going notification");
   }
 
-  static getRelatedAction(
-      ReceivedNotification receivedNotification, BuildContext context, Function navigatorCallback) async {
-    if (receivedNotification.channelKey == "newmail" && receivedNotification.toMap()["buttonKeyPressed"] == "REPLY") {
+  static getRelatedAction(ReceivedNotification receivedNotification,
+      BuildContext context, Function navigatorCallback) async {
+    if (receivedNotification.channelKey == "newmail" &&
+        receivedNotification.toMap()["buttonKeyPressed"] == "REPLY") {
       CustomDialogs.writeModalBottomSheet(context,
           defaultListRecipients: [
-            Recipient(receivedNotification.payload!["name"], receivedNotification.payload!["surname"],
-                receivedNotification.payload!["id"], receivedNotification.payload!["isTeacher"] == "true", null)
+            Recipient(
+                receivedNotification.payload!["name"],
+                receivedNotification.payload!["surname"],
+                receivedNotification.payload!["id"],
+                receivedNotification.payload!["isTeacher"] == "true",
+                null)
           ],
           defaultSubject: receivedNotification.payload!["subject"]);
       return;
     }
 
-    if (receivedNotification.channelKey == "newmail" && receivedNotification.toMap()["buttonKeyPressed"] != null) {
+    if (receivedNotification.channelKey == "newmail" &&
+        receivedNotification.toMap()["buttonKeyPressed"] != null) {
       navigatorCallback(4);
       return;
     }
 
-    if (receivedNotification.channelKey == "newgrade" && receivedNotification.toMap()["buttonKeyPressed"] != null) {
+    if (receivedNotification.channelKey == "newgrade" &&
+        receivedNotification.toMap()["buttonKeyPressed"] != null) {
       navigatorCallback(3);
       return;
     }
@@ -166,7 +177,8 @@ class AppNotification {
     }
   }
 
-  static initNotifications(BuildContext context, Function navigatorCallback) async {
+  static initNotifications(
+      BuildContext context, Function navigatorCallback) async {
     if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
       AwesomeNotifications().initialize(null, [
         NotificationChannel(
@@ -179,8 +191,11 @@ class AppNotification {
             ledColor: Colors.white)
       ]);
       try {
-        AwesomeNotifications().actionStream.listen((receivedNotification) async {
-          await getRelatedAction(receivedNotification, context, navigatorCallback);
+        AwesomeNotifications()
+            .actionStream
+            .listen((receivedNotification) async {
+          await getRelatedAction(
+              receivedNotification, context, navigatorCallback);
         });
       } catch (e) {}
     }
@@ -225,15 +240,22 @@ class AppNotification {
                 channelKey: 'alarm',
                 title: (event.name ?? "(Sans titre)") + " à $time",
                 body: event.description,
-                notificationLayout: parse(event.description).documentElement!.text.length < 49
-                    ? NotificationLayout.Default
-                    : NotificationLayout.BigText),
-            schedule: NotificationCalendar.fromDate(date: event.start!.subtract(delay).toUtc()));
-        CustomLogger.log("NOTIFICATIONS",
-            "Scheduled an alarm" + event.start!.subtract(delay).toString() + " " + event.id.hashCode.toString());
+                notificationLayout:
+                    parse(event.description).documentElement!.text.length < 49
+                        ? NotificationLayout.Default
+                        : NotificationLayout.BigText),
+            schedule: NotificationCalendar.fromDate(
+                date: event.start!.subtract(delay).toUtc()));
+        CustomLogger.log(
+            "NOTIFICATIONS",
+            "Scheduled an alarm" +
+                event.start!.subtract(delay).toString() +
+                " " +
+                event.id.hashCode.toString());
       }
     } catch (e) {
-      CustomLogger.log("NOTIFICATIONS", "An error occured while scheduling agenda reminders");
+      CustomLogger.log("NOTIFICATIONS",
+          "An error occured while scheduling agenda reminders");
       CustomLogger.error(e);
     }
   }
@@ -249,8 +271,8 @@ class AppNotification {
           defaultColor: ThemeUtils.spaceColor(),
           ledColor: Colors.white)
     ]);
-    List<AgendaReminder> reminders =
-        await (RemindersOffline(appSys.offline).getReminders(event.lesson!.id)) as List<AgendaReminder>;
+    List<AgendaReminder> reminders = await (RemindersOffline(appSys.offline)
+        .getReminders(event.lesson!.id)) as List<AgendaReminder>;
     await Future.forEach(reminders, (AgendaReminder rmd) async {
       //Unschedule existing
       if (rmd.alarm == AlarmType.none) {
@@ -273,8 +295,10 @@ class AppNotification {
         if (rmd.alarm == AlarmType.oneDay) {
           delay = Duration(days: 1);
         }
-        String text = "Rappel relié à l'évènement ${event.name} : \n <b>${rmd.name}</b> ${rmd.description}";
-        CustomLogger.log("NOTIFICATIONS", "Event will start in ${event.start!.subtract(delay)}");
+        String text =
+            "Rappel relié à l'évènement ${event.name} : \n <b>${rmd.name}</b> ${rmd.description}";
+        CustomLogger.log("NOTIFICATIONS",
+            "Event will start in ${event.start!.subtract(delay)}");
         CustomLogger.log("NOTIFICATIONS", text);
 
         await AwesomeNotifications().createNotification(
@@ -283,17 +307,21 @@ class AppNotification {
                 channelKey: 'reminder',
                 title: "Rappel d'évènement",
                 body: text,
-                notificationLayout:
-                    event.description!.length < 49 ? NotificationLayout.Default : NotificationLayout.BigText),
-            schedule: NotificationCalendar.fromDate(date: event.start!.subtract(delay).toUtc()));
+                notificationLayout: event.description!.length < 49
+                    ? NotificationLayout.Default
+                    : NotificationLayout.BigText),
+            schedule: NotificationCalendar.fromDate(
+                date: event.start!.subtract(delay).toUtc()));
       }
     });
   }
 
   ///Set an on going notification which is automatically refreshed (online or not) each hour
-  static Future<void> setOnGoingNotification({bool dontShowActual = false}) async {
+  static Future<void> setOnGoingNotification(
+      {bool dontShowActual = false}) async {
     //Logs for tests
-    CustomLogger.saveLog(object: "NOTIFICATIONS", text: "Setting on going notification.");
+    CustomLogger.saveLog(
+        object: "NOTIFICATIONS", text: "Setting on going notification.");
     var connectivityResult = await (Connectivity().checkConnectivity());
     List<Lesson>? lessons = [];
     API api = apiManager(appSys.offline);
@@ -326,7 +354,8 @@ class AppNotification {
       Hive.registerAdapter(HomeworkAdapter());
       Hive.registerAdapter(PollInfoAdapter());
     } catch (e) {
-      CustomLogger.log("NOTIFICATIONS", "An error occured while registering adapter");
+      CustomLogger.log(
+          "NOTIFICATIONS", "An error occured while registering adapter");
       CustomLogger.error(e);
     }
     if (connectivityResult == ConnectivityResult.none || !api.loggedIn) {
@@ -339,7 +368,8 @@ class AppNotification {
       try {
         lessons = await (api.getNextLessons(date) as Future<List<Lesson>>);
       } catch (e) {
-        CustomLogger.log("NOTIFICATIONS", "An error occured while collecting online lessons");
+        CustomLogger.log("NOTIFICATIONS",
+            "An error occured while collecting online lessons");
         CustomLogger.error(e);
 
         Box _offlineBox = await Hive.openBox("offlineData2");
@@ -353,7 +383,8 @@ class AppNotification {
       Lesson? getActualLesson = getCurrentLesson(lessons);
       if (!dontShowActual) {
         if (appSys.settings.user.agendaPage.enableDNDWhenOnGoingNotifEnabled) {
-          AndroidPlatformChannel.enableDND(); // Turn on DND - All notifications are suppressed.
+          AndroidPlatformChannel
+              .enableDND(); // Turn on DND - All notifications are suppressed.
         }
         await showOngoingNotification(getActualLesson);
       }
@@ -364,22 +395,34 @@ class AppNotification {
         if (lesson.start!.isAfter(date)) {
           try {
             if (await AndroidAlarmManager.oneShotAt(
-                lesson.start!.subtract(Duration(minutes: minutes ?? 15)), lesson.start.hashCode, callback,
-                allowWhileIdle: true, rescheduleOnReboot: true))
+                lesson.start!.subtract(Duration(minutes: minutes ?? 15)),
+                lesson.start.hashCode,
+                callback,
+                allowWhileIdle: true,
+                rescheduleOnReboot: true))
               CustomLogger.log(
-                  "NOTIFICATIONS", "Scheduled " + lesson.start.hashCode.toString() + " $minutes minutes before.");
+                  "NOTIFICATIONS",
+                  "Scheduled " +
+                      lesson.start.hashCode.toString() +
+                      " $minutes minutes before.");
           } catch (e) {
-            CustomLogger.log("NOTIFICATIONS", "An error occured while scheduling lesson notification");
+            CustomLogger.log("NOTIFICATIONS",
+                "An error occured while scheduling lesson notification");
             CustomLogger.error(e);
           }
         }
       });
       try {
         if (await AndroidAlarmManager.oneShotAt(
-            lessons.last.end!.subtract(Duration(minutes: minutes ?? 15)), lessons.last.end.hashCode, callback,
-            allowWhileIdle: true, rescheduleOnReboot: true)) CustomLogger.log("NOTIFICATIONS", "Scheduled last lesson");
+            lessons.last.end!.subtract(Duration(minutes: minutes ?? 15)),
+            lessons.last.end.hashCode,
+            callback,
+            allowWhileIdle: true,
+            rescheduleOnReboot: true))
+          CustomLogger.log("NOTIFICATIONS", "Scheduled last lesson");
       } catch (e) {
-        CustomLogger.log("NOTIFICATIONS", "An error occured while scheduling last lesson");
+        CustomLogger.log(
+            "NOTIFICATIONS", "An error occured while scheduling last lesson");
         CustomLogger.error(e);
       }
     }
@@ -405,7 +448,8 @@ class AppNotification {
       channelKey: 'debug',
       title: 'Notification de test',
       notificationLayout: NotificationLayout.BigText,
-      body: "Si vous voyez cette notification, alors yNotes est bien autorisé à vous envoyer des notifications.",
+      body:
+          "Si vous voyez cette notification, alors yNotes est bien autorisé à vous envoyer des notifications.",
     ));
   }
 
@@ -441,7 +485,8 @@ class AppNotification {
   }
 
   static showNewGradeNotification(Grade grade) async {
-    await AwesomeNotifications().initialize('resource://drawable/newgradeicon', [
+    await AwesomeNotifications()
+        .initialize('resource://drawable/newgradeicon', [
       NotificationChannel(
           channelKey: 'newgrade',
           defaultPrivacy: NotificationPrivacy.Public,
@@ -491,7 +536,9 @@ class AppNotification {
     AwesomeNotifications().createNotification(
       content: NotificationContent(
           id: int.parse(mail.id ?? ""),
-          notificationLayout: parse(content).documentElement!.text.length < 49 ? null : NotificationLayout.BigText,
+          notificationLayout: parse(content).documentElement!.text.length < 49
+              ? null
+              : NotificationLayout.BigText,
           channelKey: 'newmail',
           title: 'Nouveau mail de ${mail.from?["name"]}',
           summary: 'Nouveau mail de ${mail.from?["name"]}',
@@ -505,7 +552,10 @@ class AppNotification {
           }),
       actionButtons: [
         NotificationActionButton(
-            key: "REPLY", label: "Répondre", autoCancel: true, buttonType: ActionButtonType.Default),
+            key: "REPLY",
+            label: "Répondre",
+            autoCancel: true,
+            buttonType: ActionButtonType.Default),
       ],
     );
   }
@@ -528,7 +578,8 @@ class AppNotification {
 
       String defaultSentence = "";
       if (lesson != null) {
-        defaultSentence = 'Vous êtes en <b>${lesson.discipline}</b> dans la salle <b>${lesson.room}</b>';
+        defaultSentence =
+            'Vous êtes en <b>${lesson.discipline}</b> dans la salle <b>${lesson.room}</b>';
         if (lesson.room == null || lesson.room == "") {
           defaultSentence = "Vous êtes en ${lesson.discipline}";
         }
@@ -543,12 +594,15 @@ class AppNotification {
         }
       } catch (e) {}
       try {
-        CustomLogger.log(
-            "NOTIFICATIONS", "Ongoing notification text length is ${parse(sentence).documentElement!.text.length}");
+        CustomLogger.log("NOTIFICATIONS",
+            "Ongoing notification text length is ${parse(sentence).documentElement!.text.length}");
         await AwesomeNotifications().createNotification(
           content: NotificationContent(
             id: id,
-            notificationLayout: parse(sentence).documentElement!.text.length < 49 ? null : NotificationLayout.BigText,
+            notificationLayout:
+                parse(sentence).documentElement!.text.length < 49
+                    ? null
+                    : NotificationLayout.BigText,
             channelKey: 'persisnotif',
             title: 'Rappel de cours constant',
             body: sentence,
@@ -557,13 +611,20 @@ class AppNotification {
           ),
           actionButtons: [
             NotificationActionButton(
-                key: "REFRESH", label: "Actualiser", autoCancel: false, buttonType: ActionButtonType.KeepOnTop),
+                key: "REFRESH",
+                label: "Actualiser",
+                autoCancel: false,
+                buttonType: ActionButtonType.KeepOnTop),
             NotificationActionButton(
-                key: "KILL", label: "Désactiver", autoCancel: true, buttonType: ActionButtonType.Default),
+                key: "KILL",
+                label: "Désactiver",
+                autoCancel: true,
+                buttonType: ActionButtonType.Default),
           ],
         );
       } catch (e) {
-        CustomLogger.log("NOTIFICATIONS", "An error occured while setting ongoing notification");
+        CustomLogger.log("NOTIFICATIONS",
+            "An error occured while setting ongoing notification");
         CustomLogger.error(e);
       }
     }

@@ -1,87 +1,72 @@
-import 'package:intl/intl.dart';
-import 'package:ynotes/core/apis/pronote/pronote_api.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
-import 'package:ynotes/core/utils/null_safe_map_getter.dart';
-import 'package:html/dom.dart';
-import 'package:html/dom_parsing.dart';
 import 'package:html/parser.dart' show parse;
 
 class LvsDisciplineConverter {
   static disciplines(d) {}
 
-  static List<Grade> grades(PronoteClient client, List gradesData) {
-    List<Grade> grades = [];
-    gradesData.forEach((gradeData) {
-      String value =
-          client.utils.gradeTranslate(mapGet(gradeData, ["note", "V"]) ?? "");
-      String testName = mapGet(gradeData, ["commentaire"]) ?? "";
-      String periodCode = mapGet(gradeData, ["periode", "V", "N"]) ?? "";
-      String periodName = mapGet(gradeData, ["periode", "V", "L"]) ?? "";
-      String disciplineCode =
-          (mapGet(gradeData, ["service", "V", "L"]) ?? "").hashCode.toString();
-      String? subdisciplineCode;
-      String disciplineName = mapGet(gradeData, ["service", "V", "L"]);
-      bool letters = (mapGet(gradeData, ["note", "V"]) ?? "").contains("|");
-      String weight = mapGet(gradeData, ["coefficient"]).toString();
-      String scale = mapGet(gradeData, ["bareme", "V"]);
-      String min = client.utils
-          .gradeTranslate(mapGet(gradeData, ["noteMin", "V"]) ?? "");
-      String max = client.utils
-          .gradeTranslate(mapGet(gradeData, ["noteMax", "V"]) ?? "");
-      String classAverage = client.utils
-          .gradeTranslate(mapGet(gradeData, ["moyenne", "V"]) ?? "");
-      DateTime? date = mapGet(gradeData, ["date", "V"]) != null
-          ? DateFormat("dd/MM/yyyy").parse(mapGet(gradeData, ["date", "V"]))
-          : null;
-      bool notSignificant =
-          client.utils.gradeTranslate(mapGet(gradeData, ["note", "V"]) ?? "") ==
-              "NonNote";
-      String testType = "Interrogation";
-      DateTime? entryDate = mapGet(gradeData, ["date", "V"]) != null
-          ? DateFormat("dd/MM/yyyy").parse(mapGet(gradeData, ["date", "V"]))
-          : null;
-      bool countAsZero = client.utils.shouldCountAsZero(
-          client.utils.gradeTranslate(mapGet(gradeData, ["note", "V"]) ?? ""));
-
-      grades.add(Grade(
-          value: value,
-          testName: testName,
-          periodCode: periodCode,
-          periodName: periodName,
-          disciplineCode: disciplineCode,
-          subdisciplineCode: subdisciplineCode,
-          disciplineName: disciplineName,
-          letters: letters,
-          weight: weight,
-          scale: scale,
-          min: min,
-          max: max,
-          classAverage: classAverage,
-          date: date,
-          notSignificant: notSignificant,
-          testType: testType,
-          entryDate: entryDate,
-          countAsZero: countAsZero));
+  static List<Grade> grades(gradesData) {
+    var url = getPeriod(content);
+    var periode = url.substring(url.length - 2);
+    content
+        .querySelector("ul.periodes")!
+        .querySelectorAll('li.periode')
+        .forEach((period) {
+      var cont = period.querySelector('a')!.attributes['href'].toString();
     });
-    return grades;
+    String value = '';
+    String testName = '';
+    String periodCode = '';
+    String periodName = '';
+    String disciplineCode = '';
+    String? subdisciplineCode;
+    String disciplineName = '';
+    bool letters = true;
+    String weight = '';
+    String scale = '';
+    String min = '';
+    String max = '';
+    String classAverage = '';
+    DateTime? date = null;
+    bool notSignificant = false;
+    String testType = "Interrogation";
+    DateTime? entryDate = null;
+    bool countAsZero = true;
+    Grade(
+        value: value,
+        testName: testName,
+        periodCode: periodCode,
+        periodName: periodName,
+        disciplineCode: disciplineCode,
+        subdisciplineCode: subdisciplineCode,
+        disciplineName: disciplineName,
+        letters: letters,
+        weight: weight,
+        scale: scale,
+        min: min,
+        max: max,
+        classAverage: classAverage,
+        date: date,
+        notSignificant: notSignificant,
+        testType: testType,
+        entryDate: entryDate,
+        countAsZero: countAsZero);
+    return [];
   }
 
   static getPeriods(html) {
-    print('hey');
     List<String?> urls = [];
     content
         .querySelector("ul.periodes")!
         .querySelectorAll('li.periode')
         .forEach((period) {
       var url = period.querySelector('a')!.attributes['href'].toString();
-      print(url);
+      urls.add(url);
     });
-    urls.add('mee');
     return urls;
   }
 
   static getPeriod(html) {
-    content
+    return content
         .querySelector("ul.periodes")!
         .querySelector(".periode.active")!
         .querySelector('a')!

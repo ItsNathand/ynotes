@@ -36,13 +36,13 @@ class LvsMethods {
     var periodsData = LvsDisciplineConverter.getPeriods('me');
 
     periodsData.forEach((periodId) {
-      var url =
-          'https://institut.la-vie-scolaire.fr/vsn.main/releveNote/changeSynthesePeriode?idSynthesePeriode=' +
-              periodId.toString();
+      var url = periodId.toString();
       print(url);
       //var content = {};
       //disciplines.add(LvsDisciplineConverter.disciplines(content));
     });
+    print(LvsDisciplineConverter.getPeriod('me'));
+    print(LvsDisciplineConverter.grades('me'));
     return disciplines;
   }
 
