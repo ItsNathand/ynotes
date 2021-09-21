@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:ynotes/core/apis/Lvs/LvsMethods.dart';
+import 'package:ynotes/core/apis/Lvs/lvs_methods.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/logic/shared/models.dart';
 
@@ -116,7 +116,7 @@ class APILVS extends API {
       {bool? forceReload}) async {
     return await fetch(
         () async => LvsMethods(await this.getClient(), this.offlineController)
-            .homeworkFor(DateTime(2005)),
+            .homeworkFor(dateHomework!),
         () async =>
             HomeworkOffline(offlineController).getHomeworkFor(dateHomework!),
         forceFetch: forceReload ?? false);
@@ -124,11 +124,13 @@ class APILVS extends API {
 
   @override
   Future<List<Homework>?> getNextHomework({bool? forceReload}) async {
-    return await fetch(
+    var d = await fetch(
         () async => LvsMethods(await this.getClient(), this.offlineController)
             .nextHomework(),
         () => HomeworkOffline(offlineController).getAllHomework(),
         forceFetch: forceReload ?? false);
+    print(d);
+    return d;
   }
 
   @override

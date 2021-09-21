@@ -17,7 +17,7 @@ class LvsAccountConverter {
         id: id,
         managableAccounts: [_account],
         isParentMainAccount: isParentMainAccount,
-        apiType: API_TYPE.Pronote);
+        apiType: API_TYPE.Lvs);
   }
 
   static List<appTabs> availableTabs() {

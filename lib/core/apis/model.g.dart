@@ -60,6 +60,7 @@ K _$enumDecode<K, V>(
 const _$API_TYPEEnumMap = {
   API_TYPE.EcoleDirecte: 'EcoleDirecte',
   API_TYPE.Pronote: 'Pronote',
+  API_TYPE.Lvs: 'Lvs',
 };
 
 SchoolAccount _$SchoolAccountFromJson(Map<String, dynamic> json) {

@@ -10,11 +10,9 @@ class LvsHomeworkConverter {
     List<Homework> hwList = [];
     hws.forEach((sHw) {
       String discipline = sHw['subject'];
-      DateTime date = DateFormat('yyyy-MM-dd').parse('2021-06-07');
+      DateTime date = DateFormat('yyyy-MM-dd').parse(sHw['start_date']);
       bool done = false;
       String teacherName = sHw['text'];
-      done = sHw['activitesMaisonTerminees'];
-
       sHw['activitesData'].forEach((element) {
         String id = element['id'].toString();
         String content = element['description'];

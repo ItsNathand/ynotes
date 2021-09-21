@@ -9,7 +9,7 @@ Implementant `SessionClient.dart`, les clients permettent de gérer une session 
 ## Converters
 Permettent de convertir les données brutes renvoyées par le service scolaire sous forme d'instance d'objets définis par l'application.
 - ### Account Converter
-exemple de données attendues pour `account()`:
+Exemple de données attendues pour `account()`:
 ```json{
           "infoUser": {
             "logo":
@@ -22,4 +22,5 @@ exemple de données attendues pour `account()`:
           "plateform": ""
         }
 ```
-!!
+- ### Disciplines Converter
+Un contenu html est attendu.
