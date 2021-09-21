@@ -147,6 +147,7 @@ testIfPronoteCas(String url) async {
     url += "?fd=1";
   }
   var response = await http.get(Uri.parse(url));
+
   CustomLogger.logWrapped("API UTILS", "Response body", response.body);
   if (response.body.contains('id="id_body"')) {
     return false;
