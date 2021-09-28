@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'SessionClient.dart';
+import 'package:ynotes/core/utils/logging_utils.dart';
+import 'session_client.dart';
 
 class LvsClient extends SessionClient {
   HwClient hw_client = new HwClient();
@@ -26,9 +27,9 @@ class LvsClient extends SessionClient {
         headers: {"Content-Type": "application/json"},
         token: false,
         baseUrl: false);
-    print(rep.body);
+    CustomLogger.log('LVS', rep.body);
     if (rep.statusCode == 200) /* && message == 'success"*/ {
-      print('successful authentication for Lvs');
+      CustomLogger.log('LVS', 'successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();
       this.base_url = credentials['url'].toString();
       this.hw_client.started = false;
@@ -134,10 +135,9 @@ class HwClient extends SessionClient {
             },
             body:
                 "params=%7B%22start%22%3A0%2C%22limit%22%3A100%2C%22contexteId%22%3A-1%2C%22typeId%22%3A-1%2C%22cdtId%22%3A-1%2C%22matiereId%22%3A-1%2C%22groupeId%22%3A-1%2C%22dateDebut%22%3A%2208%2F06%2F2021%22%2C%22dateFin%22%3A%2208%2F06%2F2021%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
-        print(resp.statusCode);
-        print(resp.body); */
+      */
 
-        print('successful authentication for Lvs Hw');
+        CustomLogger.log('LVS_HW', 'successful authentication for Lvs Hw');
         return [1, "success"];
       }
       return [0, "invalid token for Lvs Hw"];

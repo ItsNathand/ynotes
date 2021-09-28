@@ -173,5 +173,3 @@ class SchoolAccount {
       _$SchoolAccountFromJson(json);
   Map<String, dynamic> toJson() => _$SchoolAccountToJson(this);
 }
-//mme
-//me

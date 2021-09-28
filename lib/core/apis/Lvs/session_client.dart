@@ -19,10 +19,11 @@ abstract class SessionClient {
 
   Future<List> start(Map<String, dynamic> credentials) async {
     this.credentials = credentials;
+    var res = await this.init(credentials);
     this.started = true;
     var now = new DateTime.now();
     this.last_refresh = now.millisecondsSinceEpoch;
-    return await this.init(credentials);
+    return res;
   }
 
   Future<http.Response> get(Uri url,
@@ -60,7 +61,7 @@ abstract class SessionClient {
     return client.post(url, body: body, headers: headers);
   }
 
-  Future<String> getToken({refresh = false}) async {
+  Future<String> getToken([refresh = false]) async {
     if (!this.started) {
       return '';
     }
@@ -72,8 +73,7 @@ abstract class SessionClient {
         now.millisecondsSinceEpoch - this.last_refresh >
             this.token_expiration) {
       var previous_token = this.token;
-      this.last_refresh = now.millisecondsSinceEpoch;
-      await this.init(this.credentials);
+      await this.start(this.credentials);
       if (this.token == previous_token) {
         return '';
       }

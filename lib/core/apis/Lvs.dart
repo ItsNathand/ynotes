@@ -17,6 +17,7 @@ import 'package:http/src/request.dart';
 import 'package:ynotes/core/offline/data/disciplines/disciplines.dart';
 import 'package:ynotes/core/offline/data/homework/homework.dart';
 import 'package:ynotes/core/offline/offline.dart';
+import 'package:ynotes/core/utils/logging_utils.dart';
 import 'package:ynotes/globals.dart';
 
 import 'lvs/lvs_client.dart';
@@ -35,7 +36,7 @@ class APILVS extends API {
 
   @override
   Future<List> login(username, password, {Map? additionnalSettings}) async {
-    print('[LVS] login called');
+    CustomLogger.log('LVS', 'Login called');
     if (username == null) {
       username = "";
     }
@@ -88,7 +89,7 @@ class APILVS extends API {
         this.loggedIn = true;
         return ([1, "Bienvenue ${appSys.account?.name ?? "Invité"}!"]);
       } catch (e) {
-        print(
+        CustomLogger.error(
             'An error occured while registering the account: ' + e.toString());
       }
       return [
@@ -124,13 +125,11 @@ class APILVS extends API {
 
   @override
   Future<List<Homework>?> getNextHomework({bool? forceReload}) async {
-    var d = await fetch(
+    return await fetch(
         () async => LvsMethods(await this.getClient(), this.offlineController)
             .nextHomework(),
         () => HomeworkOffline(offlineController).getAllHomework(),
         forceFetch: forceReload ?? false);
-    print(d);
-    return d;
   }
 
   @override
@@ -181,11 +180,4 @@ class APILVS extends API {
     }
     return this.client;
   }
-  //the under is not bad but it's not working as it should, we'll see that later
-  /* if (!this.client.started) {
-      appSys.api!.loggedIn == false;
-      await appSys.loginController.init();
-    }
-    return this.client; 
-  } */
 }

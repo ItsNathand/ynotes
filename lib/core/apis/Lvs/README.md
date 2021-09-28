@@ -1,6 +1,6 @@
 # Introduction ✨
 Api apportant l'intégration du service scolaire "La Vie Scolaire" à l'application Ynotes. Se référer aux conditions d'utilisation de celle-ci.
-Seuls les devoirs et les informations de l'élève sont disponibles pour l'instant.
+Seuls les devoirs, notes et informations de l'élève sont disponibles pour l'instant.
 
 # Fonctionnement 🧙🏻
 ## Clients
@@ -22,5 +22,8 @@ Exemple de données attendues pour `account()`:
           "plateform": ""
         }
 ```
+- ### Homework Converter
+Un contenu json est attendu.
+
 - ### Disciplines Converter
 Un contenu html est attendu.
