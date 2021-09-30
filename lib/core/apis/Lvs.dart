@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:ynotes/core/apis/Lvs/lvs_methods.dart';
+import 'package:ynotes/core/apis/lvs/lvs_methods.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/logic/shared/models.dart';
 
@@ -64,7 +64,7 @@ class APILVS extends API {
             .get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
 
         Map<String, dynamic> raw_infos = jsonDecode(req_infos.body);
-        raw_infos = {
+        /*  raw_infos = {
           "infoUser": {
             "logo": "https://institut.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
             "etabName": "Intitut",
@@ -73,7 +73,7 @@ class APILVS extends API {
             "profil": "Elève"
           },
           "plateform": ""
-        };
+        }; */
         appSys.account = LvsAccountConverter.account(raw_infos);
 
         if (appSys.account != null &&

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:ynotes/core/apis/Lvs/converters_exporter.dart';
+import 'package:ynotes/core/apis/lvs/converters_exporter.dart';
 import 'package:ynotes/core/apis/lvs/lvs_client.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/offline/data/disciplines/disciplines.dart';
@@ -11,8 +11,9 @@ import 'package:ynotes/core/utils/logging_utils.dart';
 import '../../../globals.dart';
 import '../../../useful_methods.dart';
 
-//log instead of printing
-//-work on disciplines
+//-work on disciplines:
+//  -get disciplines
+//  -add grades
 
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
     {bool forceFetch = false}) async {
@@ -46,7 +47,8 @@ class LvsMethods {
     await periodsData.asMap().forEach((index, periodUrl) async {
       var resp = await this.client.get(Uri.parse(periodUrl.toString()));
       var dis = LvsDisciplineConverter.disciplines(resp.body);
-      disciplines.add(dis);
+      print(dis);
+      disciplines = disciplines + dis;
       /*  dis.forEach((Discipline element) {
         element.periodName = periods[index];
         element.periodCode = periods[index];

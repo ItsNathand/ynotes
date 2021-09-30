@@ -40,6 +40,11 @@ class LvsAccountConverter {
     String? studentClass = "";
     String? studentID = mapGet(schoolAccountsData, ["id"]).toString();
     List<appTabs> tabs = availableTabs();
+    print('hoo');
+    if (schoolName.length > 27) {
+      print('hey');
+      schoolName = schoolName.substring(0, 25) + '...';
+    }
     return SchoolAccount(
         name: name,
         surname: surname,

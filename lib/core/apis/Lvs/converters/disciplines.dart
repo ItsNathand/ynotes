@@ -79,6 +79,8 @@ class LvsDisciplineConverter {
           subdisciplineCodes: [],
           teachers: ['teachers'])
     ];
+    List<Discipline> e = [];
+    return e;
   }
 
   static List<Grade> grades(gradesData, periodN) {
