@@ -2,6 +2,52 @@ import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:html/parser.dart' show parse;
 
 class LvsDisciplineConverter {
+  static get_disciplines() {
+    return Discipline(
+        maxClassGeneralAverage: '20',
+        minClassGeneralAverage: '20',
+        classGeneralAverage: '20',
+        generalAverage: '20',
+        classAverage: '20',
+        minClassAverage: '20',
+        maxClassAverage: '20',
+        disciplineCode: '20',
+        average: '20',
+        teachers: ['me'],
+        disciplineName: 'disciplineName',
+        periodName: 'periodeName',
+        disciplineRank: 1,
+        classNumber: 'classNumber',
+        generalRank: '2',
+        weight: '3',
+        periodCode: '10',
+        gradesList: [get_grades()],
+        subdisciplineCodes: [],
+        subdisciplineNames: []);
+  }
+
+  static get_grades() {
+    return Grade(
+        value: '20',
+        testName: 'testName',
+        periodCode: '10',
+        periodName: 'periodeName',
+        disciplineCode: '20',
+        subdisciplineCode: '0',
+        disciplineName: 'disciplineName',
+        letters: true,
+        weight: '',
+        scale: '15',
+        min: '15',
+        max: '20',
+        classAverage: '20',
+        date: new DateTime(2021),
+        notSignificant: false,
+        testType: 'me',
+        entryDate: new DateTime(2021),
+        countAsZero: false);
+  }
+
   static disciplines(d, [periodN = '']) {
     //select period html
     //  print(periodN);
@@ -54,7 +100,7 @@ class LvsDisciplineConverter {
           maxClassAverage: ' maxClassAverage',
           disciplineCode: 'disciplineCode',
           average: 'average',
-          teachers: [],
+          teachers: ['mm'],
           disciplineName: 'disciplineName',
           periodName: ' periodeName',
           disciplineRank: 5,
@@ -65,22 +111,32 @@ class LvsDisciplineConverter {
           subdisciplineCodes: [],
           gradesList: [g, g],
           subdisciplineNames: []),
-      Discipline(
-          periodCode: '1',
-          disciplineName: 'Fr',
-          disciplineCode: ' disciplineName.hashCode.toString()',
-          gradesList: [g, g],
-          minClassAverage: 'minClassAverage',
-          maxClassAverage: 'maxClassAverage',
-          average: 'average',
-          classAverage: '',
-          generalAverage: 'generalAverage',
-          classGeneralAverage: 'classGeneralAverage',
-          subdisciplineCodes: [],
-          teachers: ['teachers'])
     ];
     List<Discipline> e = [];
-    return e;
+    disciplines = [
+      Discipline(
+          maxClassGeneralAverage: '20',
+          minClassGeneralAverage: '20',
+          classGeneralAverage: '20',
+          generalAverage: '20',
+          classAverage: '20',
+          minClassAverage: '20',
+          maxClassAverage: '20',
+          disciplineCode: '20',
+          average: '20',
+          teachers: ['me'],
+          disciplineName: ' disciplineName',
+          periodName: 'perirodeName',
+          color: null,
+          disciplineRank: 1,
+          classNumber: 'classNumber',
+          generalRank: '2',
+          weight: '3',
+          periodCode: '10',
+          subdisciplineCodes: [],
+          subdisciplineNames: [])
+    ];
+    return disciplines;
   }
 
   static List<Grade> grades(gradesData, periodN) {

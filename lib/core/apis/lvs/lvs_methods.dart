@@ -23,7 +23,9 @@ Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
   } else if (forceFetch) {
     try {
       await onlineFetch();
-      return await offlineFetch();
+      var a = await offlineFetch();
+      print('dis' + a.toString());
+      return a;
     } catch (e) {
       CustomLogger.error("Error while fetching: " + e.toString());
       return await offlineFetch();
@@ -53,29 +55,33 @@ class LvsMethods {
         element.periodName = periods[index];
         element.periodCode = periods[index];
       }); */
-      //disciplines.add(LvsDisciplineConverter.disciplines(content));
+      disciplines.add(dis[0]);
     });
-    await DisciplinesOffline(_offlineController).updateDisciplines(disciplines);
-    appSys.settings.system.lastGradeCount =
+    print(disciplines);
+    await DisciplinesOffline(_offlineController)
+        .updateDisciplines([LvsDisciplineConverter.get_disciplines()]);
+    /*   appSys.settings.system.lastGradeCount =
         (getAllGrades(disciplines, overrideLimit: true) ?? []).length;
-    appSys.saveSettings();
-    return disciplines;
+    appSys.saveSettings(); */
   }
 
   Future<List<Homework>?> homeworkFor(DateTime date) async {
     HwClient hwClient = await this.client.getHwClient();
-    return await searchHw(hwClient, date, date);
+    var h = await searchHw(hwClient, date, date.add(Duration(days: 2)));
   }
 
   nextHomework() async {
     var date = new DateTime.now();
-    var end_date = date.add(Duration(days: 14, hours: 0));
+    var end_date = date.add(Duration(days: 16));
     HwClient hwClient = await this.client.getHwClient();
-    return await searchHw(hwClient, date, end_date);
+    await searchHw(hwClient, date, end_date);
   }
 
   searchHw(HwClient hwClient, DateTime date, DateTime end_date) async {
     CustomLogger.log('LVS_HW', 'searching hw');
+
+    DateTime search_date = end_date.subtract(const Duration(days: 2));
+
     var search = await hwClient.post(
         Uri.parse('/rechercheActivite/rechercheJournaliere'),
         headers: {
@@ -88,11 +94,11 @@ class LvsMethods {
             "%2F" +
             date.year.toString() +
             "%22%2C%22dateFin%22%3A%22" +
-            end_date.day.toString() +
+            search_date.day.toString() +
             "%2F" +
-            end_date.month.toString() +
+            search_date.month.toString() +
             "%2F" +
-            end_date.year.toString() +
+            search_date.year.toString() +
             "%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
 
     List searchIds = [];
@@ -113,7 +119,6 @@ class LvsMethods {
             end_date.month.toString() +
             '-' +
             end_date.day.toString());
-
     List<Homework>? hw = LvsHomeworkConverter.homework(req.body);
     (hw).removeWhere((element) => !searchIds.contains(element.id));
 
@@ -125,11 +130,9 @@ class LvsMethods {
         ids.add(element.id);
       }
     });
-
     if (hw.length > 0) {
       await HomeworkOffline(_offlineController).updateHomework(hw);
       CustomLogger.log('LVS_HW', "Hw updated");
     }
-    return hw;
   }
 }
