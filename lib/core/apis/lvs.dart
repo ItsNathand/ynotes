@@ -4,13 +4,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:ynotes/core/apis/lvs/lvs_methods.dart';
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:ynotes/core/logic/shared/models.dart';
-
-import 'package:ynotes/core/logic/homework/models.dart';
-
-import 'package:ynotes/core/logic/grades/models.dart';
-
-import 'package:ynotes/core/logic/cloud/models.dart';
-
 import 'package:ynotes/core/logic/agenda/models.dart';
 
 import 'package:http/src/request.dart';
@@ -134,9 +127,14 @@ class APILVS extends API {
 
   @override
   Future<Request> downloadRequest(Document document) async {
+    var cl = await this.getClient();
+    var hw_client = await cl.getHwClient();
+    var url = hw_client.base_url +
+        "/fichier/afficherFichier" +
+        hw_client.token +
+        '?fichierId=1292425';
     //TODO: implement downloadRequest
-    //I will take care of this function later on.
-    return new Request('GET', Uri.parse(''));
+    return new Request('GET', Uri.parse(url));
   }
 
   @override
@@ -170,7 +168,7 @@ class APILVS extends API {
 
   @override
   Future uploadFile(String context, String id, String filepath) async {
-    // TODO: implement uploadFile
+    // Not available
     throw UnimplementedError();
   }
 

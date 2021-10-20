@@ -2,34 +2,61 @@ import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:html/parser.dart' show parse;
 
 class LvsDisciplineConverter {
-  static get_disciplines() {
-    return Discipline(
-        maxClassGeneralAverage: '20',
-        minClassGeneralAverage: '20',
-        classGeneralAverage: '20',
-        generalAverage: '20',
-        classAverage: '20',
-        minClassAverage: '20',
-        maxClassAverage: '20',
-        disciplineCode: '20',
-        average: '20',
-        teachers: ['me'],
-        disciplineName: 'disciplineName',
-        periodName: 'periodeName',
-        disciplineRank: 1,
-        classNumber: 'classNumber',
-        generalRank: '2',
-        weight: '3',
-        periodCode: '10',
-        gradesList: [get_grades()],
-        subdisciplineCodes: [],
-        subdisciplineNames: []);
+  static get_disciplines(html) {
+    parse(html).querySelectorAll("tr.odd, tr.even").forEach((element) {
+      print(element.querySelector("td.tdReleveLeft")!.innerHtml);
+      print(element.querySelector("td.tdReleveRight")!.innerHtml);
+    });
+    return [
+      Discipline(
+          maxClassGeneralAverage: '200',
+          minClassGeneralAverage: '200',
+          classGeneralAverage: '20',
+          generalAverage: '20',
+          classAverage: '20',
+          minClassAverage: '20',
+          maxClassAverage: '20',
+          disciplineCode: '20',
+          average: '20',
+          teachers: ['me'],
+          disciplineName: 'Neew',
+          periodName: 'periodeName',
+          disciplineRank: 1,
+          classNumber: 'classNumber',
+          generalRank: '2',
+          weight: '3',
+          periodCode: '10',
+          gradesList: [get_grades()],
+          subdisciplineCodes: [],
+          subdisciplineNames: []),
+      Discipline(
+          maxClassGeneralAverage: '200',
+          minClassGeneralAverage: '200',
+          classGeneralAverage: '20',
+          generalAverage: '20',
+          classAverage: '20',
+          minClassAverage: '20',
+          maxClassAverage: '20',
+          disciplineCode: '20',
+          average: '20',
+          teachers: ['me'],
+          disciplineName: 'New',
+          periodName: 'periodeName',
+          disciplineRank: 1,
+          classNumber: 'classNumber',
+          generalRank: '2',
+          weight: '3',
+          periodCode: '10',
+          gradesList: [get_grades()],
+          subdisciplineCodes: [],
+          subdisciplineNames: [])
+    ];
   }
 
   static get_grades() {
     return Grade(
         value: '20',
-        testName: 'testName',
+        testName: 'New',
         periodCode: '10',
         periodName: 'periodeName',
         disciplineCode: '20',

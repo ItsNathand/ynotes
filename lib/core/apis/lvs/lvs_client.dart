@@ -28,7 +28,7 @@ class LvsClient extends SessionClient {
         token: false,
         baseUrl: false);
     CustomLogger.log('LVS', rep.body);
-    if (rep.statusCode == 200) /* && message == 'success"*/ {
+    if (rep.statusCode == 200) {
       CustomLogger.log('LVS', 'successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();
       this.base_url = credentials['url'].toString();
@@ -101,15 +101,16 @@ class LvsClient extends SessionClient {
 class HwClient extends SessionClient {
   HwClient() : super();
   Future<List> init(Map<String, dynamic> credentials) async {
-    var entry_url =
+    var entry =
         await Function.apply(credentials['method'], [credentials['args']]);
+    var entry_url = jsonDecode(entry.body)['location'];
+    CustomLogger.saveLog(object: 'Entry Url for Hw', text: entry_url);
+    if (entry.statusCode == 200) {
+      this.base_url = entry_url.substring(0, entry_url.indexOf('.fr') + 3) +
+          '/eliot-textes';
 
-    if (entry_url.statusCode == 200) {
-      this.base_url = 'https://ent05.la-vie-scolaire.fr/eliot-textes';
-
-      var request =
-          new Request('GET', Uri.parse(jsonDecode(entry_url.body)['location']))
-            ..followRedirects = false;
+      var request = new Request('GET', Uri.parse(entry_url))
+        ..followRedirects = false;
       var response = await client.send(request);
 
       var i = 1;

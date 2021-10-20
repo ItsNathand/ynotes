@@ -14,7 +14,8 @@ import '../../../useful_methods.dart';
 //-work on disciplines:
 //  -get disciplines
 //  -add grades
-
+//  -files
+//-save logs
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
     {bool forceFetch = false}) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
@@ -46,23 +47,22 @@ class LvsMethods {
         await this.client.get(Uri.parse('/vsn.main/releveNote/releveNotes'));
     List periods = ['1er Trimestre', '2nd Trimestre', '3ème Trimestre'];
     var periodsData = LvsDisciplineConverter.getPeriods(req.body);
-    await periodsData.asMap().forEach((index, periodUrl) async {
-      var resp = await this.client.get(Uri.parse(periodUrl.toString()));
-      var dis = LvsDisciplineConverter.disciplines(resp.body);
-      print(dis);
-      disciplines = disciplines + dis;
-      /*  dis.forEach((Discipline element) {
+
+    for (var index = 0; index < periodsData.length; index++) {
+      var resp =
+          await this.client.get(Uri.parse(periodsData[index].toString()));
+      var dis = LvsDisciplineConverter.get_disciplines(resp.body);
+      dis.forEach((Discipline element) {
         element.periodName = periods[index];
         element.periodCode = periods[index];
-      }); */
-      disciplines.add(dis[0]);
-    });
-    print(disciplines);
-    await DisciplinesOffline(_offlineController)
-        .updateDisciplines([LvsDisciplineConverter.get_disciplines()]);
-    /*   appSys.settings.system.lastGradeCount =
+        print(element.periodName);
+      });
+      disciplines.addAll(dis);
+    }
+    await DisciplinesOffline(_offlineController).updateDisciplines(disciplines);
+    appSys.settings.system.lastGradeCount =
         (getAllGrades(disciplines, overrideLimit: true) ?? []).length;
-    appSys.saveSettings(); */
+    appSys.saveSettings();
   }
 
   Future<List<Homework>?> homeworkFor(DateTime date) async {
@@ -72,7 +72,7 @@ class LvsMethods {
 
   nextHomework() async {
     var date = new DateTime.now();
-    var end_date = date.add(Duration(days: 16));
+    var end_date = date.add(Duration(days: 25));
     HwClient hwClient = await this.client.getHwClient();
     await searchHw(hwClient, date, end_date);
   }
@@ -102,7 +102,9 @@ class LvsMethods {
             "%22%2C%22actionRecherche%22%3Atrue%2C%22activeTab%22%3A%22idlisteTab%22%7D&xaction=read");
 
     List searchIds = [];
+    Map af = {}; //attached files
     json.decode(search.body)['activites'].forEach((element) {
+      af[element['activiteId'].toString()] = element['activiteDocuments'];
       searchIds.add(element['activiteId'].toString());
     });
 
@@ -127,6 +129,13 @@ class LvsMethods {
       if (ids.contains(element.id)) {
         hw.remove(element);
       } else {
+        var theaf = LvsHomeworkConverter.get_af(af[element.id], hwClient);
+        element.rawContent = element.rawContent! + theaf;
+        if (theaf != '') {
+          element.files.addAll([
+            Document(documentName: 'orientation.pdf', id: '01', type: 'pdf')
+          ]);
+        }
         ids.add(element.id);
       }
     });

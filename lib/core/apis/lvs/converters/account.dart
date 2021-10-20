@@ -6,6 +6,9 @@ import 'package:uuid/uuid.dart';
 
 class LvsAccountConverter {
   static AppAccount account(Map<dynamic, dynamic> accountData) {
+    if (accountData["infoUser"]["profil"] != 'Elève') {
+      throw ('Account type must be "Elève"');
+    }
     SchoolAccount _account = singleSchoolAccount(accountData);
     String? name = _account.name;
     String? surname = _account.surname;
@@ -25,25 +28,22 @@ class LvsAccountConverter {
     tabs.add(appTabs.HOMEWORK);
     tabs.add(appTabs.SUMMARY);
     tabs.add(appTabs.GRADES);
+    tabs.add(appTabs.FILES);
     return tabs;
   }
 
   static SchoolAccount singleSchoolAccount(
-      Map<dynamic, dynamic> schoolAccountsData) {
-    if (schoolAccountsData["infoUser"]["profil"] != 'Elève') {
-      throw ('Account type must be "Elève"');
-    }
-    schoolAccountsData = mapGet(schoolAccountsData, ["infoUser"]);
-    String? name = utf8convert(mapGet(schoolAccountsData, ["userPrenom"]));
-    String? surname = utf8convert(mapGet(schoolAccountsData, ["userNom"]));
-    String? schoolName = utf8convert(mapGet(schoolAccountsData, ["etabName"]));
+      Map<dynamic, dynamic> schoolAccountData) {
+    schoolAccountData = mapGet(schoolAccountData, ["infoUser"]);
+    String? name = utf8convert(mapGet(schoolAccountData, ["userPrenom"]));
+    String? surname = utf8convert(mapGet(schoolAccountData, ["userNom"]));
+    String? schoolName = utf8convert(mapGet(schoolAccountData, ["etabName"]));
     String? studentClass = "";
-    String? studentID = mapGet(schoolAccountsData, ["id"]).toString();
+    String? studentID = mapGet(schoolAccountData, ["id"]).toString();
     List<appTabs> tabs = availableTabs();
-    print('hoo');
     if (schoolName.length > 37) {
-      print('hey');
       schoolName = schoolName.substring(0, 35) + '...';
+      //quick fix if name is too long
     }
     return SchoolAccount(
         name: name,
