@@ -1,79 +1,68 @@
 import 'package:ynotes/core/logic/models_exporter.dart';
 import 'package:html/parser.dart' show parse;
 
+//https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/dossierRecapEleve/afficheDetailNotes
+
 class LvsDisciplineConverter {
   static get_disciplines(html) {
+    List<Discipline> disciplines = [];
     parse(html).querySelectorAll("tr.odd, tr.even").forEach((element) {
-      print(element.querySelector("td.tdReleveLeft")!.innerHtml);
-      print(element.querySelector("td.tdReleveRight")!.innerHtml);
+      var grades =
+          get_grades(element.querySelector("td.tdReleveRight")!.innerHtml);
+      var title = element.querySelector("td.tdReleveLeft");
+      var name = title!.querySelector('strong')!.innerHtml;
+      var teacher =
+          (title.innerHtml.substring(title.innerHtml.lastIndexOf('>') + 1))
+              .replaceAll('  ', '');
+      var average = element.querySelector("td.tdReleveMoy")!.innerHtml;
+      disciplines.add(Discipline(
+          classGeneralAverage: '12,2',
+          average: average,
+          teachers: [teacher],
+          disciplineName: name,
+          periodName: 'periodeName',
+          classNumber: 'classNumber',
+          gradesList: grades,
+          subdisciplineCodes: [],
+          subdisciplineNames: []));
     });
-    return [
-      Discipline(
-          maxClassGeneralAverage: '200',
-          minClassGeneralAverage: '200',
-          classGeneralAverage: '20',
-          generalAverage: '20',
-          classAverage: '20',
-          minClassAverage: '20',
-          maxClassAverage: '20',
-          disciplineCode: '20',
-          average: '20',
-          teachers: ['me'],
-          disciplineName: 'Neew',
-          periodName: 'periodeName',
-          disciplineRank: 1,
-          classNumber: 'classNumber',
-          generalRank: '2',
-          weight: '3',
-          periodCode: '10',
-          gradesList: [get_grades()],
-          subdisciplineCodes: [],
-          subdisciplineNames: []),
-      Discipline(
-          maxClassGeneralAverage: '200',
-          minClassGeneralAverage: '200',
-          classGeneralAverage: '20',
-          generalAverage: '20',
-          classAverage: '20',
-          minClassAverage: '20',
-          maxClassAverage: '20',
-          disciplineCode: '20',
-          average: '20',
-          teachers: ['me'],
-          disciplineName: 'New',
-          periodName: 'periodeName',
-          disciplineRank: 1,
-          classNumber: 'classNumber',
-          generalRank: '2',
-          weight: '3',
-          periodCode: '10',
-          gradesList: [get_grades()],
-          subdisciplineCodes: [],
-          subdisciplineNames: [])
-    ];
+    // print(disciplines);
+    return disciplines;
   }
 
-  static get_grades() {
-    return Grade(
-        value: '20',
-        testName: 'New',
-        periodCode: '10',
-        periodName: 'periodeName',
-        disciplineCode: '20',
-        subdisciplineCode: '0',
-        disciplineName: 'disciplineName',
-        letters: true,
-        weight: '',
-        scale: '15',
-        min: '15',
-        max: '20',
-        classAverage: '20',
-        date: new DateTime(2021),
-        notSignificant: false,
-        testType: 'me',
-        entryDate: new DateTime(2021),
-        countAsZero: false);
+  static get_grades(html) {
+    // print(html);
+    List<Grade> grades = [];
+    //print(html.split("</span>"));
+    html.split("</span>").forEach((grade) {
+      if (grade.replaceAll(' ', '').toString().length > 1) {
+        var name = grade.split(' :')[0];
+        if (grade.substring(0, 3) == ' - ') {
+          name = grade
+              .split(' :')[0]
+              .substring(0, grade.split(' :')[0].length - 13);
+        }
+        var value = grade.substring(grade.lastIndexOf('">') + ('">').length);
+
+        grades.add(Grade(
+            value: value.substring(0, value.indexOf('/')),
+            testName: name,
+            letters: true,
+            weight: '',
+            scale: value.substring(value.indexOf('/') + 1),
+            min: '15',
+            max: '20',
+            classAverage: '20',
+            date: new DateTime(2021),
+            notSignificant: false,
+            entryDate: new DateTime(2021),
+            countAsZero: false));
+      }
+    });
+    return grades;
   }
+
+  static class_level() {}
 
   static disciplines(d, [periodN = '']) {
     //select period html

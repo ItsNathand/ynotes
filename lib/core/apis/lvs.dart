@@ -29,7 +29,7 @@ class APILVS extends API {
 
   @override
   Future<List> login(username, password, {Map? additionnalSettings}) async {
-    CustomLogger.log('LVS', 'Login called');
+    CustomLogger.saveLog(object: 'LVS', text: 'Login called');
     if (username == null) {
       username = "";
     }
@@ -132,8 +132,8 @@ class APILVS extends API {
     var url = hw_client.base_url +
         "/fichier/afficherFichier" +
         hw_client.token +
-        '?fichierId=1292425';
-    //TODO: implement downloadRequest
+        '?fichierId=' +
+        document.id;
     return new Request('GET', Uri.parse(url));
   }
 

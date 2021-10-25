@@ -27,7 +27,7 @@ class LvsClient extends SessionClient {
         headers: {"Content-Type": "application/json"},
         token: false,
         baseUrl: false);
-    CustomLogger.log('LVS', rep.body);
+    CustomLogger.saveLog(object: 'LVS', text: rep.body.toString());
     if (rep.statusCode == 200) {
       CustomLogger.log('LVS', 'successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();

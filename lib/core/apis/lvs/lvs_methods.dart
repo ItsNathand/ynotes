@@ -12,10 +12,10 @@ import '../../../globals.dart';
 import '../../../useful_methods.dart';
 
 //-work on disciplines:
-//  -get disciplines
 //  -add grades
-//  -files
-//-save logs
+//  -add Global class average
+//  -use rank as student average
+//-ask merging!
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
     {bool forceFetch = false}) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
@@ -24,9 +24,7 @@ Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
   } else if (forceFetch) {
     try {
       await onlineFetch();
-      var a = await offlineFetch();
-      print('dis' + a.toString());
-      return a;
+      return await offlineFetch();
     } catch (e) {
       CustomLogger.error("Error while fetching: " + e.toString());
       return await offlineFetch();
@@ -49,15 +47,18 @@ class LvsMethods {
     var periodsData = LvsDisciplineConverter.getPeriods(req.body);
 
     for (var index = 0; index < periodsData.length; index++) {
+      'heeeee';
       var resp =
           await this.client.get(Uri.parse(periodsData[index].toString()));
       var dis = LvsDisciplineConverter.get_disciplines(resp.body);
-      dis.forEach((Discipline element) {
+      print(dis);
+      dis.forEach((element) {
         element.periodName = periods[index];
         element.periodCode = periods[index];
-        print(element.periodName);
       });
+      print('ii');
       disciplines.addAll(dis);
+      print('oo');
     }
     await DisciplinesOffline(_offlineController).updateDisciplines(disciplines);
     appSys.settings.system.lastGradeCount =
@@ -129,13 +130,8 @@ class LvsMethods {
       if (ids.contains(element.id)) {
         hw.remove(element);
       } else {
-        var theaf = LvsHomeworkConverter.get_af(af[element.id], hwClient);
-        element.rawContent = element.rawContent! + theaf;
-        if (theaf != '') {
-          element.files.addAll([
-            Document(documentName: 'orientation.pdf', id: '01', type: 'pdf')
-          ]);
-        }
+        element.files
+            .addAll(LvsHomeworkConverter.get_af(af[element.id], hwClient));
         ids.add(element.id);
       }
     });

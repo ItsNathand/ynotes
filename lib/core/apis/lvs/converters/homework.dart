@@ -41,17 +41,18 @@ class LvsHomeworkConverter {
 
   static get_af(List af, hw_client) {
     var text = '';
+    List<Document> docs = [];
     if (!af.isEmpty) {
       text = text + '<br /><br /><strong>Pièces jointes</strong>: <br /><br />';
       af.forEach((file) {
-        var url = hw_client.base_url +
-            "/fichier/afficherFichier" +
-            hw_client.token +
-            '?fichierId=1292425';
-        text =
-            text + ' <a href="' + url + '">' + file['nom'].toString() + '</a>';
+        var f_url = file['url'];
+        docs.add(Document(
+            documentName: file['nom'],
+            id: f_url.substring(
+                f_url.lastIndexOf('fichierId=') + 'fichierId='.length)));
       });
     }
-    return text;
+    print(docs);
+    return docs;
   }
 }
