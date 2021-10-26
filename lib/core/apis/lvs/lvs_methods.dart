@@ -11,11 +11,6 @@ import 'package:ynotes/core/utils/logging_utils.dart';
 import '../../../globals.dart';
 import '../../../useful_methods.dart';
 
-//-work on disciplines:
-//  -add grades
-//  -add Global class average
-//  -use rank as student average
-//-ask merging!
 Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
     {bool forceFetch = false}) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
@@ -40,25 +35,20 @@ class LvsMethods {
 
   Future<List<Discipline>?> grades() async {
     List<Discipline> disciplines = [];
-    print('grades called');
     var req =
         await this.client.get(Uri.parse('/vsn.main/releveNote/releveNotes'));
     List periods = ['1er Trimestre', '2nd Trimestre', '3ème Trimestre'];
     var periodsData = LvsDisciplineConverter.getPeriods(req.body);
 
     for (var index = 0; index < periodsData.length; index++) {
-      'heeeee';
       var resp =
           await this.client.get(Uri.parse(periodsData[index].toString()));
       var dis = LvsDisciplineConverter.get_disciplines(resp.body);
-      print(dis);
       dis.forEach((element) {
         element.periodName = periods[index];
         element.periodCode = periods[index];
       });
-      print('ii');
       disciplines.addAll(dis);
-      print('oo');
     }
     await DisciplinesOffline(_offlineController).updateDisciplines(disciplines);
     appSys.settings.system.lastGradeCount =
