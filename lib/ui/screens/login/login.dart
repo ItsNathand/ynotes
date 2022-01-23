@@ -34,7 +34,8 @@ class LoginPage extends StatelessWidget {
       subtitle: LoginContent.login.subtitle,
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         // ...spacedChildren(_services),
-        ...spacedChildren(schoolApis.map((e) => SchoolServiceBox(e.metadata)).toList()),
+        ...spacedChildren(
+            schoolApis.map((e) => SchoolServiceBox(e.metadata)).toList()),
         Padding(
           padding: YPadding.pt(YScale.s1),
           child: YButton(
@@ -45,7 +46,8 @@ class LoginPage extends StatelessWidget {
                   context,
                   YInfoDialog(
                     title: LoginContent.login.missingService,
-                    body: Text(LoginContent.login.dialogBody, style: theme.texts.body1),
+                    body: Text(LoginContent.login.dialogBody,
+                        style: theme.texts.body1),
                     confirmLabel: "OK",
                   ));
             },
