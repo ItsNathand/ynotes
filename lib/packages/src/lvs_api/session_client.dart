@@ -1,4 +1,4 @@
-part of lvs;
+part of lvs_api;
 
 abstract class SessionClient {
   http.Client client = new http.Client();

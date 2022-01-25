@@ -1,4 +1,4 @@
-part of lvs;
+part of lvs_api;
 
 class LvsClient extends SessionClient {
   HwClient hw_client = new HwClient();

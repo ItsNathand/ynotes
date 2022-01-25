@@ -1,6 +1,6 @@
 part of lvs;
 
-//LvsClient client = LvsClient();
+LvsClient client = LvsClient();
 
 final Metadata metadata = Metadata(
     name: "La-vie-scolaire",

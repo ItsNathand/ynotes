@@ -11,6 +11,7 @@ import 'package:intl/intl.dart';
 import 'package:ynotes/core/utilities.dart';
 import 'package:ynotes/core/extensions.dart';
 import 'package:ynotes/core/api.dart';
+import 'package:ynotes/packages/lvs_api.dart';
 import 'package:ynotes/packages/shared.dart';
 import 'package:html/parser.dart' as html_parser;
 
@@ -25,7 +26,6 @@ part 'src/modules/grades/provider.dart';
 // AUTH MODULE
 part 'src/modules/auth/module.dart';
 part 'src/modules/auth/repository.dart';
-part 'src/modules/auth/providers.dart';
 
 // HOMEWORK MODULE
 part 'src/modules/homework/module.dart';

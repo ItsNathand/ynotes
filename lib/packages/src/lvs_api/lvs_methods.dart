@@ -1,32 +1,16 @@
-/* part of lvs;
-//import 'package:connectivity_plus/connectivity_plus.dart';
-/* Future<dynamic> fetch(Function onlineFetch, Function offlineFetch,
-    {bool forceFetch = false}) async {
-  var connectivityResult = await (Connectivity().checkConnectivity());
-  if (connectivityResult == ConnectivityResult.none) {
-    return await offlineFetch();
-  } else if (forceFetch) {
-    try {
-      await onlineFetch();
-      return await offlineFetch();
-    } catch (e) {
-      CustomLogger.error("Error while fetching: " + e.toString());
-      return await offlineFetch();
-    }
-  }
-} */
+part of lvs_api;
+
 class LvsMethods {
-  LvsClient client;
-  //final Offline _offlineController;
+  late LvsClient client;
 
-  LvsMethods(this.client, this._offlineController);
+  LvsMethods(this.client);
 
-  Future<List<Discipline>?> grades() async {
-    List<Discipline> disciplines = [];
+  Future<List?> grades() async {
+    List disciplines = [];
     var req =
         await this.client.get(Uri.parse('/vsn.main/releveNote/releveNotes'));
     List periods = ['1er Trimestre', '2nd Trimestre', '3ème Trimestre'];
-    var periodsData = LvsDisciplineConverter.getPeriods(req.body);
+/*     var periodsData = LvsDisciplineConverter.getPeriods(req.body);
 
     for (var index = 0; index < periodsData.length; index++) {
       var resp =
@@ -38,13 +22,10 @@ class LvsMethods {
       });
       disciplines.addAll(dis);
     }
-    await DisciplinesOffline(_offlineController).updateDisciplines(disciplines);
-    appSys.settings.system.lastGradeCount =
-        (getAllGrades(disciplines, overrideLimit: true) ?? []).length;
-    appSys.saveSettings();
+ */
   }
 
-  Future<List<Homework>?> homeworkFor(DateTime date) async {
+  Future<List?> homeworkFor(DateTime date) async {
     HwClient hwClient = await this.client.getHwClient();
     var h = await searchHw(hwClient, date, date.add(Duration(days: 2)));
   }
@@ -57,8 +38,6 @@ class LvsMethods {
   }
 
   searchHw(HwClient hwClient, DateTime date, DateTime end_date) async {
-    CustomLogger.log('LVS_HW', 'searching hw');
-
     DateTime search_date = end_date.subtract(const Duration(days: 2));
 
     var search = await hwClient.post(
@@ -100,7 +79,7 @@ class LvsMethods {
             end_date.month.toString() +
             '-' +
             end_date.day.toString());
-    List<Homework>? hw = LvsHomeworkConverter.homework(req.body);
+    /*  List<Homework>? hw = LvsHomeworkConverter.homework(req.body);
     (hw).removeWhere((element) => !searchIds.contains(element.id));
 
     var ids = [];
@@ -116,7 +95,6 @@ class LvsMethods {
     if (hw.length > 0) {
       await HomeworkOffline(_offlineController).updateHomework(hw);
       CustomLogger.log('LVS_HW', "Hw updated");
-    }
+    } */
   }
 }
-*/
