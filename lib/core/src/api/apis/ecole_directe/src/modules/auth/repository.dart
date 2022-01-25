@@ -7,11 +7,14 @@ class _AuthRepository extends AuthRepository {
   _AuthRepository(SchoolApi api) : super(api);
 
   @override
-  Future<Response<Map<String, dynamic>>> get() async => const Response(error: "Not implemented");
+  Future<Response<Map<String, dynamic>>> get() async =>
+      const Response(error: "Not implemented");
 
   @override
   Future<Response<Map<String, dynamic>>> login(
-      {required String username, required String password, Map<String, dynamic>? parameters}) async {
+      {required String username,
+      required String password,
+      Map<String, dynamic>? parameters}) async {
     final Map<String, String> body = {
       "identifiant": username,
       "motdepasse": password,
@@ -49,8 +52,11 @@ class _AuthRepository extends AuthRepository {
                   profilePicture: e["photo"],
                   school: e["nomEtablissement"]))
               .toList();
-      final AppAccount appAccount =
-          AppAccount(id: account["uid"], firstName: account["prenom"], lastName: account["nom"], accounts: accounts);
+      final AppAccount appAccount = AppAccount(
+          id: account["uid"],
+          firstName: account["prenom"],
+          lastName: account["nom"],
+          accounts: accounts);
       final Map<String, dynamic> map = {
         "appAccount": appAccount,
         "schoolAccount": accounts.isEmpty
@@ -63,7 +69,9 @@ class _AuthRepository extends AuthRepository {
                 school: account["nomEtablissement"])
             : accounts[0]
       };
-      for (final module in (account["modules"] as List<dynamic>).map<Map<String, dynamic>>((e) => e).toList()) {
+      for (final module in (account["modules"] as List<dynamic>)
+          .map<Map<String, dynamic>>((e) => e)
+          .toList()) {
         final String name = module["code"];
         final bool enabled = module["enable"];
         if (name == "VIE_SCOLAIRE") {

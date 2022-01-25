@@ -1,8 +1,4 @@
 part of lvs;
-/* import 'dart:convert';
-
-import 'package:http/http.dart' as http;
-import 'dart:math';
 
 abstract class SessionClient {
   http.Client client = new http.Client();
@@ -40,7 +36,7 @@ abstract class SessionClient {
       }
       headers['User-Agent'] = this.user_agent!;
     }
-    return await await client.get(url, headers: headers);
+    return await client.get(url, headers: headers);
   }
 
   Future<http.Response> post(Uri url,
@@ -107,4 +103,3 @@ abstract class SessionClient {
     return this.user_agent = agent;
   }
 }
- */
