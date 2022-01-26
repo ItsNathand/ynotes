@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:html_character_entities/html_character_entities.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:uuid/uuid.dart';
 import 'package:ynotes/core/utilities.dart';
 import 'package:ynotes/core/extensions.dart';
 import 'package:ynotes/core/api.dart';
@@ -36,3 +37,11 @@ part 'src/modules/homework/provider.dart';
 part 'src/modules/documents/module.dart';
 part 'src/modules/documents/repository.dart';
 part 'src/modules/documents/provider.dart';
+
+// DOCUMENTS MODULE
+part 'src/modules/school_life/module.dart';
+part 'src/modules/school_life/repository.dart';
+
+// DOCUMENTS MODULE
+part 'src/modules/emails/module.dart';
+part 'src/modules/emails/repository.dart';

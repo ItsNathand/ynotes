@@ -1,5 +1,8 @@
 part of lvs;
 
-_DocumentsModule(SchoolApi api) {}
+class _DocumentsModule extends DocumentsModule<_DocumentsRepository> {
+  _DocumentsModule(SchoolApi api)
+      : super(repository: _DocumentsRepository(api), api: api);
+}
 
 // future support is planned

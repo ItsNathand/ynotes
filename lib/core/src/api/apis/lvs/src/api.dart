@@ -28,10 +28,10 @@ class LvsApi extends SchoolApi implements SchoolApiModules {
   late GradesModule gradesModule = _GradesModule(this);
 
   @override
-  late SchoolLifeModule schoolLifeModule;
+  late SchoolLifeModule schoolLifeModule = _SchoolLifeModule(this);
 
   @override
-  late EmailsModule emailsModule;
+  late EmailsModule emailsModule = _EmailsModule(this);
 
   @override
   late HomeworkModule homeworkModule = _HomeworkModule(this);

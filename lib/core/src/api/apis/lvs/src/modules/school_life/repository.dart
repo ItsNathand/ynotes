@@ -1,8 +1,8 @@
 part of lvs;
 
-class _GradesRepository extends Repository {
+class _SchoolLifeRepository extends Repository {
   @protected
-  _GradesRepository(SchoolApi api) : super(api);
+  _SchoolLifeRepository(SchoolApi api) : super(api);
 
   @override
   Future<Response<Map<String, dynamic>>> get() async {
