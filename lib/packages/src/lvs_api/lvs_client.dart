@@ -4,6 +4,7 @@ class LvsClient extends SessionClient {
   HwClient hw_client = new HwClient();
 
   Future<List> init(credentials) async {
+    print('hhi');
     if (credentials['username'] is! String ||
         credentials['password'] is! String) {
       throw ('Lvs credentials username and password must be string');
@@ -15,7 +16,7 @@ class LvsClient extends SessionClient {
       'login': credentials['username'],
       'password': credentials['password']
     };
-
+    print(data);
     this.setUser_agent();
     var rep = await this.post(
         Uri.parse(credentials['url'].toString() + '/vsn.main/WSAuth/connexion'),
@@ -24,6 +25,8 @@ class LvsClient extends SessionClient {
         token: false,
         baseUrl: false);
     // CustomLogger.saveLog(object: 'LVS', text: rep.body.toString());
+    print(rep.body);
+    print(rep.headers);
     if (rep.statusCode == 200) {
       //  CustomLogger.log('LVS', 'successful authentication for Lvs');
       this.token = rep.headers['set-cookie'].toString();
