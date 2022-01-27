@@ -14,22 +14,22 @@ class _AuthRepository extends AuthRepository {
       'username': username,
       'password': password
     };
-    List res = await client.start(credentials);
-    if (res[0] == 1) {
-      var req_infos =
+    List authRes = await client.start(credentials);
+    if (authRes[0] == 1) {
+      var accountInfos =
           await client.get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
-      Map<String, dynamic> raw_infos = jsonDecode(req_infos.body)["infoUser"];
+      Map<String, dynamic> rawInfos = jsonDecode(accountInfos.body)["infoUser"];
 
       final AppAccount appAccount = AppAccount(
-          firstName: raw_infos['userPrenom'], lastName: raw_infos['userNom']);
+          firstName: rawInfos['userPrenom'], lastName: rawInfos['userNom']);
       final Map<String, dynamic> map = {
         "appAccount": appAccount,
         "schoolAccount": SchoolAccount(
             firstName: appAccount.firstName,
             lastName: appAccount.lastName,
-            profilePicture: raw_infos["logo"],
-            school: raw_infos["etabName"],
-            className: '',
+            profilePicture: rawInfos["logo"],
+            school: rawInfos["etabName"],
+            className: 'none',
             id: appAccount.id)
       };
       api.modulesAvailability.grades = true;

@@ -1,5 +1,7 @@
 part of lvs;
 
+// flutter run --no-sound-null-safety
+
 LvsClient client = LvsClient();
 
 final Metadata metadata = Metadata(
