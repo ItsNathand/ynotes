@@ -18,6 +18,11 @@ PODS:
     - Flutter
   - geolocator_apple (1.2.0):
     - Flutter
+<<<<<<< HEAD
+=======
+  - isar_flutter_libs (1.0.0):
+    - Flutter
+>>>>>>> cc90fcd9abeafa2bc4f648c00446df9d1733eeda
   - MTBBarcodeScanner (5.0.11)
   - open_file (0.0.1):
     - Flutter
@@ -47,6 +52,10 @@ DEPENDENCIES:
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
+<<<<<<< HEAD
+=======
+  - isar_flutter_libs (from `.symlinks/plugins/isar_flutter_libs/ios`)
+>>>>>>> cc90fcd9abeafa2bc4f648c00446df9d1733eeda
   - open_file (from `.symlinks/plugins/open_file/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
@@ -77,6 +86,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   geolocator_apple:
     :path: ".symlinks/plugins/geolocator_apple/ios"
+<<<<<<< HEAD
+=======
+  isar_flutter_libs:
+    :path: ".symlinks/plugins/isar_flutter_libs/ios"
+>>>>>>> cc90fcd9abeafa2bc4f648c00446df9d1733eeda
   open_file:
     :path: ".symlinks/plugins/open_file/ios"
   package_info_plus:
@@ -100,6 +114,10 @@ SPEC CHECKSUMS:
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_secure_storage: 7953c38a04c3fdbb00571bcd87d8e3b5ceb9daec
   geolocator_apple: b741765c55dc21950e3e106e8b3584e55cf81ce5
+<<<<<<< HEAD
+=======
+  isar_flutter_libs: 5a34aebdd82e388db81dad8dd26786a642bb5b90
+>>>>>>> cc90fcd9abeafa2bc4f648c00446df9d1733eeda
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   open_file: 02eb5cb6b21264bd3a696876f5afbfb7ca4f4b7d
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
@@ -114,4 +132,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 898173fe690512721055d0727f73c8f81ab045e3
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

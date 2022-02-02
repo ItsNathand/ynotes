@@ -8,7 +8,7 @@ class _AuthRepository extends AuthRepository {
       {required String username,
       required String password,
       Map<String, dynamic>? parameters}) async {
-    var url = '';
+    var url = 'https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/';
     Map<String, dynamic> credentials = {
       'url': Uri.parse(url),
       'username': username,
@@ -35,6 +35,7 @@ class _AuthRepository extends AuthRepository {
           throw ('Account type must be "Elève"');
         }
         final AppAccount appAccount = AppAccount(
+            entityId: Uuid().v4(),
             firstName: accountInfos['userPrenom'],
             lastName: accountInfos['userNom']);
         final Map<String, dynamic> map = {
@@ -45,7 +46,7 @@ class _AuthRepository extends AuthRepository {
               profilePicture: accountInfos["logo"],
               school: accountInfos["etabName"],
               className: 'none',
-              id: appAccount.id)
+              entityId: appAccount.id.toString())
         };
         api.modulesAvailability.grades = true;
         api.modulesAvailability.schoolLife = false;
