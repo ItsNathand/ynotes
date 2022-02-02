@@ -16,29 +16,47 @@ class _AuthRepository extends AuthRepository {
     };
     List authRes = await client.start(credentials);
     if (authRes[0] == 1) {
-      var accountInfos =
-          await client.get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
-      Map<String, dynamic> rawInfos = jsonDecode(accountInfos.body)["infoUser"];
+      try {
+        var rawInfos =
+            await client.get(Uri.parse('/vsn.main/WSMenu/infosPortailUser'));
 
-      final AppAccount appAccount = AppAccount(
-          firstName: rawInfos['userPrenom'], lastName: rawInfos['userNom']);
-      final Map<String, dynamic> map = {
-        "appAccount": appAccount,
-        "schoolAccount": SchoolAccount(
-            firstName: appAccount.firstName,
-            lastName: appAccount.lastName,
-            profilePicture: rawInfos["logo"],
-            school: rawInfos["etabName"],
-            className: 'none',
-            id: appAccount.id)
-      };
-      api.modulesAvailability.grades = true;
-      api.modulesAvailability.schoolLife = false;
-      api.modulesAvailability.emails = false;
-      api.modulesAvailability.homework = false;
-      await api.modulesAvailability.save();
-      api.refreshModules();
-      return Response(data: map);
+        Map<String, dynamic> accountInfos =
+            jsonDecode(rawInfos.body)["infoUser"];
+        //testing without account:
+        /*Map<String, dynamic> accountInfos = {
+          "logo": "https://institut.la-vie-scolaire.fr/vsn.main/WSMenu/logo",
+          "etabName": "Intitut",
+          "userPrenom": "Inom",
+          "userNom": "Iom",
+          "profil": "Elève" 
+        }; */
+
+        if (accountInfos["infoUser"]["profil"] != 'Elève') {
+          throw ('Account type must be "Elève"');
+        }
+        final AppAccount appAccount = AppAccount(
+            firstName: accountInfos['userPrenom'],
+            lastName: accountInfos['userNom']);
+        final Map<String, dynamic> map = {
+          "appAccount": appAccount,
+          "schoolAccount": SchoolAccount(
+              firstName: appAccount.firstName,
+              lastName: appAccount.lastName,
+              profilePicture: accountInfos["logo"],
+              school: accountInfos["etabName"],
+              className: 'none',
+              id: appAccount.id)
+        };
+        api.modulesAvailability.grades = true;
+        api.modulesAvailability.schoolLife = false;
+        api.modulesAvailability.emails = false;
+        api.modulesAvailability.homework = false;
+        await api.modulesAvailability.save();
+        api.refreshModules();
+        return Response(data: map);
+      } catch (e) {
+        return Response(error: "$e");
+      }
     }
     return const Response(error: 'Connection failed');
   }

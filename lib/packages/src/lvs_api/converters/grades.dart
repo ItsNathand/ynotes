@@ -1,8 +1,9 @@
 part of lvs_api;
 
-/* 
+//https://institutsaintpierresaintpaul28.la-vie-scolaire.fr/vsn.main/dossierRecapEleve/afficheDetailNotes
+
 class LvsDisciplineConverter {
-  static get_disciplines(html) {
+  /*  static get_disciplines(html) {
     List<Discipline> disciplines = [];
     parse(html).querySelectorAll("tr.odd, tr.even").forEach((element) {
       var grades =
@@ -26,8 +27,8 @@ class LvsDisciplineConverter {
     });
     return disciplines;
   }
-
-  static get_grades(html) {
+ */
+  /* static get_grades(html) {
     List<Grade> grades = [];
     html.split("</span>").forEach((grade) {
       if (grade.replaceAll(' ', '').toString().length > 1) {
@@ -55,75 +56,21 @@ class LvsDisciplineConverter {
       }
     });
     return grades;
-  }
+  } */
 
   static getPeriods(html) {
-    List<String?> urls = [];
+    Map<String, String> periods = {};
+    html.querySelector("ul.periodes");
     html = parse(html);
     html
         .querySelector("ul.periodes")!
         .querySelectorAll('li.periode')
         .forEach((period) {
       var url = period.querySelector('a')!.attributes['href'].toString();
-      urls.add(url);
+      var period_name =
+          period.querySelector('a')!.attributes['href'].toString();
+      periods[period_name] = url;
     });
-    return urls;
+    return periods;
   }
 }
-
-class LvsHomeworkConverter {
-  static List<Homework> homework(hwsData) {
-    List hws = json.decode(hwsData);
-
-    List<Homework> hwList = [];
-    hws.forEach((hw) {
-      String discipline = hw['subject'];
-      DateTime date = DateFormat('yyyy-MM-dd').parse(hw['start_date']);
-      bool done = false;
-      String teacherName = hw['text'];
-      hw['activitesData'].forEach((hwContent) {
-        String id = hwContent['id'].toString();
-        String rawContent = hwContent['description'];
-        bool toReturn = false;
-        bool isATest = false;
-        bool loaded = true;
-
-        if (['SURV', 'EVAL', 'PSURV'].contains(hwContent['code'])) {
-          isATest = true;
-        }
-
-        hwList.add(Homework(
-          discipline: discipline,
-          id: id,
-          rawContent: rawContent,
-          date: date,
-          done: done,
-          toReturn: toReturn,
-          teacherName: teacherName,
-          loaded: loaded,
-          isATest: isATest,
-        ));
-      });
-    });
-    return hwList;
-  }
-
-  static get_af(List af, hw_client) {
-    var text = '';
-    List<Document> docs = [];
-    if (!af.isEmpty) {
-      text = text + '<br /><br /><strong>Pièces jointes</strong>: <br /><br />';
-      af.forEach((file) {
-        var f_url = file['url'];
-        docs.add(Document(
-            documentName: file['nom'],
-            id: f_url.substring(
-                f_url.lastIndexOf('fichierId=') + 'fichierId='.length)));
-      });
-    }
-    print(docs);
-    return docs;
-  }
-} 
-
-*/

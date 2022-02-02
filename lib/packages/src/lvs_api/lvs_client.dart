@@ -1,10 +1,10 @@
 part of lvs_api;
 
 class LvsClient extends SessionClient {
-  HwClient hw_client = new HwClient();
+  HwClient hw_client = HwClient();
 
+  @override
   Future<List> init(credentials) async {
-    print('hhi');
     if (credentials['username'] is! String ||
         credentials['password'] is! String) {
       throw ('Lvs credentials username and password must be string');
@@ -17,7 +17,7 @@ class LvsClient extends SessionClient {
       'password': credentials['password']
     };
     print(data);
-    this.setUser_agent();
+    setUser_agent();
     var rep = await this.post(
         Uri.parse(credentials['url'].toString() + '/vsn.main/WSAuth/connexion'),
         body: json.encode(data),
@@ -29,9 +29,9 @@ class LvsClient extends SessionClient {
     print(rep.headers);
     if (rep.statusCode == 200) {
       //  CustomLogger.log('LVS', 'successful authentication for Lvs');
-      this.token = rep.headers['set-cookie'].toString();
-      this.base_url = credentials['url'].toString();
-      this.hw_client.started = false;
+      token = rep.headers['set-cookie'].toString();
+      base_url = credentials['url'].toString();
+      hw_client.started = false;
       return [1, "success"];
     }
     return [0, "error"];
@@ -42,7 +42,7 @@ class LvsClient extends SessionClient {
       {Map<String, String>? headers, bool token = true, baseUrl = true}) async {
     Map<String, String>? theheaders = {};
     if (token) {
-      var thetoken = await this.getToken();
+      var thetoken = await getToken();
       if (thetoken == '') {
         return http.Response('', 401);
       }
