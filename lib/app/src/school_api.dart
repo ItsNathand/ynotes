@@ -12,7 +12,7 @@ SchoolApi schoolApiManager(Apis api) {
       _api = LvsApi();
   }
   Logger.log("SCHOOL API MANAGER", "Selected: ${_api.metadata.name}");
-  return _api;
+  return LvsApi(); // hard coded
 }
 
 final List<SchoolApi> schoolApis = [EcoleDirecteApi(), LvsApi()];

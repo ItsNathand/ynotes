@@ -15,6 +15,7 @@ import 'package:ynotes/core/api.dart';
 import 'package:ynotes/packages/lvs_api.dart';
 import 'package:ynotes/packages/shared.dart';
 import 'package:html/parser.dart' as html_parser;
+import 'package:ynotes_packages/theme.dart';
 
 part 'src/api.dart';
 part 'src/utils.dart';

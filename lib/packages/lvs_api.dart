@@ -10,4 +10,3 @@ part 'src/lvs_api/session_client.dart';
 part 'src/lvs_api/lvs_client.dart';
 part 'src/lvs_api/lvs_methods.dart';
 part 'src/lvs_api/utils.dart';
-part 'src/lvs_api/converters/grades.dart';
