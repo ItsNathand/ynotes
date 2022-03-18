@@ -4,7 +4,7 @@ description: yNotes application de gestion de vie scolaire
 # Don't delete the `+9`
 #
 # Before building the app for Windows, go to `windows/runner/Runner.rc` and edit `VERSION_AS_NUMBER` and `VERSION_AS_STRING`
-version: 0.14.7+9
+version: 0.15.1+9
 publish_to: none
 
 environment:
@@ -52,7 +52,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   url_launcher: ^6.0.18
   uuid: ^3.0.5
-  ynotes_packages:
+  ynotes_packages: # flutter pub upgrade ynotes_packages
     git:
       ref: main
       url: "https://github.com/EduWireApps/ynotes-packages"
@@ -62,6 +62,8 @@ dependencies:
   convert: ^3.0.1
   crypto: ^3.0.1
   html: ^0.15.0
+  new_version: ^0.3.0
+  device_info_plus: ^3.2.2
 
 # dependency_overrides:
 

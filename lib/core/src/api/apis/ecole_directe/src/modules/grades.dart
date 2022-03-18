@@ -1,5 +1,16 @@
 part of ecole_directe;
 
+class _GradesModule extends GradesModule<_GradesRepository> {
+  _GradesModule(SchoolApi api) : super(repository: _GradesRepository(api), api: api);
+}
+
+class _GradesProvider extends Provider {
+  _GradesProvider(SchoolApi api) : super(api);
+
+  Future<Response<Map<String, dynamic>>> get() async =>
+      await _request(api, url: "eleves/${api.authModule.schoolAccount?.entityId}/notes.awp?verbe=get");
+}
+
 class _GradesRepository extends Repository {
   @protected
   late final _GradesProvider gradesProvider = _GradesProvider(api);
@@ -11,7 +22,11 @@ class _GradesRepository extends Repository {
     final res = await gradesProvider.get();
     if (res.error != null) return res;
 
-    final List<Period> periods = res.data!["data"]["periodes"].map<Period>((e) {
+    final List<dynamic> filteredPeriods = (res.data!["data"]["periodes"] as List<dynamic>)
+        // Keep the space after "Relevé"
+        .where((element) => !["Relevé ", "Année"].contains(element["periode"]))
+        .toList();
+    final List<Period> periods = filteredPeriods.map<Period>((e) {
       for (var d in e["ensembleMatieres"]["disciplines"]) {
         d["codePeriode"] = e["idPeriode"];
       }
@@ -27,12 +42,8 @@ class _GradesRepository extends Repository {
           minAverage: (e["ensembleMatieres"]["moyenneMin"] as String).toDouble() ?? double.nan);
     }).toList();
     periods.sort((a, b) => a.startDate.compareTo(b.startDate));
-    // Put the yearPeriod at the end
-    final Period yearPeriod = periods.firstWhere((e) => e.entityId == "A999Z");
-    periods.remove(yearPeriod);
-    periods.add(yearPeriod);
     List<Map<String, dynamic>> disciplines = [];
-    for (var period in res.data!["data"]["periodes"]) {
+    for (var period in filteredPeriods) {
       for (var d in period["ensembleMatieres"]["disciplines"]) {
         disciplines.add(d);
       }
